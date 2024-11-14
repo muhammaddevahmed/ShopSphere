@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <nav class="bg-blue-600 p-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <!-- Logo and Name (Centered) -->
+            <div class="flex items-center flex-grow lg:flex-none">
+                <img src="logo.png" alt="Logo" class="h-8 mr-2">
+                <span class="text-white text-lg font-semibold">MyWebsite</span>
+            </div>
+
+            <!-- Search Bar (Visible on all screens) -->
+            <div class="flex-grow mx-4">
+                <input type="text" placeholder="Search..." class="w-full px-4 py-2 rounded-lg text-gray-800">
+            </div>
+
+            <!-- Right-side Links (Visible on desktop) -->
+            <div class="hidden lg:flex items-center space-x-4">
+                <a href="#" class="text-white flex items-center space-x-2">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+                <a href="#" class="text-white flex items-center space-x-2">
+                    <i class="fas fa-comment"></i>
+                    <span>Messages</span>
+                </a>
+                <a href="#" class="text-white flex items-center space-x-2">
+                    <i class="fas fa-box"></i>
+                    <span>Orders</span>
+                </a>
+                <a href="#" class="text-white flex items-center space-x-2">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Add to Cart</span>
+                </a>
+            </div>
+
+            <!-- Mobile & Tablet Menu Button (Hamburger Icon) -->
+            <button id="hamburger" class="lg:hidden text-white ml-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile & Tablet Dropdown for Links (Initially Hidden) -->
+        <div id="mobile-menu" class="lg:hidden bg-blue-600 text-white p-4 hidden">
+            <div class="flex flex-col space-y-4">
+                <a href="#" class="flex items-center space-x-2">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+                <a href="#" class="flex items-center space-x-2">
+                    <i class="fas fa-comment"></i>
+                    <span>Messages</span>
+                </a>
+                <a href="#" class="flex items-center space-x-2">
+                    <i class="fas fa-box"></i>
+                    <span>Orders</span>
+                </a>
+                <a href="#" class="flex items-center space-x-2">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Add to Cart</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+   
+    <!-- Categories Section with Dropdown and Flags -->
+    <div class="bg-gray-200 p-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <!-- Categories Dropdown -->
+            <div class="relative">
+                <button id="categories-toggle" class="text-blue-600 flex items-center space-x-2">
+                    <span>All Categories</span>
+                    <i class="fas fa-bars"></i>
+                </button>
+                <!-- Categories Dropdown Menu -->
+                <div id="categories-menu" class="hidden absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg">
+                    <ul class="flex flex-col">
+                        <li><a href="#" class="block px-4 py-2 text-gray-800">Category 1</a></li>
+                        <li><a href="#" class="block px-4 py-2 text-gray-800">Category 2</a></li>
+                        <li><a href="#" class="block px-4 py-2 text-gray-800">Category 3</a></li>
+                        <li><a href="#" class="block px-4 py-2 text-gray-800">Category 4</a></li>
+                        <li><a href="#" class="block px-4 py-2 text-gray-800">Category 5</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+
+            <!-- Language, Currency, Ship to Dropdowns -->
+            <div class="flex space-x-4">
+                <!-- Language Dropdown -->
+                <div class="relative">
+                    <button id="language-toggle" class="flex items-center space-x-2 text-gray-800">
+                        <i class="fas fa-globe"></i>
+                        <span id="language-text">English</span>
+                    </button>
+                    <div id="language-menu" class="hidden absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-lg">
+                        <ul class="flex flex-col">
+                            <li><a href="#" class="block px-4 py-2 text-gray-800" data-lang="English">English</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800" data-lang="Español">Español</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800" data-lang="Français">Français</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Currency Dropdown -->
+                <div class="relative">
+                    <button id="currency-toggle" class="flex items-center space-x-2 text-gray-800">
+                        <span id="currency-icon" class="text-xl">$</span>
+                        <span id="currency-text">USD</span>
+                    </button>
+                    <div id="currency-menu" class="hidden absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-lg">
+                        <ul class="flex flex-col">
+                            <li><a href="#" class="block px-4 py-2 text-gray-800" data-currency="USD" data-icon="$">USD</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800" data-currency="EUR" data-icon="€">EUR</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800" data-currency="GBP" data-icon="£">GBP</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Ship to Dropdown -->
+                <div class="relative">
+                    <button id="shipto-toggle" class="flex items-center space-x-2 text-gray-800">
+                        <img id="shipto-flag" src="https://www.countryflags.io/us/flat/32.png" alt="Flag" class="w-5 h-5">
+                        <span id="shipto-text">USA</span>
+                    </button>
+                    <div id="shipto-menu" class="hidden absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-lg">
+                        <ul class="flex flex-col">
+                            <li><a href="#" class="block px-4 py-2 text-gray-800" data-shipto="USA" data-flag="https://www.countryflags.io/us/flat/32.png">USA</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800" data-shipto="Canada" data-flag="https://www.countryflags.io/ca/flat/32.png">Canada</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-gray-800" data-shipto="Mexico" data-flag="https://www.countryflags.io/mx/flat/32.png">Mexico</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto p-4 flex flex-wrap">
+        <!-- Sidebar -->
+        <div class="w-full lg:w-1/4 p-4">
+            <ul class="space-y-4 ">
+                <li class="hover:bg-green-800"><a href="#" class="text-blue-600 no-underline hover:text-blue-800 transition-colors duration-300">Link 1</a></li>
+                <li><a href="#" class="text-blue-600 no-underline hover:text-blue-800 transition-colors duration-300">Link 2</a></li>
+                <li><a href="#" class="text-blue-600 no-underline hover:text-blue-800 transition-colors duration-300">Link 3</a></li>
+                <li><a href="#" class="text-blue-600 no-underline hover:text-blue-800 transition-colors duration-300">Link 4</a></li>
+                <li><a href="#" class="text-blue-600 no-underline hover:text-blue-800 transition-colors duration-300">Link 5</a></li>
+                <li><a href="#" class="text-blue-600 no-underline hover:text-blue-800 transition-colors duration-300">Link 6</a></li>
+                <li><a href="#" class="text-blue-600 no-underline hover:text-blue-800 transition-colors duration-300">Link 7</a></li>
+                <li><a href="#" class="text-blue-600 no-underline hover:text-blue-800 transition-colors duration-300">Link 8</a></li>
+                <li><a href="#" class="text-blue-600 no-underline hover:bg-green-800 transition-colors duration-300">Link 9</a></li>
+                <li><a href="#" class="text-blue-600 no-underline hover:text-blue-800 transition-colors duration-300">Link 10</a></li>
+                <li><a href="#" class="text-blue-600 no-underline hover:text-blue-800 transition-colors duration-300">Link 10</a></li>
+                <li><a href="#" class="text-blue-600 no-underline hover:text-blue-800 transition-colors duration-300">Link 10</a></li>
+                <li><a href="#" class="text-blue-600 no-underline hover:text-blue-800 transition-colors duration-300">Link 10</a></li>
+            </ul>
+        </div>
+    
+        <!-- Banner Image -->
+        <div class="w-full lg:w-1/2  flex justify-center items-center">
+            <img src="https://images.pexels.com/photos/573130/pexels-photo-573130.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Banner" class="w-full h-auto object-cover">
+        </div>
+    
+        <!-- Right Side (Profile Box and Additional Boxes) -->
+        <div class="w-full lg:w-1/4 p-4">
+            <!-- Profile Box -->
+            <div class="bg-gray-100 p-4 mb-4 rounded-lg shadow-lg">
+                <img src="profile-pic.jpg" alt="Profile" class="w-40 h-20 rounded-full mx-auto mb-4">
+                <p class="text-center mb-4">Welcome to our website!</p>
+                <div class="text-center">
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-lg mb-2 w-full hover:bg-blue-800 transition-all duration-300">Login</button>
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-lg w-full hover:bg-blue-800 transition-all duration-300">Sign Up</button>
+                </div>
+            </div>
+    
+            <!-- Additional Box 1 -->
+            <div class="bg-gray-100 p-4 mb-4 rounded-lg shadow-lg">
+                <p class="text-center">Some information or content here.</p>
+            </div>
+    
+            <!-- Additional Box 2 -->
+            <div class="bg-gray-100 p-4 mb-4 rounded-lg shadow-lg">
+                <p class="text-center">Some more information or content here.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container mx-auto p-4 flex flex-wrap flex-row">
+        <!-- Right Box Section -->
+        <div class="w-full lg:w-1/3 p-4">
+            <!-- Intro Text -->
+            <div class="bg-white p-4 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300">
+                <div class="mb-8">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-2">Limited Time Offer</h2>
+                    <p class="text-gray-600">Hurry up! Grab these amazing deals before time runs out.</p>
+                </div>
+    
+                <!-- Timer Boxes -->
+                <div class="grid grid-cols-4 sm:grid-cols-4 gap-1 mb-8">
+                    <div class="bg-blue-600 text-white p-2 rounded-lg text-center w-16 h-16">
+                        <p class="text-xs font-semibold">00</p>
+                        <p class="text-xs">Hours</p>
+                    </div>
+                    <div class="bg-blue-600 text-white p-2 rounded-lg text-center w-16 h-16">
+                        <p class="text-xs font-semibold">00</p>
+                        <p class="text-xs">Minutes</p>
+                    </div>
+                    <div class="bg-blue-600 text-white p-2 rounded-lg text-center w-16 h-16">
+                        <p class="text-xs font-semibold">00</p>
+                        <p class="text-xs">Seconds</p>
+                    </div>
+                    <div class="bg-blue-600 text-white p-2 rounded-lg text-center w-16 h-16">
+                        <p class="text-xs font-semibold">00</p>
+                        <p class="text-xs">Days</p>
+                    </div>
+
+                 
+                </div>
+            </div>
+        </div>
+<!-- 5 New Boxes Section (placed in front of the timer card) -->
+<div class="flex flex-wrap w-full lg:w-2/3 gap-4 ">
+    <!-- Product Boxes -->
+    <div class="bg-white p-4 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300 w-46 ">
+        <img src="https://via.placeholder.com/100" alt="Product 1" class="w-full h-32 object-cover rounded-md mb-2">
+        <h3 class="text-sm font-semibold text-center mb-2">Product 1</h3>
+        <p class="text-center text-red-600 font-bold text-xs bg-red-100 rounded-full px-2 py-1">15% OFF</p>
+    </div>
+    <div class="bg-white p-4 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300 w-46">
+        <img src="https://via.placeholder.com/100" alt="Product 2" class="w-full h-32 object-cover rounded-md mb-2">
+        <h3 class="text-sm font-semibold text-center mb-2">Product 2</h3>
+        <p class="text-center text-red-600 font-bold text-xs bg-red-100 rounded-full px-2 py-1">15% OFF</p>
+    </div>
+    <div class="bg-white p-4 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300 w-46">
+        <img src="https://via.placeholder.com/100" alt="Product 3" class="w-full h-32 object-cover rounded-md mb-2">
+        <h3 class="text-sm font-semibold text-center mb-2">Product 3</h3>
+        <p class="text-center text-red-600 font-bold text-xs bg-red-100 rounded-full px-2 py-1">15% OFF</p>
+    </div>
+    <div class="bg-white p-4 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300 w-46">
+        <img src="https://via.placeholder.com/100" alt="Product 4" class="w-full h-32 object-cover rounded-md mb-2">
+        <h3 class="text-sm font-semibold text-center mb-2">Product 4</h3>
+        <p class="text-center text-red-600 font-bold text-xs bg-red-100 rounded-full px-2 py-1">15% OFF</p>
+    </div>
+    <div class="bg-white p-4 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300 w-46">
+        <img src="https://via.placeholder.com/100" alt="Product 5" class="w-full h-32 object-cover rounded-md mb-2">
+        <h3 class="text-sm font-semibold text-center mb-2">Product 5</h3>
+        <p class="text-center text-red-600 font-bold text-xs bg-red-100 rounded-full px-2 py-1">15% OFF</p>
+    </div>
+  
+</div>
+
+    </div>/
+
+</div>
+    </div>
+
+    <div class="container mx-auto p-4 flex flex-wrap lg:flex-nowrap">
+        <!-- Right Side Banner with Text and Button -->
+        <div class="w-full lg:w-1/3 p-4 relative bg-gray-100 rounded-lg shadow-lg overflow-hidden">
+            <img src="https://via.placeholder.com/300x200" alt="Banner" class="w-full h-full object-cover rounded-lg">
+            <div class="absolute inset-0 bg-gray-800 bg-opacity-50 flex flex-col justify-center items-center p-4">
+                <h2 class="text-white text-lg font-semibold mb-2">Special Offer!</h2>
+                <p class="text-white text-sm mb-4 text-center">Get the best deals on our products today.</p>
+                <button class="bg-pink-500 text-white py-1 px-4 rounded-full hover:bg-pink-600 transition">Shop Now</button>
+            </div>
+        </div>
+    
+        <!-- 8 Cards in Grid Layout -->
+        <div class="w-full lg:w-2/3 p-4 grid grid-cols-2 sm:grid-cols-4 gap-4 mt-4 lg:mt-0">
+            <!-- Card 1 -->
+            <div class="bg-white p-4 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300">
+                <img src="https://via.placeholder.com/100" alt="Product 1" class="w-full h-24 object-cover rounded-md mb-2">
+                <h3 class="text-center text-sm font-semibold">Product 1</h3>
+            </div>
+            <!-- Card 2 -->
+            <div class="bg-white p-4 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300">
+                <img src="https://via.placeholder.com/100" alt="Product 2" class="w-full h-24 object-cover rounded-md mb-2">
+                <h3 class="text-center text-sm font-semibold">Product 2</h3>
+            </div>
+            <!-- Card 3 -->
+            <div class="bg-white p-4 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300">
+                <img src="https://via.placeholder.com/100" alt="Product 3" class="w-full h-24 object-cover rounded-md mb-2">
+                <h3 class="text-center text-sm font-semibold">Product 3</h3>
+            </div>
+            <!-- Card 4 -->
+            <div class="bg-white p-4 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300">
+                <img src="https://via.placeholder.com/100" alt="Product 4" class="w-full h-24 object-cover rounded-md mb-2">
+                <h3 class="text-center text-sm font-semibold">Product 4</h3>
+            </div>
+            <!-- Card 5 -->
+            <div class="bg-white p-4 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300">
+                <img src="https://via.placeholder.com/100" alt="Product 5" class="w-full h-24 object-cover rounded-md mb-2">
+                <h3 class="text-center text-sm font-semibold">Product 5</h3>
+            </div>
+            <!-- Card 6 -->
+            <div class="bg-white p-4 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300">
+                <img src="https://via.placeholder.com/100" alt="Product 6" class="w-full h-24 object-cover rounded-md mb-2">
+                <h3 class="text-center text-sm font-semibold">Product 6</h3>
+            </div>
+            <!-- Card 7 -->
+            <div class="bg-white p-4 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300">
+                <img src="https://via.placeholder.com/100" alt="Product 7" class="w-full h-24 object-cover rounded-md mb-2">
+                <h3 class="text-center text-sm font-semibold">Product 7</h3>
+            </div>
+            <!-- Card 8 -->
+            <div class="bg-white p-4 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300">
+                <img src="https://via.placeholder.com/100" alt="Product 8" class="w-full h-24 object-cover rounded-md mb-2">
+                <h3 class="text-center text-sm font-semibold">Product 8</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto p-4 flex flex-wrap lg:flex-nowrap">
+        <!-- Right Side Banner with Text and Button -->
+        <div class="w-full lg:w-1/3 p-4 relative bg-gray-100 rounded-lg shadow-lg overflow-hidden">
+            <img src="https://via.placeholder.com/300x200" alt="Banner" class="w-full h-full object-cover rounded-lg">
+            <div class="absolute inset-0 bg-gray-800 bg-opacity-50 flex flex-col justify-center items-center p-4">
+                <h2 class="text-white text-lg font-semibold mb-2">Special Offer!</h2>
+                <p class="text-white text-sm mb-4 text-center">Get the best deals on our products today.</p>
+                <button class="bg-pink-500 text-white py-1 px-4 rounded-full hover:bg-pink-600 transition">Shop Now</button>
+            </div>
+        </div>
+    
+        <!-- 8 Cards in Grid Layout -->
+        <div class="w-full lg:w-2/3 p-4 grid grid-cols-2 sm:grid-cols-4 gap-4 mt-4 lg:mt-0">
+            <!-- Card 1 -->
+            <div class="bg-white p-4 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300">
+                <img src="https://via.placeholder.com/100" alt="Product 1" class="w-full h-24 object-cover rounded-md mb-2">
+                <h3 class="text-center text-sm font-semibold">Product 1</h3>
+            </div>
+            <!-- Card 2 -->
+            <div class="bg-white p-4 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300">
+                <img src="https://via.placeholder.com/100" alt="Product 2" class="w-full h-24 object-cover rounded-md mb-2">
+                <h3 class="text-center text-sm font-semibold">Product 2</h3>
+            </div>
+            <!-- Card 3 -->
+            <div class="bg-white p-4 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300">
+                <img src="https://via.placeholder.com/100" alt="Product 3" class="w-full h-24 object-cover rounded-md mb-2">
+                <h3 class="text-center text-sm font-semibold">Product 3</h3>
+            </div>
+            <!-- Card 4 -->
+            <div class="bg-white p-4 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300">
+                <img src="https://via.placeholder.com/100" alt="Product 4" class="w-full h-24 object-cover rounded-md mb-2">
+                <h3 class="text-center text-sm font-semibold">Product 4</h3>
+            </div>
+            <!-- Card 5 -->
+            <div class="bg-white p-4 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300">
+                <img src="https://via.placeholder.com/100" alt="Product 5" class="w-full h-24 object-cover rounded-md mb-2">
+                <h3 class="text-center text-sm font-semibold">Product 5</h3>
+            </div>
+            <!-- Card 6 -->
+            <div class="bg-white p-4 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300">
+                <img src="https://via.placeholder.com/100" alt="Product 6" class="w-full h-24 object-cover rounded-md mb-2">
+                <h3 class="text-center text-sm font-semibold">Product 6</h3>
+            </div>
+            <!-- Card 7 -->
+            <div class="bg-white p-4 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300">
+                <img src="https://via.placeholder.com/100" alt="Product 7" class="w-full h-24 object-cover rounded-md mb-2">
+                <h3 class="text-center text-sm font-semibold">Product 7</h3>
+            </div>
+            <!-- Card 8 -->
+            <div class="bg-white p-4 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300">
+                <img src="https://via.placeholder.com/100" alt="Product 8" class="w-full h-24 object-cover rounded-md mb-2">
+                <h3 class="text-center text-sm font-semibold">Product 8</h3>
+            </div>
+        </div>
+    </div>
+    <div class="container mx-auto p-4">
+        <!-- Full-width Banner Section -->
+        <div class="relative w-full bg-cover bg-center rounded-lg overflow-hidden" style="background-image: url('https://via.placeholder.com/1600x400');">
+            <div class="flex flex-wrap lg:flex-nowrap items-center p-8 bg-black bg-opacity-50">
+                <!-- Text Section (Left Side) -->
+                <div class="w-full lg:w-1/2 text-white p-4">
+                    <h2 class="text-3xl font-semibold mb-2">Get the Best Deals!</h2>
+                    <p class="text-lg">Find everything you need at amazing prices. Don’t miss out!</p>
+                </div>
+    
+                <!-- Form Section (Right Side) -->
+                <div class="w-full lg:w-1/2 bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Send Quote to Seller</h3>
+                    
+                    <!-- Form -->
+                    <form>
+                        <div class="mb-4">
+                            <label for="item" class="block text-sm font-medium text-gray-700">What item do you need?</label>
+                            <input type="text" id="item" name="item" placeholder="Enter item name" class="w-full p-2 border border-gray-300 rounded mt-1" />
+                        </div>
+                        <div class="mb-4">
+                            <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
+                            <textarea id="description" name="description" rows="3" placeholder="Provide a brief description" class="w-full p-2 border border-gray-300 rounded mt-1"></textarea>
+                        </div>
+                        <div class="flex space-x-4 mb-4">
+                            <div class="flex-1">
+                                <label for="quantity" class="block text-sm font-medium text-gray-700">Quantity</label>
+                                <input type="number" id="quantity" name="quantity" placeholder="Qty" class="w-full p-2 border border-gray-300 rounded mt-1" />
+                            </div>
+                            <div class="flex-1">
+                                <label for="pcs" class="block text-sm font-medium text-gray-700">Pcs</label>
+                                <input type="number" id="pcs" name="pcs" placeholder="Pcs" class="w-full p-2 border border-gray-300 rounded mt-1" />
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">Send Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recommended Items Section -->
+<section class="container mx-auto p-4">
+    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Recommended Items</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+        
+        <!-- Card 1 -->
+        <div class="bg-white p-4 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300">
+            <img src="https://via.placeholder.com/150" alt="Item 1" class="w-full h-40 object-cover rounded-md mb-2">
+            <p class="text-sm font-semibold mb-1">$25.00</p>
+            <p class="text-xs text-gray-600">Short description of item 1.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white p-4 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300">
+            <img src="https://via.placeholder.com/150" alt="Item 2" class="w-full h-36 object-cover rounded-md mb-2">
+            <p class="text-sm font-semibold mb-1">$30.00</p>
+            <p class="text-xs text-gray-600">Short description of item 2.</p>
+        </div>
+ 
+
+        <!--  for Card 3 -->
+        <div class="bg-white p-4 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300">
+            <img src="https://via.placeholder.com/150" alt="Item 3" class="w-full h-40 object-cover rounded-md mb-2">
+            <p class="text-sm font-semibold mb-1">$28.00</p>
+            <p class="text-xs text-gray-600">Short description of item 3.</p>
+        </div>
+
+         <!--  for Card 4 -->
+         <div class="bg-white p-4 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300">
+            <img src="https://via.placeholder.com/150" alt="Item 3" class="w-full h-40 object-cover rounded-md mb-2">
+            <p class="text-sm font-semibold mb-1">$28.00</p>
+            <p class="text-xs text-gray-600">Short description of item 3.</p>
+        </div>
+
+         <!--  for Card 5 -->
+         <div class="bg-white p-4 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300">
+            <img src="https://via.placeholder.com/150" alt="Item 3" class="w-full h-40 object-cover rounded-md mb-2">
+            <p class="text-sm font-semibold mb-1">$28.00</p>
+            <p class="text-xs text-gray-600">Short description of item 3.</p>
+        </div>
+
+            <!-- Card 1 -->
+            <div class="bg-white p-4 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300">
+                <img src="https://via.placeholder.com/150" alt="Item 1" class="w-full h-40 object-cover rounded-md mb-2">
+                <p class="text-sm font-semibold mb-1">$25.00</p>
+                <p class="text-xs text-gray-600">Short description of item 1.</p>
+            </div>
+    
+            <!-- Card 2 -->
+            <div class="bg-white p-4 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300">
+                <img src="https://via.placeholder.com/150" alt="Item 2" class="w-full h-40 object-cover rounded-md mb-2">
+                <p class="text-sm font-semibold mb-1">$30.00</p>
+                <p class="text-xs text-gray-600">Short description of item 2.</p>
+            </div>
+     
+    
+            <!--  for Card 3 -->
+            <div class="bg-white p-4 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300">
+                <img src="https://via.placeholder.com/150" alt="Item 3" class="w-full h-40 object-cover rounded-md mb-2">
+                <p class="text-sm font-semibold mb-1">$28.00</p>
+                <p class="text-xs text-gray-600">Short description of item 3.</p>
+            </div>
+    
+             <!--  for Card 4 -->
+             <div class="bg-white p-4 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300">
+                <img src="https://via.placeholder.com/150" alt="Item 3" class="w-full h-40 object-cover rounded-md mb-2">
+                <p class="text-sm font-semibold mb-1">$28.00</p>
+                <p class="text-xs text-gray-600">Short description of item 3.</p>
+            </div>
+    
+             <!--  for Card 5 -->
+             <div class="bg-white p-4 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300">
+                <img src="https://via.placeholder.com/150" alt="Item 3" class="w-full h-40 object-cover rounded-md mb-2">
+                <p class="text-sm font-semibold mb-1">$28.00</p>
+                <p class="text-xs text-gray-600">Short description of item 3.</p>
+            </div>
+
+            
+    </div>
+</section>
+<div class="container mx-auto py-12 mt-8 px-4">
+    <!-- Section Heading -->
+    <h2 class="text-3xl font-semibold mr-4 mb-10 ">Our Extra Service</h2>
+
+    <!-- Cards Section -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+          <!-- Card 2 -->
+          <div class="bg-white p-6 rounded-lg shadow-lg text-center hover:scale-105 transform transition duration-300 relative flex flex-col">
+            <!-- Image with increased height -->
+            <div class="relative w-full h-40 mb-4">
+                <img src="https://via.placeholder.com/100" alt="Service 2" class="w-full h-full object-cover rounded-md">
+            </div>
+
+            <!-- Icon Positioned on the Right Side of the Card -->
+            <div class="absolute top-1/2 right-4 transform -translate-y-1/2 w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center">
+                <i class="fas fa-gift text-red-600 text-lg"></i>
+            </div>
+             <!-- Text on Left Side -->
+            <div class="flex-1 flex flex-col justify-between">
+                <p class="text-gray-700 mb-4">Exclusive gift options available <br> for special occasions.</p>
+            </div>
+        </div>
+        
+
+        <!-- Card 2 -->
+        <div class="bg-white p-6 rounded-lg shadow-lg text-center hover:scale-105 transform transition duration-300 relative flex flex-col">
+            <!-- Image with increased height -->
+            <div class="relative w-full h-40 mb-4">
+                <img src="https://via.placeholder.com/100" alt="Service 2" class="w-full h-full object-cover rounded-md">
+            </div>
+
+            <!-- Icon Positioned on the Right Side of the Card -->
+            <div class="absolute top-1/2 right-4 transform -translate-y-1/2 w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center">
+                <i class="fas fa-gift text-red-600 text-lg"></i>
+            </div>
+             <!-- Text on Left Side -->
+            <div class="flex-1 flex flex-col justify-between">
+                <p class="text-gray-700 mb-4">Exclusive gift options available <br> for special occasions.</p>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white p-6 rounded-lg shadow-lg text-center hover:scale-105 transform transition duration-300 relative flex flex-col">
+            <!-- Image with increased height -->
+            <div class="relative w-full h-40 mb-4">
+                <img src="https://via.placeholder.com/100" alt="Service 3" class="w-full h-full object-cover rounded-md">
+            </div>
+
+            <!-- Icon Positioned on the Right Side of the Card -->
+            <div class="absolute top-1/2 right-4 transform -translate-y-1/2 w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center">
+                <i class="fas fa-arrow-right text-green-600 text-lg"></i>
+            </div>
+             <!-- Text on Left Side -->
+             <div class="flex-1 flex flex-col justify-between">
+                <p class="text-gray-700 mb-4">Quick and easy navigation through <br> all service categories.</p>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-white p-6 rounded-lg shadow-lg text-center hover:scale-105 transform transition duration-300 relative flex flex-col">
+            <!-- Text on Left Side -->
+         
+
+            <!-- Image with increased height -->
+            <div class="relative w-full h-40 mb-4">
+                <img src="https://via.placeholder.com/100" alt="Service 4" class="w-full h-full object-cover rounded-md">
+            </div>
+
+            <!-- Icon Positioned on the Right Side of the Card -->
+            <div class="absolute top-1/2 right-4 transform -translate-y-1/2 w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center">
+                <i class="fas fa-gem text-purple-600 text-lg"></i>
+            </div>
+            <div class="flex-1 flex flex-col justify-between">
+                <p class="text-gray-700 mb-4">Exclusive diamond service <br> for premium customers.</p>
+            </div>
+        </div>
+    </div>
+</div><div class="container mx-auto py-12">
+    <!-- Section Heading -->
+    <h2 class="text-3xl font-semibold mb-8">Suppliers by Region</h2>
+
+    <!-- Flags Section -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
+        <!-- Flag 1 -->
+        <div class="text-center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/1280px-Flag_of_the_United_States.svg.png" alt="USA Flag" class="mx-auto mb-4 w-12 h-8 object-cover">
+            <p class="font-semibold">USA</p>
+            <p class="text-gray-600">shopname.ae</p>
+        </div>
+
+        <!-- Flag 2 -->
+        <div class="text-center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Flag_of_Germany.svg/1280px-Flag_of_Germany.svg.png" alt="Germany Flag" class="mx-auto mb-4 w-12 h-8 object-cover">
+            <p class="font-semibold">Germany</p>
+            <p class="text-gray-600">shopname.ae</p>
+        </div>
+
+        <!-- Flag 3 -->
+        <div class="text-center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Flag_of_France.svg/1280px-Flag_of_France.svg.png" alt="France Flag" class="mx-auto mb-4 w-12 h-8 object-cover">
+            <p class="font-semibold">France</p>
+            <p class="text-gray-600">shopname.ae</p>
+        </div>
+
+        <!-- Flag 4 -->
+        <div class="text-center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Italy.svg/1280px-Flag_of_Italy.svg.png" alt="Italy Flag" class="mx-auto mb-4 w-12 h-8 object-cover">
+            <p class="font-semibold">Italy</p>
+            <p class="text-gray-600">shopname.ae</p>
+        </div>
+
+        <!-- Flag 5 -->
+        <div class="text-center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_Spain.svg/1280px-Flag_of_Spain.svg.png" alt="Spain Flag" class="mx-auto mb-4 w-12 h-8 object-cover">
+            <p class="font-semibold">Spain</p>
+            <p class="text-gray-600">shopname.ae</p>
+        </div>
+
+        <!-- Flag 6 -->
+        <div class="text-center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Flag_of_India.svg/1280px-Flag_of_India.svg.png" alt="India Flag" class="mx-auto mb-4 w-12 h-8 object-cover">
+            <p class="font-semibold">India</p>
+            <p class="text-gray-600">shopname.ae</p>
+        </div>
+
+        <!-- Flag 7 -->
+        <div class="text-center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Australia.svg/1280px-Flag_of_Australia.svg.png" alt="Australia Flag" class="mx-auto mb-4 w-12 h-8 object-cover">
+            <p class="font-semibold">Australia</p>
+            <p class="text-gray-600">shopname.ae</p>
+        </div>
+
+        <!-- Flag 8 -->
+        <div class="text-center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Flag_of_Japan.svg/1280px-Flag_of_Japan.svg.png" alt="Japan Flag" class="mx-auto mb-4 w-12 h-8 object-cover">
+            <p class="font-semibold">Japan</p>
+            <p class="text-gray-600">shopname.ae</p>
+        </div>
+
+        <!-- Flag 9 -->
+        <div class="text-center">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Flag_of_Brazil.svg/1280px-Flag_of_Brazil.svg.png" alt="Brazil Flag" class="mx-auto mb-4 w-12 h-8 object-cover">
+            <p class="font-semibold">Brazil</p>
+            <p class="text-gray-600">shopname.ae</p>
+        </div>
+
+        <!-- Flag 10 -->
+        <div class="text-center " >
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Flag_of_South_Korea.svg/1280px-Flag_of_South_Korea.svg.png" alt="South Korea Flag" class="mx-auto mb-4 w-12 h-8 object-cover">
+            <p class="font-semibold">South Korea</p>
+            <p class="text-gray-600">shopname.ae</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
+
