@@ -53,3 +53,21 @@ document.getElementById('currency-text').textContent = 'USD';
 document.getElementById('currency-icon').textContent = '$';
 document.getElementById('shipto-text').textContent = 'USA';
 document.getElementById('shipto-flag').src = 'https://www.countryflags.io/us/flat/32.png';
+
+ // Function to update flag based on language selection
+ function updateFlag() {
+    const selectedLanguage = document.getElementById('language-selector').value;
+    const flagImage = document.getElementById('language-flag');
+
+    // Map language codes to their respective flag images
+    const flagMap = {
+        'en': 'https://flagcdn.com/w20/us.png',
+        'fr': 'https://flagcdn.com/w20/fr.png',
+        'es': 'https://flagcdn.com/w20/es.png',
+        'de': 'https://flagcdn.com/w20/de.png'
+    };
+
+    // Update the flag image source based on the selected language
+    flagImage.src = flagMap[selectedLanguage];
+
+}  
