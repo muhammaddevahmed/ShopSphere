@@ -71,3 +71,45 @@ document.getElementById('shipto-flag').src = 'https://www.countryflags.io/us/fla
     flagImage.src = flagMap[selectedLanguage];
 
 }  
+
+
+// Set the target date
+const targetDate = new Date().getTime() + 5 * 24 * 60 * 60 * 1000; // 5 days from now
+
+function updateTimer() {
+  const now = new Date().getTime();
+  const timeLeft = targetDate - now;
+
+  if (timeLeft < 0) {
+    document.getElementById("days").textContent = "00";
+    document.getElementById("hours").textContent = "00";
+    document.getElementById("minutes").textContent = "00";
+    document.getElementById("seconds").textContent = "00";
+    return; // Stop updating once time has passed
+  }
+
+  // Calculate time components
+  const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+  // Update the DOM
+  document.getElementById("days").textContent = String(days).padStart(2, "0");
+  document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+  document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+  document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+}
+
+// Run the timer update every second
+setInterval(updateTimer, 1000);
+
+// Initialize timer on page load
+updateTimer();
+
+  // Function to change the default flag
+  function changeDefaultFlag(countryName, flagSrc) {
+    document.getElementById('defaultFlagImg').src = flagSrc; // Update flag image
+    document.getElementById('defaultFlagImg').alt = `${countryName} Flag`; // Update alt text
+    document.getElementById('defaultCountryName').textContent = countryName; // Update country name
+}
