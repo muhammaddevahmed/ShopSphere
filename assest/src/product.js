@@ -49,6 +49,7 @@ fetch('products.json')
                     <p class="text-gray-500 text-sm">Brand: ${product.brand}</p>
                     <p class="text-yellow-500">${'★'.repeat(product.rating)}</p>
                     <button class="mt-4 px-4 py-2 bg-blue-500 text-white rounded" onclick="viewDetails(${product.id})">View Details</button>
+                    <button class="mt-4 px-4 py-2 bg-green-500 text-white rounded add-to-cart-btn" data-id="${product.id}">Add to Cart</button>
                 `;
                 productGrid.appendChild(card);
             });
@@ -81,6 +82,29 @@ fetch('products.json')
             window.location.href = 'product-details.html';
         };
 
+        // Add to cart functionality
+        window.addToCart = function(productId) {
+            const product = products.find(p => p.id === productId);
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Check if the product is already in the cart
+            const existingProductIndex = cart.findIndex(item => item.id === product.id);
+            if (existingProductIndex === -1) {
+                // If the product isn't in the cart, add it with quantity 1
+                product.quantity = 1;
+                cart.push(product);
+            } else {
+                // If it's already in the cart, increase the quantity
+                cart[existingProductIndex].quantity += 1;
+            }
+
+            // Save the updated cart in localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Optionally, you can alert the user or show a message
+            alert(`${product.name} has been added to your cart!`);
+        };
+
         // Update grid initially
         updateProductGrid();
 
@@ -103,6 +127,14 @@ fetch('products.json')
         // Search bar event listeners for both mobile and desktop
         document.getElementById('desktopSearch').addEventListener('input', updateProductGrid);
         document.getElementById('mobileSearch').addEventListener('input', updateProductGrid);
+
+        // Add event listeners for the "Add to Cart" buttons
+        document.getElementById('productGrid').addEventListener('click', function(event) {
+            if (event.target && event.target.classList.contains('add-to-cart-btn')) {
+                const productId = event.target.getAttribute('data-id');
+                addToCart(parseInt(productId)); // Add product to cart using its ID
+            }
+        });
     });
 
 
