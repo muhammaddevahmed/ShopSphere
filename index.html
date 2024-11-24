@@ -292,21 +292,21 @@
                 <!-- Right Side (Profile Box and Additional Boxes) -->
 
                 <div class="w-full lg:w-1/4 p-4 flex flex-col justify-between bg-gray-100">
-                    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-                        <h2 class="text-sm font-semibold text-center mb-4">Welcome to ShopSphere</h2>
-                    
-                        <!-- Button to trigger file input -->
+                    <!-- Profile Box -->
+                    <div class="bg-gray-200 p-4 mb-4 rounded-lg shadow-lg flex-1">
+                        <p class="text-center mb-4">Welcome to ShopSphere!</p>
+                        <img id="profilePic" src="assest/images/PP.jpeg" alt="Profile"
+                            class="w-40 h-40 rounded-full mx-auto mb-4">
                        
-                    
-                        <!-- Hidden file input -->
-                        <input type="file" id="fileInput" accept="image/*" class="hidden" />
-                    
-                        <div class="flex justify-center mt-6">
-                          <!-- Profile Image -->
-                          <img id="profilePic" src="https://via.placeholder.com/150" alt="Profile Image" class="w-32 h-32 rounded-full object-cover border-4 border-gray-200" />
+
+                        <!-- Custom Add Image Button -->
+                        <div class="text-center">
+                            <label for="uploadPic"
+                                class="bg-green-600 text-white px-4 py-2 rounded-lg cursor-pointer hover:bg-green-800 transition-all duration-300">
+                                Update Image
+                            </label>
+                            <input type="file" id="uploadPic" accept="image/*" class="hidden">
                         </div>
-                        <button id="uploadButton" class="w-full py-3 bg-green-500 text-white rounded-md hover:bg-green-600 transition duration-300">Upload Image</button>
-                      
 
                         <div class="mt-8">
                             <a href="login.html"
