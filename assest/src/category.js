@@ -70,6 +70,20 @@
         "description": "Gear up with our sports collection, offering high-performance equipment and apparel for all your athletic needs.",
         "rating": 5
       },
+      {
+        "image": "https://i.pinimg.com/control2/736x/cf/6d/0d/cf6d0d9ccc92297739236f35ec3c7a5e.jpg",
+        "category": "Home Interiors",
+        "name": "Home Interiors",
+        "description": "Transform your living space with stylish and functional home interiors that reflect your personal taste and comfort.",
+        "rating": 4
+      },
+      {
+        "image": "https://i.pinimg.com/736x/5f/58/de/5f58de70b3e4376fe05ea86f3631520e.jpg",
+        "category": "Tools & Equipments",
+        "name": "Tools & Equipments",
+        "description": "Explore a wide range of high-quality tools and equipment designed for efficiency, precision, and durability.",
+        "rating": 3
+      },
 ];
 
 // Populate the filter categories
@@ -100,7 +114,10 @@ function displayProducts(products) {
                 <div class="flex items-center">
                     <span class="text-yellow-500">${'★'.repeat(product.rating)}</span>
                 </div>
-                <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded">View More</button>
+                <a href="product.html">
+  <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded">View More</button>
+</a>
+
             </div>
         `;
         productGrid.appendChild(productCard);

@@ -14,100 +14,101 @@
 </head>
 <style>
     .slider-container {
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            height: 400px;
-            
-        }
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 400px;
 
-        .slider-item {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
+    }
 
-        .slider-item.active {
-            opacity: 1;
-        }
+    .slider-item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+
+    .slider-item.active {
+        opacity: 1;
+    }
 </style>
 
 <body class="bg-gray-100">
 
-   <!-- Navbar start -->
-<nav class="bg-blue-600 p-4">
-    <div class="max-w-7xl mx-auto flex justify-between items-center flex-wrap">
-        <!-- Logo and Name (Left-aligned, no shrinking) -->
-        <div class="flex items-center flex-shrink-0">
-            <img src="assest/images/logoo.png" alt="Logo" class="h-14 mr-2">
-            <span class="text-white text-lg font-semibold">ShopSphere</span>
+    <!-- Navbar start -->
+    <nav class="bg-blue-600 p-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center flex-wrap">
+            <!-- Logo and Name (Left-aligned, no shrinking) -->
+            <div class="flex items-center flex-shrink-0">
+                <img src="assest/images/logoo.png" alt="Logo" class="h-14 mr-2">
+                <span class="text-white text-lg font-semibold">ShopSphere</span>
+            </div>
+
+            <!-- Mobile & Tablet Menu Button (Hamburger Icon, visible only on small and medium screens) -->
+            <button id="hamburger" class="lg:hidden text-white ml-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+
+            <!-- Search Bar (Visible only on medium and larger screens) -->
+            <div class="flex-grow mx-4 hidden sm:block">
+                <input type="text" placeholder="Search..." class="w-full px-4 py-2 rounded-lg text-gray-800">
+            </div>
+
+            <!-- Mobile & Tablet Search Bar (Visible only on small screens) -->
+            <div class="sm:hidden flex-grow mx-4 mt-2">
+                <input type="text" placeholder="Search..." class="w-full px-4 py-2 rounded-lg text-gray-800">
+            </div>
+
+            <!-- Right-side Links (Visible on desktop) -->
+            <div class="hidden lg:flex items-center space-x-4">
+                <a href="#" class="text-white flex items-center space-x-2">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+                <a href="#" class="text-white flex items-center space-x-2">
+                    <i class="fas fa-comment"></i>
+                    <span>Messages</span>
+                </a>
+                <a href="product.html" class="text-white flex items-center space-x-2">
+                    <i class="fas fa-box"></i>
+                    <span>Products</span>
+                </a>
+                <a href="cart.html" class="cart-link text-white flex items-center space-x-4 gap-2">
+                    <i class="fas fa-shopping-cart"></i>
+                    Cart
+                </a>
+            </div>
         </div>
 
-        <!-- Mobile & Tablet Menu Button (Hamburger Icon, visible only on small and medium screens) -->
-        <button id="hamburger" class="lg:hidden text-white ml-4">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-        </button>
-
-        <!-- Search Bar (Visible only on medium and larger screens) -->
-        <div class="flex-grow mx-4 hidden sm:block">
-            <input type="text" placeholder="Search..." class="w-full px-4 py-2 rounded-lg text-gray-800">
+        <!-- Mobile & Tablet Dropdown for Links (Initially Hidden) -->
+        <div id="mobile-menu" class="lg:hidden bg-blue-600 text-white p-4 hidden">
+            <div class="flex flex-col space-y-4">
+                <a href="#" class="flex items-center space-x-2">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+                <a href="#" class="flex items-center space-x-2">
+                    <i class="fas fa-comment"></i>
+                    <span>Messages</span>
+                </a>
+                <a href="product.html" class="flex items-center space-x-2">
+                    <i class="fas fa-box"></i>
+                    <span>Products</span>
+                </a>
+                <a href="cart.html" class="flex items-center space-x-2">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Cart</span>
+                </a>
+            </div>
         </div>
-
-        <!-- Mobile & Tablet Search Bar (Visible only on small screens) -->
-        <div class="sm:hidden flex-grow mx-4 mt-2">
-            <input type="text" placeholder="Search..." class="w-full px-4 py-2 rounded-lg text-gray-800">
-        </div>
-
-        <!-- Right-side Links (Visible on desktop) -->
-        <div class="hidden lg:flex items-center space-x-4">
-            <a href="#" class="text-white flex items-center space-x-2">
-                <i class="fas fa-user"></i>
-                <span>Profile</span>
-            </a>
-            <a href="#" class="text-white flex items-center space-x-2">
-                <i class="fas fa-comment"></i>
-                <span>Messages</span>
-            </a>
-            <a href="product.html" class="text-white flex items-center space-x-2">
-                <i class="fas fa-box"></i>
-                <span>Products</span>
-            </a>
-            <a href="cart.html" class="cart-link text-white flex items-center space-x-4 gap-2">
-                <i class="fas fa-shopping-cart"></i>
-                Cart
-            </a>
-        </div>
-    </div>
-
-    <!-- Mobile & Tablet Dropdown for Links (Initially Hidden) -->
-    <div id="mobile-menu" class="lg:hidden bg-blue-600 text-white p-4 hidden">
-        <div class="flex flex-col space-y-4">
-            <a href="#" class="flex items-center space-x-2">
-                <i class="fas fa-user"></i>
-                <span>Profile</span>
-            </a>
-            <a href="#" class="flex items-center space-x-2">
-                <i class="fas fa-comment"></i>
-                <span>Messages</span>
-            </a>
-            <a href="product.html" class="flex items-center space-x-2">
-                <i class="fas fa-box"></i>
-                <span>Products</span>
-            </a>
-            <a href="cart.html" class="flex items-center space-x-2">
-                <i class="fas fa-shopping-cart"></i>
-                <span>Cart</span>
-            </a>
-        </div>
-    </div>
-</nav>
+    </nav>
 
     <!-- Categories Section with Dropdown and Flags -->
     <div class="bg-gray-200 p-4">
@@ -121,7 +122,8 @@
                 <!-- Categories Dropdown Menu -->
                 <div id="categories-menu" class="hidden absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg">
                     <ul class="flex flex-col">
-                        <li><a href="category.html" class="block px-4 py-2 text-gray-800 text-2xl text-bold">Categories</a></li>
+                        <li><a href="category.html"
+                                class="block px-4 py-2 text-gray-800 text-2xl text-bold">Categories</a></li>
                         <li><a href="product.html" class="block px-4 py-2 text-gray-800">Furniture</a></li>
                         <li><a href="product.html" class="block px-4 py-2 text-gray-800">Watches</a></li>
                         <li><a href="product.html" class="block px-4 py-2 text-gray-800">Smartphones</a></li>
@@ -135,7 +137,7 @@
                     </ul>
                 </div>
             </div>
-        
+
 
 
             <!-- Language, Currency, Ship to Dropdowns -->
@@ -266,39 +268,56 @@
 
                 <!-- Side bar end  -->
 
-             <!-- Slider Container -->
-             <div class="slider-container mx-auto lg:w-3/4 mt-32 h-96 sm:h-[400px] md:h-[500px] lg:h-[550px] px-4 lg:px-8">
+                <!-- Slider Container -->
+                <div
+                    class="slider-container mx-auto lg:w-3/4 mt-32 h-96 sm:h-[400px] md:h-[500px] lg:h-[700px] px-4 lg:px-8 lg:m-10">
 
-                <div class="slider-item active">
-                    <img src="https://t3.ftcdn.net/jpg/06/32/90/44/360_F_632904407_iPLi90WdjZ0oKAeRiL98gEIeHIUtzWae.jpg"
-                         alt="Banner 1" class="w-full h-full object-cover rounded-xl">
+                    <div class="slider-item active">
+                        <img src="https://t3.ftcdn.net/jpg/06/32/90/44/360_F_632904407_iPLi90WdjZ0oKAeRiL98gEIeHIUtzWae.jpg"
+                            alt="Banner 1" class="w-full h-full object-cover rounded-xl">
+                    </div>
+                    <div class="slider-item">
+                        <img src="https://i.pinimg.com/736x/ad/6c/8e/ad6c8e2143e2a808f79a88680fe0c3f9.jpg"
+                            alt="Banner 2" class="w-full h-full object-cover rounded-xl">
+                    </div>
+                    <div class="slider-item">
+                        <img src="https://i.pinimg.com/736x/93/84/25/9384256c1338be4d677c3601daff607e.jpg"
+                            alt="Banner 3" class="w-full h-full object-cover rounded-xl">
+                    </div>
                 </div>
-                <div class="slider-item">
-                    <img src="https://t4.ftcdn.net/jpg/06/32/90/55/360_F_632905507_7piPjOzT5gwdVLQh4h2AxoA3oRsKjZ5v.jpg"
-                         alt="Banner 2" class="w-full h-full object-cover rounded-xl">
-                </div>
-                <div class="slider-item">
-                    <img src="https://t3.ftcdn.net/jpg/06/32/91/12/360_F_632911213_3kpwFZGom1dThMv3zA7V67D1RVphS77e.jpg"
-                         alt="Banner 3" class="w-full h-full object-cover rounded-xl">
-                </div>
-            </div>
-            
+
 
                 <!-- Right Side (Profile Box and Additional Boxes) -->
 
                 <div class="w-full lg:w-1/4 p-4 flex flex-col justify-between bg-gray-100">
                     <!-- Profile Box -->
                     <div class="bg-gray-200 p-4 mb-4 rounded-lg shadow-lg flex-1">
-                        <img src="assest/images/PP.jpeg" alt="Profile" class="w-40 h-40 rounded-full mx-auto mb-4">
+                        <img id="profilePic" src="assest/images/PP.jpeg" alt="Profile"
+                            class="w-40 h-40 rounded-full mx-auto mb-4">
                         <p class="text-center mb-4">Welcome to our website!</p>
+
+                        <!-- Custom Add Image Button -->
                         <div class="text-center">
-                            <button
-                                class="bg-blue-600 text-white px-4 py-2 rounded-lg mb-2 w-full hover:bg-blue-800 transition-all duration-300">Login</button>
-                            <button
-                                class="bg-blue-600 text-white px-4 py-2 rounded-lg w-full hover:bg-blue-800 transition-all duration-300">Sign
-                                Up</button>
+                            <label for="uploadPic"
+                                class="bg-blue-600 text-white px-4 py-2 rounded-lg cursor-pointer hover:bg-blue-800 transition-all duration-300">
+                                Add Image
+                            </label>
+                            <input type="file" id="uploadPic" accept="image/*" class="hidden">
+                        </div>
+
+                        <div class="mt-8">
+                            <a href="login.html"
+                                class="block bg-blue-600 text-white px-4 py-2 rounded-lg mb-2 w-full text-center hover:bg-blue-800 transition-all duration-300">
+                                Login
+                            </a>
+                            <a href="signup.html"
+                                class="block bg-blue-600 text-white px-4 py-2 rounded-lg w-full text-center hover:bg-blue-800 transition-all duration-300">
+                                Sign Up
+                            </a>
                         </div>
                     </div>
+
+
 
                     <!-- Additional Box 1 -->
                     <div class="bg-orange-400 p-4 mb-4 rounded-lg shadow-lg flex-1">
@@ -775,7 +794,7 @@
             </div>
         </div>
     </div>
- 
+
     <div class="container mx-auto py-12">
         <!-- Section Heading with Default Flag -->
         <div class="flex justify-between items-center">
@@ -784,10 +803,9 @@
             <!-- Default Flag Section -->
             <div id="defaultFlag" class="flex flex-col items-center space-x-4 mr-4">
                 <!-- Default Flag -->
-                <img id="defaultFlagImg" 
-                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/1280px-Flag_of_the_United_States.svg.png" 
-                     alt="Default USA Flag" 
-                     class="w-20 h-14 object-cover rounded shadow-lg">
+                <img id="defaultFlagImg"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/1280px-Flag_of_the_United_States.svg.png"
+                    alt="Default USA Flag" class="w-20 h-14 object-cover rounded shadow-lg">
                 <!-- Default Text -->
                 <p id="defaultCountryName" class="text-lg font-semibold mt-4">
                     US - Supplier
@@ -795,87 +813,87 @@
             </div>
         </div>
     </div>
-    
-    
-    
-        <!-- Flags Section -->
-        <div class="grid bg-gray-200 grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 mt-8">
-            <!-- Example Flags -->
-            <div class="text-center" onclick="changeDefaultFlag('US - Supplier', 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/1280px-Flag_of_the_United_States.svg.png')">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/1280px-Flag_of_the_United_States.svg.png" 
-                     alt="USA Flag" 
-                     class="mx-auto mb-4 w-12 h-8 object-cover">
-                <p class="font-semibold">United States </p>
-                <p class="text-gray-600">shopname.ae</p>
-            </div>
-            <div class="text-center" onclick="changeDefaultFlag('Ger - Supplier', 'https://flagicons.lipis.dev/flags/4x3/de.svg')">
-                <img src="https://flagicons.lipis.dev/flags/4x3/de.svg" 
-                     alt="Germany Flag" 
-                     class="mx-auto mb-4 w-12 h-8 object-cover">
-                <p class="font-semibold">Germany </p>
-                <p class="text-gray-600">shopname.ae</p>
-            </div>
-            <div class="text-center" onclick="changeDefaultFlag('Fra - Supplier', 'https://flagicons.lipis.dev/flags/4x3/fr.svg')">
-                <img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" 
-                     alt="France Flag" 
-                     class="mx-auto mb-4 w-12 h-8 object-cover">
-                <p class="font-semibold">France</p>
-                <p class="text-gray-600">shopname.ae</p>
-            </div>
-            <div class="text-center" onclick="changeDefaultFlag('UK - Supplier', 'https://flagicons.lipis.dev/flags/4x3/gb.svg')">
-                <img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" 
-                     alt="United Kingdom Flag" 
-                     class="mx-auto mb-4 w-12 h-8 object-cover">
-                <p class="font-semibold">United Kingdom </p>
-                <p class="text-gray-600">shopname.ae</p>
-            </div>
-            <div class="text-center" onclick="changeDefaultFlag('Jap- Supplier', 'https://flagicons.lipis.dev/flags/4x3/jp.svg')">
 
-                <img src="https://flagicons.lipis.dev/flags/4x3/jp.svg" 
-                     alt="Japan Flag" 
-                     class="mx-auto mb-4 w-12 h-8 object-cover">
-                <p class="font-semibold">Japan </p>
-                <p class="text-gray-600">shopname.ae</p>
-            </div>
-            <div class="text-center" onclick="changeDefaultFlag('Ind - Supplier', 'https://flagicons.lipis.dev/flags/4x3/in.svg')">
-                <img src="https://flagicons.lipis.dev/flags/4x3/in.svg" 
-                     alt="India Flag" 
-                     class="mx-auto mb-4 w-12 h-8 object-cover">
-                <p class="font-semibold">India - Supplier</p>
-                <p class="text-gray-600">shopname.ae</p>
-            </div>
-            <div class="text-center" onclick="changeDefaultFlag('Aus - Supplier', 'https://flagicons.lipis.dev/flags/4x3/au.svg')">
-                <img src="https://flagicons.lipis.dev/flags/4x3/au.svg" 
-                     alt="Australia Flag" 
-                     class="mx-auto mb-4 w-12 h-8 object-cover">
-                <p class="font-semibold">Australia </p>
-                <p class="text-gray-600">shopname.ae</p>
-            </div>
-            <div class="text-center" onclick="changeDefaultFlag('Can - Supplier', 'https://flagicons.lipis.dev/flags/4x3/ca.svg')">
-                <img src="https://flagicons.lipis.dev/flags/4x3/ca.svg" 
-                     alt="Canada Flag" 
-                     class="mx-auto mb-4 w-12 h-8 object-cover">
-                <p class="font-semibold">Canada</p>
-                <p class="text-gray-600">shopname.ae</p>
-            </div>
-            <div class="text-center" onclick="changeDefaultFlag('Braz - Supplier', 'https://flagicons.lipis.dev/flags/4x3/br.svg')">
-                <img src="https://flagicons.lipis.dev/flags/4x3/br.svg" 
-                     alt="Brazil Flag" 
-                     class="mx-auto mb-4 w-12 h-8 object-cover">
-                <p class="font-semibold">Brazil</p>
-                <p class="text-gray-600">shopname.ae</p>
-            </div>
-            <div class="text-center" onclick="changeDefaultFlag('SK - Supplier', 'https://flagicons.lipis.dev/flags/4x3/kr.svg')">
-                <img src="https://flagicons.lipis.dev/flags/4x3/kr.svg" 
-                     alt="South Korea Flag" 
-                     class="mx-auto mb-4 w-12 h-8 object-cover">
-                <p class="font-semibold">South Korea</p>
-                <p class="text-gray-600">shopname.ae</p>
-            </div>
-            
+
+
+    <!-- Flags Section -->
+    <div class="grid bg-gray-200 grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 mt-8">
+        <!-- Example Flags -->
+        <div class="text-center"
+            onclick="changeDefaultFlag('US - Supplier', 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/1280px-Flag_of_the_United_States.svg.png')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/1280px-Flag_of_the_United_States.svg.png"
+                alt="USA Flag" class="mx-auto mb-4 w-12 h-8 object-cover">
+            <p class="font-semibold">United States </p>
+            <p class="text-gray-600">shopname.ae</p>
         </div>
+        <div class="text-center"
+            onclick="changeDefaultFlag('Ger - Supplier', 'https://flagicons.lipis.dev/flags/4x3/de.svg')">
+            <img src="https://flagicons.lipis.dev/flags/4x3/de.svg" alt="Germany Flag"
+                class="mx-auto mb-4 w-12 h-8 object-cover">
+            <p class="font-semibold">Germany </p>
+            <p class="text-gray-600">shopname.ae</p>
+        </div>
+        <div class="text-center"
+            onclick="changeDefaultFlag('Fra - Supplier', 'https://flagicons.lipis.dev/flags/4x3/fr.svg')">
+            <img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="France Flag"
+                class="mx-auto mb-4 w-12 h-8 object-cover">
+            <p class="font-semibold">France</p>
+            <p class="text-gray-600">shopname.ae</p>
+        </div>
+        <div class="text-center"
+            onclick="changeDefaultFlag('UK - Supplier', 'https://flagicons.lipis.dev/flags/4x3/gb.svg')">
+            <img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="United Kingdom Flag"
+                class="mx-auto mb-4 w-12 h-8 object-cover">
+            <p class="font-semibold">United Kingdom </p>
+            <p class="text-gray-600">shopname.ae</p>
+        </div>
+        <div class="text-center"
+            onclick="changeDefaultFlag('Jap- Supplier', 'https://flagicons.lipis.dev/flags/4x3/jp.svg')">
+
+            <img src="https://flagicons.lipis.dev/flags/4x3/jp.svg" alt="Japan Flag"
+                class="mx-auto mb-4 w-12 h-8 object-cover">
+            <p class="font-semibold">Japan </p>
+            <p class="text-gray-600">shopname.ae</p>
+        </div>
+        <div class="text-center"
+            onclick="changeDefaultFlag('Ind - Supplier', 'https://flagicons.lipis.dev/flags/4x3/in.svg')">
+            <img src="https://flagicons.lipis.dev/flags/4x3/in.svg" alt="India Flag"
+                class="mx-auto mb-4 w-12 h-8 object-cover">
+            <p class="font-semibold">India - Supplier</p>
+            <p class="text-gray-600">shopname.ae</p>
+        </div>
+        <div class="text-center"
+            onclick="changeDefaultFlag('Aus - Supplier', 'https://flagicons.lipis.dev/flags/4x3/au.svg')">
+            <img src="https://flagicons.lipis.dev/flags/4x3/au.svg" alt="Australia Flag"
+                class="mx-auto mb-4 w-12 h-8 object-cover">
+            <p class="font-semibold">Australia </p>
+            <p class="text-gray-600">shopname.ae</p>
+        </div>
+        <div class="text-center"
+            onclick="changeDefaultFlag('Can - Supplier', 'https://flagicons.lipis.dev/flags/4x3/ca.svg')">
+            <img src="https://flagicons.lipis.dev/flags/4x3/ca.svg" alt="Canada Flag"
+                class="mx-auto mb-4 w-12 h-8 object-cover">
+            <p class="font-semibold">Canada</p>
+            <p class="text-gray-600">shopname.ae</p>
+        </div>
+        <div class="text-center"
+            onclick="changeDefaultFlag('Braz - Supplier', 'https://flagicons.lipis.dev/flags/4x3/br.svg')">
+            <img src="https://flagicons.lipis.dev/flags/4x3/br.svg" alt="Brazil Flag"
+                class="mx-auto mb-4 w-12 h-8 object-cover">
+            <p class="font-semibold">Brazil</p>
+            <p class="text-gray-600">shopname.ae</p>
+        </div>
+        <div class="text-center"
+            onclick="changeDefaultFlag('SK - Supplier', 'https://flagicons.lipis.dev/flags/4x3/kr.svg')">
+            <img src="https://flagicons.lipis.dev/flags/4x3/kr.svg" alt="South Korea Flag"
+                class="mx-auto mb-4 w-12 h-8 object-cover">
+            <p class="font-semibold">South Korea</p>
+            <p class="text-gray-600">shopname.ae</p>
+        </div>
+
     </div>
-    
+    </div>
+
 
     <div class="bg-gray-200 py-16 mt-10">
         <div class="container mx-auto text-center max-w-lg">
@@ -910,29 +928,29 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Footer Start -->
 
-    <footer class="bg-gray-100 py-12 ml-8">
-        <div class="container mx-auto flex flex-wrap lg:flex-nowrap justify-between items-start">
-
+    <footer class="bg-gray-200 py-12 ">
+        <div class="container mx-auto flex flex-wrap lg:flex-nowrap justify-between items-start ml-4">
+    
             <!-- Logo and Description Section -->
-
+    
             <div class="w-full lg:w-1/4 mb-8 lg:mb-0">
                 <div class="flex items-center mb-4">
-
+    
                     <!-- Logo -->
-
+    
                     <img src="assest/images/logoo.png" alt="Logo" class="w-12 h-12 mr-3">
-
+    
                     <!-- Company Name -->
-
+    
                     <span class="text-xl font-semibold">ShopSphere</span>
                 </div>
                 <p class="text-gray-600 mb-4">Your go-to platform for reliable suppliers <br> worldwide.</p>
-
+    
                 <!-- Social Media Icons -->
-
+    
                 <div class="flex space-x-4 mt-4">
                     <a href="#" aria-label="Facebook" class="text-gray-600 hover:text-blue-600">
                         <i class="fab fa-facebook-f"></i>
@@ -951,11 +969,11 @@
                     </a>
                 </div>
             </div>
-
+    
             <!-- Links Section -->
-
+    
             <div class="w-full lg:w-2/4 grid grid-cols-2 sm:grid-cols-4 gap-8">
-
+    
                 <!-- About Links -->
                 <div>
                     <h4 class="text-lg font-semibold mb-4">About</h4>
@@ -966,9 +984,9 @@
                         <li><a href="#" class="hover:text-gray-800">Careers</a></li>
                     </ul>
                 </div>
-
+    
                 <!-- Partnership Links -->
-
+    
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Partnership</h4>
                     <ul class="space-y-2 text-gray-600">
@@ -978,9 +996,9 @@
                         <li><a href="#" class="hover:text-gray-800">Affiliate Program</a></li>
                     </ul>
                 </div>
-
+    
                 <!-- Information Links -->
-
+    
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Information</h4>
                     <ul class="space-y-2 text-gray-600">
@@ -990,9 +1008,9 @@
                         <li><a href="#" class="hover:text-gray-800">Contact Us</a></li>
                     </ul>
                 </div>
-
+    
                 <!-- For Users Links -->
-
+    
                 <div>
                     <h4 class="text-lg font-semibold mb-4">For Users</h4>
                     <ul class="space-y-2 text-gray-600">
@@ -1003,22 +1021,22 @@
                     </ul>
                 </div>
             </div>
-
+    
             <!-- Get the App Section -->
-
+    
             <div class="w-full lg:w-1/4 mt-8 lg:mt-0 flex flex-col items-center lg:items-start">
                 <h4 class="text-lg font-semibold mb-4">Get the App</h4>
                 <div class="flex space-x-4 ">
-
+    
                     <!-- Play Store Icon -->
-
+    
                     <a href="#" class="bg-black text-white px-4 py-2 rounded-lg flex items-center">
                         <i class="fab fa-google-play text-lg mr-2"></i>
                         Play Store
                     </a>
-
+    
                     <!-- App Store Icon -->
-
+    
                     <a href="#" class="bg-black text-white px-4 py-2 rounded-lg flex items-center">
                         <i class="fab fa-apple text-lg mr-2"></i>
                         App Store
@@ -1027,32 +1045,32 @@
             </div>
         </div>
     </footer>
-
+    
     <!-- Footer end -->
-
+    
     <!-- Footer Bottom Section -->
-
+    
     <div class="bg-gray-600 py-4">
         <div class="container mx-auto flex justify-between items-center text-white text-sm max-w-screen-md">
-
+    
             <!-- Copyright Text, Slightly Centered -->
-
+    
             <div class="text-left ml-4">
                 &copy; 2023 Ecommerce
             </div>
-
+    
             <!-- Language and Flag Selector, Slightly Centered -->
-
+    
             <div class="flex items-center space-x-2 mr-4">
-
-
+    
+    
                 <!-- Flag Display (Initially US Flag) -->
-
+    
                 <img id="language-flag" src="https://flagcdn.com/w20/us.png" alt="US Flag"
                     class="w-6 h-4 object-cover rounded-sm">
-
+    
                 <!-- Language Dropdown -->
-
+    
                 <select id="language-selector" class="bg-gray-700 text-white border-none focus:outline-none p-1 rounded"
                     onchange="updateFlag()">
                     <option value="en" selected>English</option>
@@ -1063,6 +1081,7 @@
             </div>
         </div>
     </div>
+    
 
 
 

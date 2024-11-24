@@ -62,8 +62,11 @@ window.onload = function() {
         const cartTotalDiv = document.getElementById('cartTotal');
         const totalAmount = parseFloat(cartTotalDiv.textContent.replace('Total: $', '').trim());
 
-        if (totalAmount === 0) {
-            // Alert if the cart is empty
+        // If the cart is empty, alert and do not proceed
+        if (cart.length === 0) {
+            alert('Your cart is empty. Please add items to your cart before proceeding.');
+        } else if (totalAmount === 0) {
+            // If the total is 0, show alert
             alert('Your cart is empty. Please add items to your cart before proceeding.');
         } else {
             // Show the "Buy Now" message
@@ -71,8 +74,6 @@ window.onload = function() {
             buyNowMessageDiv.classList.remove('hidden');  // Show the message
             buyNowMessageDiv.textContent = `Total amount of $${totalAmount.toFixed(2)} has been deducted from your account. Thank you for your purchase!`;
             alert(buyNowMessageDiv.textContent);
-
-            
 
             // Clear the cart after successful purchase
             cart = [];

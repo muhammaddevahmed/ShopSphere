@@ -131,3 +131,24 @@ updateTimer();
 
  // Automatically switch slides every 3 seconds
  setInterval(showNextSlide, 3000);
+ 
+ document.getElementById("uploadPic").addEventListener("change", function (event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            document.getElementById("profilePic").src = e.target.result;
+            // Optionally, save the updated profile picture to localStorage
+            localStorage.setItem("profilePic", e.target.result);
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+// Load the saved profile picture from localStorage on page load
+window.addEventListener("load", () => {
+    const savedPic = localStorage.getItem("profilePic");
+    if (savedPic) {
+        document.getElementById("profilePic").src = savedPic;
+    }
+});
