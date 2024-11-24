@@ -1,0 +1,1157 @@
+[
+    
+    {
+        "id": 1,
+        "name": "Cupboard",
+        "category": "furniture",
+        "price": 200,
+        "description": "This spacious wooden cupboard combines functionality and elegance. It features six adjustable shelves and sliding doors with a smooth mechanism, making it a versatile storage solution for clothes, accessories, or household items. The durable solid wood construction ensures long-term reliability, while the sleek, minimalist design blends seamlessly with modern interiors.",
+        "image": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+        "specifications": "Material: Solid wood | Shelves: 6 adjustable | Doors: Sliding mechanism",
+        "rating": 4,
+        "reviews": ["Very sturdy and durable.", "The design is elegant, but assembly took time."],
+        "brand": "StorageMax"
+    },
+    {
+        "id": 2,
+        "name": "Sofa",
+        "category": "furniture",
+        "price": 200,
+        "description": "This spacious wooden cupboard combines functionality and elegance. It features six adjustable shelves and sliding doors with a smooth mechanism, making it a versatile storage solution for clothes, accessories, or household items. The durable solid wood construction ensures long-term reliability, while the sleek, minimalist design blends seamlessly with modern interiors.",
+        "image": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+        "specifications": "Material: Solid wood | Shelves: 6 adjustable | Doors: Sliding mechanism",
+        "rating": 4,
+        "reviews": ["Very sturdy and durable.", "The design is elegant, but assembly took time."],
+        "brand": "StorageMax"
+    },
+    
+    {
+        "id": 3,
+        "name": "Dining Table",
+        "category": "furniture",
+        "price": 400,
+        "description": "Upgrade your dining area with this stylish dining table featuring a tempered glass top and a sturdy metal frame. With ample space to seat six people comfortably, this table is ideal for family meals or hosting guests. The scratch-resistant surface ensures easy maintenance, while the modern design enhances your dining space's aesthetic appeal.",
+        "image": "https://images.unsplash.com/photo-1571158721552-5bcdb5c24292?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+        "specifications": "Material: Tempered glass top | Frame: Metal | Seating: Up to 6 people",
+        "rating": 5,
+        "reviews": ["Beautiful and functional.", "Perfect for family dinners."],
+        "brand": "DreamSpace"
+    },
+    {
+        "id": 4,
+        "name": "Bed Frame",
+        "category": "furniture",
+        "price": 350,
+        "description": "Create your dream bedroom with this elegant king-sized bed frame. The sturdy wooden construction and upholstered padded headboard provide a perfect combination of durability and comfort. With a modern yet timeless design, this bed frame fits seamlessly into any decor style, providing a cozy and relaxing ambiance.",
+        "image": "https://images.unsplash.com/photo-1603993097397-89b61841db1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+        "specifications": "Size: King | Frame: Solid wood | Headboard: Upholstered",
+        "rating": 4,
+        "reviews": ["Very comfortable and sturdy.", "Assembly instructions could be clearer."],
+        "brand": "DreamSpace"
+    },
+    {
+        "id": 5,
+        "name": "Coffee Table",
+        "category": "furniture",
+        "price": 120,
+        "description": "This compact yet stylish coffee table is perfect for any living room setup. Featuring a sleek wooden finish and an additional lower storage shelf, it is designed for functionality and aesthetics. The smooth surface is ideal for placing coffee, books, or decorative items, while the durable construction ensures long-lasting use.",
+        "image": "https://images.unsplash.com/photo-1555041430-710cb1fd6f48?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+        "specifications": "Material: Wooden finish | Storage: Lower shelf | Design: Compact",
+        "rating": 5,
+        "reviews": ["Perfect size for my small living room.", "Love the extra storage feature."],
+        "brand": "CozyLiving"
+    },
+    {
+        "id": 6,
+        "name": "Bookshelf",
+        "category": "furniture",
+        "price": 150,
+        "description": "Organize your books and decorative items with this tall and spacious bookshelf. The adjustable shelves allow for flexible storage options, making it ideal for books, plants, or photo frames. Built with solid wood, it features a minimalist design that complements both traditional and contemporary interiors.",
+        "image": "https://images.unsplash.com/photo-1598300059419-c9f322f5fcf1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+        "specifications": "Material: Solid wood | Shelves: Adjustable | Design: Minimalist",
+        "rating": 4,
+        "reviews": ["Holds a lot of books and decor.", "Looks great in my study room."],
+        "brand": "StorageMax"
+    },
+    {
+        "id": 7,
+        "name": "Recliner Chair",
+        "category": "furniture",
+        "price": 250,
+        "description": "Experience ultimate relaxation with this recliner chair, designed with a padded backrest and adjustable footrest. Upholstered in high-quality fabric, this chair is perfect for lounging, watching TV, or reading. Its ergonomic design provides excellent lumbar support, making it a must-have for any living space.",
+        "image": "https://images.unsplash.com/photo-1603201550056-0e4e63d4a122?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+        "specifications": "Material: Fabric upholstery | Features: Reclining back, Adjustable footrest",
+        "rating": 5,
+        "reviews": ["Super comfortable and relaxing.", "Perfect for my TV room."],
+        "brand": "ComfortCouch"
+    },
+    {
+        "id": 8,
+        "name": "Wardrobe",
+        "category": "furniture",
+        "price": 500,
+        "description": "Keep your clothes organized with this large wardrobe featuring a mirrored door, spacious drawers, and ample hanging space. The wardrobe's sleek design and sturdy build make it a practical and stylish addition to any bedroom. The mirrored door adds functionality, making it a great space-saving solution.",
+        "image": "https://images.unsplash.com/photo-1602524200904-8abfe926a218?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+        "specifications": "Doors: Mirrored | Storage: Drawers and hanging space | Material: Solid wood",
+        "rating": 4,
+        "reviews": ["Very spacious and functional.", "The mirror is a nice touch."],
+        "brand": "DreamSpace"
+    },
+    {
+        "id": 9,
+        "name": "TV Stand",
+        "category": "furniture",
+        "price": 180,
+        "description": "Organize your entertainment setup with this modern TV stand. It features ample storage space, cable management, and a durable wooden finish. Perfect for holding your TV, gaming consoles, and other media devices, this TV stand is both functional and stylish.",
+        "image": "https://images.unsplash.com/photo-1585408678254-6938e7bded3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+        "specifications": "Material: Wooden finish | Features: Cable management, 2 cabinets",
+        "rating": 4,
+        "reviews": ["Keeps everything neat and tidy.", "Stylish and sturdy."],
+        "brand": "CozyLiving"
+    },
+
+
+
+
+
+        {
+            "id": 10,
+            "name": "Luxury Chronograph Watch",
+            "category": "watches",
+            "price": 20,
+            "description": "This luxury chronograph watch combines precision and style with a sleek stainless steel design, perfect for those who appreciate both functionality and elegance. Its advanced chronograph features allow for precise timekeeping, while the stylish design makes it ideal for both formal and casual wear.",
+            "image": "https://via.placeholder.com/500/0000FF",
+            "specifications": "Stainless steel case, Water resistant up to 100m, Chronograph function, Leather strap, Quartz movement",
+            "rating": 4,
+            "reviews": ["Elegant design and accurate timekeeping.", "Perfect for both casual and formal wear."],
+            "brand": "TimeMaster"
+        },
+        {
+            "id": 11,
+            "name": "Classic Leather Watch",
+            "category": "watches",
+            "price": 65,
+            "description": "A timeless classic, this leather watch is designed for those who appreciate simplicity and elegance. Featuring a genuine leather strap and a minimalist dial, it’s the perfect accessory for everyday wear. The precision quartz movement ensures reliable timekeeping throughout the day.",
+            "image": "https://via.placeholder.com/500/FF6347",
+            "specifications": "Genuine leather strap, Minimalist dial, Quartz movement, Stainless steel case, Water resistant",
+            "rating": 4,
+            "reviews": ["A beautiful, simple watch.", "The leather strap feels high quality and comfortable."],
+            "brand": "TimeMaster"
+        },
+        {
+            "id": 12,
+            "name": "Sporty Digital Watch",
+            "category": "watches",
+            "price": 20,
+            "description": "The Sporty Digital Watch is built for those who lead an active lifestyle. Featuring a large digital display, stopwatch functionality, and water resistance, it is designed to withstand the rigors of daily workouts and outdoor activities. Its sporty design also ensures it looks great during leisure time.",
+            "image": "https://via.placeholder.com/500/FFD700",
+            "specifications": "Digital display, Stopwatch function, Water resistant up to 50m, Adjustable rubber strap, LED backlight",
+            "rating": 4,
+            "reviews": ["Great for outdoor activities.", "Very comfortable and practical for workouts."],
+            "brand": "Luxora"
+        },
+        {
+            "id": 13,
+            "name": "Elegant Rose Gold Watch",
+            "category": "watches",
+            "price": 50,
+            "description": "This elegant rose gold watch is the epitome of sophistication. Its intricate design, combined with the beauty of the rose gold tone, makes it a perfect accessory for formal events or special occasions. The slim profile and delicate features ensure it adds a touch of class to any outfit.",
+            "image": "https://via.placeholder.com/500/FFB6C1",
+            "specifications": "Rose gold-plated case, Slim profile, Sapphire crystal glass, Quartz movement, Leather strap",
+            "rating": 5,
+            "reviews": ["Absolutely stunning watch.", "I love the elegance of the rose gold."],
+            "brand": "TimeMaster"
+        },
+        {
+            "id": 14,
+            "name": "Vintage Pilot Watch",
+            "category": "watches",
+            "price": 45,
+            "description": "Inspired by classic aviation timepieces, this vintage pilot watch features a bold design with large, easy-to-read numerals. The watch is built with durable materials, offering precision timekeeping along with a stylish look. Perfect for those who admire aviation history and want a watch that can stand the test of time.",
+            "image": "https://via.placeholder.com/500/000000",
+            "specifications": "Aviation-inspired design, Large numerals, Leather strap, Water resistant up to 50m, Mechanical movement",
+            "rating": 4,
+            "reviews": ["A must-have for aviation enthusiasts.", "Great quality and design."],
+            "brand": "Luxora"
+        },
+        {
+            "id": 15,
+            "name": "Modern Mesh Watch",
+            "category": "watches",
+            "price": 75,
+            "description": "This modern mesh watch combines contemporary design with high-quality craftsmanship. The mesh bracelet provides a comfortable fit, while the minimalist dial ensures a sleek and modern look. Ideal for daily wear, this watch offers the perfect balance between style and practicality.",
+            "image": "https://via.placeholder.com/500/32CD32",
+            "specifications": "Mesh bracelet, Minimalist dial, Quartz movement, Stainless steel case, Water resistant",
+            "rating": 4,
+            "reviews": ["Great for everyday use.", "Stylish and comfortable."],
+            "brand": "TimeMaster"
+        },
+        {
+            "id": 16,
+            "name": "Casual Analog Watch",
+            "category": "watches",
+            "price": 40,
+            "description": "Perfect for a casual day out, this analog watch features a simple and clean design with a durable synthetic leather strap. Its minimalistic approach makes it a great fit for any casual or laid-back occasion, and it’s reliable enough for daily use.",
+            "image": "https://via.placeholder.com/500/00008B",
+            "specifications": "Analog display, Synthetic leather strap, Quartz movement, Stainless steel back, Water resistant",
+            "rating": 3,
+            "reviews": ["Affordable and reliable.", "Nice, simple watch for casual wear."],
+            "brand": "Luxora"
+        },
+        {
+            "id": 17,
+            "name": "Classic Stainless Steel Watch",
+            "category": "watches",
+            "price": 20,
+            "description": "This classic stainless steel watch offers a perfect blend of durability and elegance. The solid stainless steel band and case ensure long-lasting wear, while the minimalist design makes it suitable for any occasion. Whether it's a formal event or a casual gathering, this watch will always complement your look.",
+            "image": "https://via.placeholder.com/500/8A2BE2",
+            "specifications": "Stainless steel band, Quartz movement, Water resistant up to 30m, Minimalist dial, Sapphire glass",
+            "rating": 3,
+            "reviews": ["Great value for the price.", "Sleek and professional."],
+            "brand": "TimeMaster"
+        },
+        {
+            "id": 18,
+            "name": "Fashionable Ceramic Watch",
+            "category": "watches",
+            "price": 30,
+            "description": "The Fashionable Ceramic Watch is designed for those who appreciate modern luxury. With a durable ceramic bracelet and a beautifully crafted dial, this watch is both stylish and practical. It’s perfect for anyone looking to elevate their fashion sense with a high-quality timepiece.",
+            "image": "https://via.placeholder.com/500/7FFF00",
+            "specifications": "Ceramic bracelet, Water resistant, Scratch-resistant, Quartz movement, Mineral glass",
+            "rating": 4,
+            "reviews": ["Stylish and elegant.", "Ceramic is a great material for a watch."],
+            "brand": "Luxora"
+        },
+
+        
+          
+            {
+                "id": 19,
+                "name": "Samsung Galaxy S22 Ultra ",
+                "category": "smartphones",
+                "price": 220,
+                "description": "This Samsung Galaxy S22 Ultra case combines protection and elegance. Designed to shield your device from daily wear and tear, it provides excellent drop resistance and is made from premium TPU and polycarbonate materials. Its slim profile maintains the sleekness of the Galaxy S22 Ultra while offering a non-slip grip. The case also features anti-yellowing properties for lasting clarity and protection.",
+                "image": "https://via.placeholder.com/500?text=Samsung+Galaxy+S22+Ultra+Case",
+                "specifications": "Drop protection, TPU and polycarbonate construction, Anti-yellowing, Slim design, Available in black, clear, and smoke.",
+                "rating": 4,
+                "reviews": ["Perfect fit and feel.", "Sleek design, great protection!", "Excellent build quality."],
+                "brand": "Samsung"
+            },
+            {
+                "id": 20,
+                "name": "Iphone 15",
+                "category": "smartphones",
+                "price": 25,
+                "description": "The OnePlus 9 Pro case is engineered to offer maximum protection with minimal bulk. Featuring a multi-layered design, this case absorbs impact, keeping your device safe from drops, bumps, and scratches. It’s made with high-quality materials, providing a premium look and feel while still maintaining full access to all ports and buttons. The ergonomic design ensures a comfortable grip.",
+                "image": "https://via.placeholder.com/500?text=OnePlus+9+Pro+Case",
+                "specifications": "Multi-layer protection, Impact resistant, Slim design, Available in matte black, navy blue, and transparent.",
+                "rating": 4,
+                "reviews": ["Slim yet protective.", "A perfect fit for my Iphone.", "Great value for money."],
+                "brand": "Apple"
+            },
+            {
+                "id": 21,
+                "name": "Galaxy Fold",
+                "category": "smartphones",
+                "price": 260,
+                "description": "Crafted for those who want to protect their Google Pixel 6 Pro without compromising on style, this case is made with a durable yet lightweight material that absorbs shocks from accidental drops. The textured surface ensures a firm grip, reducing the chances of slipping. It also features precise cutouts for easy access to all ports and camera functions.",
+                "image": "https://via.placeholder.com/500?text=Google+Pixel+6+Pro+Case",
+                "specifications": "Shock-absorbing material, Textured surface for grip, Precision cutouts, Available in graphite, orange, and clear.",
+                "rating": 5,
+                "reviews": ["Excellent protection!", "Feels premium and fits perfectly.", "Highly recommend for Pixel users."],
+                "brand":"Samsung"
+            },
+            {
+                "id": 22,
+                "name": "iPhone 14 Pro Max ",
+                "category": "smartphones",
+                "price": 230,
+                "description": "This iPhone 12 Pro Max case provides all-around protection with its shockproof and anti-scratch features. The precise design offers easy access to all buttons and ports, while the reinforced corners absorb impact from drops. The slim, lightweight design complements the iPhone's elegant look without adding extra bulk, making it easy to carry and use.",
+                "image": "https://via.placeholder.com/500?text=iPhone+12+Pro+Max+Case",
+                "specifications": "Shockproof, Anti-scratch, Reinforced corners, Lightweight design, Available in black, white, and rose gold.",
+                "rating": 5,
+                "reviews": ["Great fit and feels durable.", "Slim but strong. Definitely recommended.", "Perfect case for my iPhone 12 Pro Max."],
+                "brand": "Apple"
+            },
+            {
+                "id": 23,
+                "name": "Samsung Galaxy Note 20 Ultra Case",
+                "category": "smartphones",
+                "price": 180,
+                "description": "Keep your Samsung Galaxy Note 20 Ultra safe with this high-performance case that provides full protection against drops, scratches, and shocks. Made from a premium mix of TPU and polycarbonate materials, this case ensures your phone stays secure while maintaining its stylish appearance. The sleek design preserves the device’s original shape while offering an improved grip.",
+                "image": "https://via.placeholder.com/500?text=Samsung+Galaxy+Note+20+Ultra+Case",
+                "specifications": "TPU and polycarbonate construction, Shockproof, Drop resistant, Slim profile, Available in navy blue, clear, and black.",
+                "rating": 5,
+                "reviews": ["Sturdy and durable!", "Excellent fit. Highly recommend.", "The case gives me peace of mind."],
+                "brand": "Samsung"
+            },
+            {
+                "id": 24,
+                "name": "Samsung s21 Ultra",
+                "category": "smartphones",
+                "price": 180,
+                "description": "Designed for the OnePlus 8T, this case combines functionality with style. It is built to withstand accidental drops and bumps, protecting your device from damage while keeping the sleek look of the phone intact. With its high-quality materials and slim design, the case provides a solid grip and easy access to all ports and buttons.",
+                "image": "https://via.placeholder.com/500?text=OnePlus+8T+Case",
+                "specifications": "Drop protection, Slim and lightweight design, Precision cut-outs, Available in black, green, and clear.",
+                "rating": 4,
+                "reviews": ["Affordable and reliable protection.", "Fits great and looks sleek.", "Love the feel and quality of the case."],
+                "brand": "Samsung"
+            },
+            {
+                "id": 25,
+                "name": "Apple 13 Pro Max",
+                "category": "smartphones",
+                "price": 220,
+                "description": "Made for the Google Pixel 5, this case provides excellent shock absorption with a slim, minimalist design. It features precise cutouts for the camera, buttons, and ports, ensuring full functionality without removing the case. The anti-slip design ensures the phone stays in your hand while providing a comfortable, secure grip.",
+                "image": "https://via.placeholder.com/500?text=Google+Pixel+5+Case",
+                "specifications": "Shock absorption, Anti-slip design, Slim profile, Precision cutouts, Available in matte black, mint, and transparent.",
+                "rating": 4,
+                "reviews": ["Stylish and functional.", "Perfect fit and feels secure.", "Great case for Pixel 5."],
+                "brand": "Apple"
+            },
+            {
+                "id": 26,
+                "name": "iPhone 12 pro max",
+                "category": "smartphones",
+                "price": 250,
+                "description": "Designed specifically for the iPhone SE (2020), this case offers an ultra-slim design with high protection. The case features a flexible, shock-absorbing layer that protects your device from accidental drops, while its precise cutouts allow for easy access to all buttons and ports. It’s available in a variety of stylish colors, making it perfect for those who want protection without sacrificing style.",
+                "image": "https://via.placeholder.com/500?text=iPhone+SE+2020+Case",
+                "specifications": "Slim and shock-absorbing, Precision cut-outs, Available in black, red, and clear.",
+                "rating": 5,
+                "reviews": ["Great value for the price.", "Fits perfectly and feels great.", "Perfect protection for my SE."],
+                "brand": "Apple"
+            },
+            {
+                "id": 27,
+                "name": "Samsung Galaxy A52 Case",
+                "category": "smartphones",
+                "price": 200,
+                "description": "This Samsung Galaxy A52 case is designed to offer robust protection while maintaining the phone's slim profile. The case is made with impact-resistant TPU material that absorbs shocks from drops and bumps, while the textured surface ensures a firm grip. It's designed to preserve the phone's beauty while offering practical protection.",
+                "image": "https://via.placeholder.com/500?text=Samsung+Galaxy+A52+Case",
+                "specifications": "Impact-resistant TPU, Shockproof, Textured surface for grip, Slim profile, Available in black, blue, and clear.",
+                "rating": 5,
+                "reviews": ["The case is a great fit.", "Very sturdy, definitely protects the phone.", "I love the feel and look."],
+                "brand": "Samsung"
+            } , 
+            
+            
+                {
+                    "id": 28,
+                    "name": "Floral Kurti",
+                    "category": "ladies clothes",
+                    "price": 30,
+                    "description": "This beautiful Floral Kurti is crafted from premium cotton fabric, offering ultimate comfort and breathability. The elegant floral pattern makes it perfect for casual outings, family gatherings, or even a day at the office. With its flattering A-line cut, this Kurti provides a relaxed yet stylish fit. It features intricate embroidery on the neckline and three-quarter sleeves, giving it a traditional yet contemporary look. Available in multiple colors, it pairs well with leggings, jeans, or churidars.",
+                    "image": "https://via.placeholder.com/500?text=Floral+Kurti",
+                    "specifications": "Premium cotton fabric, A-line cut, Intricate embroidery, Three-quarter sleeves, Available in multiple colors.",
+                    "reviews": [
+                        "Beautiful design and fabric. Fits perfectly.",
+                        "Great quality, perfect for summer.",
+                        "I love the vibrant colors and soft feel of the fabric."
+                    ],
+                    "brand": "Vastra",
+                    "ratings": 4.5
+                },
+                {
+                    "id": 29,
+                    "name": "Slim Fit Jeans",
+                    "category": "ladies clothes",
+                    "price": 45,
+                    "description": "These Slim Fit Jeans are designed to provide a perfect, snug fit while offering maximum comfort. Made from a blend of cotton and elastane, they are soft to the touch and have a little stretch for a form-fitting silhouette. The stylish design features a high-rise waist and classic 5-pocket styling. The dark wash and distressed detailing add a touch of edge to this versatile wardrobe staple. Pair them with your favorite tops or tees for a chic, casual look.",
+                    "image": "https://via.placeholder.com/500?text=Slim+Fit+Jeans",
+                    "specifications": "Cotton-elastane blend, High-rise waist, 5-pocket styling, Distressed detailing, Available in multiple sizes.",
+                    "reviews": [
+                        "Perfect fit! I love the stretch and comfort.",
+                        "These jeans are my new go-to pair.",
+                        "Nice cut and very flattering."
+                    ],
+                    "brand": "DenimCorp",
+                    "ratings": 4.7
+                },
+                {
+                    "id": 30,
+                    "name": "Casual T-Shirt",
+                    "category": "ladies clothes",
+                    "price": 25,
+                    "description": "This Casual T-Shirt is made from soft, breathable cotton and features a relaxed fit, making it an ideal choice for everyday wear. The classic round neck and short sleeves provide a comfortable and flattering look for any casual occasion. The T-shirt is adorned with a subtle graphic design on the front, adding a fun, youthful touch. Available in an array of colors, this versatile piece can be easily paired with jeans, skirts, or shorts for a laid-back, stylish look.",
+                    "image": "https://via.placeholder.com/500?text=Casual+T-Shirt",
+                    "specifications": "100% cotton, Relaxed fit, Short sleeves, Round neck, Available in multiple colors.",
+                    "reviews": [
+                        "Super soft and comfortable!",
+                        "The perfect casual tee for every day.",
+                        "Great quality, and the fit is just right."
+                    ],
+                    "brand": "StyleWave",
+                    "ratings": 4.3
+                },
+                {
+                    "id": 31,
+                    "name": "A-Line Skirt",
+                    "category": "ladies clothes",
+                    "price": 35,
+                    "description": "This A-Line Skirt is a timeless wardrobe essential that combines comfort and elegance. Made from a soft cotton-blend fabric, it has a flattering silhouette that falls gently from the waist, creating a balanced, feminine shape. The waistband is elasticated for a comfortable fit, and the skirt features two side pockets for practicality. Available in various solid colors and patterns, this skirt pairs well with tops, blouses, and even jackets for a stylish, versatile outfit.",
+                    "image": "https://via.placeholder.com/500?text=A-Line+Skirt",
+                    "specifications": "Cotton-blend fabric, A-line silhouette, Elasticated waistband, Side pockets, Available in multiple colors and patterns.",
+                    "reviews": [
+                        "Flattering shape and very comfortable.",
+                        "I love the pockets and soft fabric.",
+                        "Perfect length and fit!"
+                    ],
+                    "brand": "FashionHaus",
+                    "ratings": 4.6
+                },
+                {
+                    "id": 32,
+                    "name": "Chiffon Dupatta",
+                    "category": "ladies clothes",
+                    "price": 20,
+                    "description": "This Chiffon Dupatta is the perfect accessory to complement your ethnic or casual outfits. Made from high-quality chiffon fabric, it features a soft and flowing design that adds a touch of elegance to any ensemble. The lightweight material drapes beautifully, making it ideal for draping over a Kurti or dress. Available in an assortment of solid colors and delicate prints, it can be worn for festive occasions or daily wear.",
+                    "image": "https://via.placeholder.com/500?text=Chiffon+Dupatta",
+                    "specifications": "100% chiffon fabric, Soft and lightweight, Available in multiple colors and prints.",
+                    "reviews": [
+                        "Beautiful and lightweight, great for daily wear.",
+                        "The perfect addition to any outfit.",
+                        "Lovely fabric and drapes perfectly."
+                    ],
+                    "brand": "EthnoTrend",
+                    "ratings": 4.4
+                },
+                {
+                    "id": 33,
+                    "name": "Knit Sweater",
+                    "category": "ladies clothes",
+                    "price": 50,
+                    "description": "This Knit Sweater is a cozy, stylish addition to your fall and winter wardrobe. Crafted from soft wool and cotton blend fabric, it provides warmth and comfort during chilly days. The sweater features a classic crew neck and ribbed cuffs and hem for a snug fit. The simple yet elegant design makes it easy to pair with jeans, skirts, or leggings for a relaxed, chic look. Available in neutral tones as well as bold colors for added variety.",
+                    "image": "https://via.placeholder.com/500?text=Knit+Sweater",
+                    "specifications": "Wool-cotton blend, Ribbed cuffs and hem, Crew neck, Available in various colors.",
+                    "reviews": [
+                        "Warm and comfortable, perfect for cooler weather.",
+                        "Lovely sweater with a great fit.",
+                        "I love how soft and cozy it feels!"
+                    ],
+                    "brand": "WarmthCo",
+                    "ratings": 4.8
+                },
+                {
+                    "id": 34,
+                    "name": "Maxi Dress",
+                    "category": "ladies clothes",
+                    "price": 55,
+                    "description": "This elegant Maxi Dress is perfect for formal events, evening outings, or even a day at the beach. Made from lightweight rayon fabric, the dress features a flowy, relaxed silhouette that creates a graceful, feminine look. The dress has a beautiful V-neckline and thin adjustable straps for a customizable fit. The bold floral print adds an eye-catching touch, while the empire waistline enhances the dress's overall shape. Available in various sizes and colors to suit all preferences.",
+                    "image": "https://via.placeholder.com/500?text=Maxi+Dress",
+                    "specifications": "Lightweight rayon fabric, Flowy silhouette, V-neckline, Adjustable straps, Floral print, Available in multiple colors.",
+                    "reviews": [
+                        "This dress is gorgeous and comfortable.",
+                        "Perfect for a summer evening or a beach day.",
+                        "The fit is perfect and the print is beautiful."
+                    ],
+                    "brand": "EleganceWear",
+                    "ratings": 4.9
+                },
+                {
+                    "id": 35,
+                    "name": "Palazzo Pants",
+                    "category": "ladies clothes",
+                    "price": 40,
+                    "description": "These Palazzo Pants are the ultimate in comfort and style. Made from soft rayon fabric, they feature a wide-leg design that allows for ease of movement. The elastic waistband ensures a secure and comfortable fit, while the high-waisted design provides a flattering silhouette. The pants are versatile enough to be dressed up for formal occasions or worn casually with a simple top. Available in solid colors as well as trendy prints, these palazzo pants are perfect for any occasion.",
+                    "image": "https://via.placeholder.com/500?text=Palazzo+Pants",
+                    "specifications": "Soft rayon fabric, Wide-leg design, High-waisted, Elastic waistband, Available in solid colors and prints.",
+                    "reviews": [
+                        "These pants are so comfortable and stylish.",
+                        "Perfect for casual or dressy occasions.",
+                        "I love the fit and flowy feel!"
+                    ],
+                    "brand": "TrendNova",
+                    "ratings": 4.6
+                },
+                {
+                    "id": 36,
+                    "name": "Off-Shoulder shirt",
+                    "category": "ladies clothes",
+                    "price": 45,
+                    "description": "This Off-Shoulder Blouse is the perfect piece for a chic, feminine look. Made from a silky-smooth polyester fabric, it has a relaxed fit and features off-shoulder sleeves with elastic bands that offer a comfortable yet secure fit. The blouse has a subtle ruffle detail at the top and a slight peplum waist for added flair. Whether you're dressing up for a night out or pairing it with jeans for a more casual look, this blouse is a versatile addition to your wardrobe.",
+                    "image": "https://via.placeholder.com/500?text=Off-Shoulder+Blouse",
+                    "specifications": "Silky polyester fabric, Off-shoulder design, Elasticated sleeves, Ruffle detail, Slight peplum waist.",
+                    "reviews": [
+                        "Such a beautiful and flattering blouse.",
+                        "Great for a night out or casual wear.",
+                        "Very comfortable and stylish."
+                    ],
+                    "brand": "ChicThreads",
+                    "ratings": 4.4
+                },
+
+
+            
+    {
+        "id": 37,
+        "name": "Men's Casual Shirt",
+        "category": "gentsClothes",
+        "price": 40,
+        "description": "This men's casual shirt is crafted from soft cotton fabric, offering comfort and breathability. The slim fit design gives a modern and stylish look, perfect for everyday wear or casual outings. With a button-down collar and adjustable cuffs, this shirt is versatile and easy to style for any occasion.",
+        "image": "https://via.placeholder.com/500?text=Mens+Casual+Shirt",
+        "specifications": "Cotton fabric, Slim fit, Button-down collar, Adjustable cuffs, Available in blue, white, and grey.",
+        "reviews": ["Very comfortable and stylish.", "Great quality and fit.", "Perfect for casual wear."],
+        "brand": "H&M",
+        "rating": 4
+    },
+    {
+        "id": 38,
+        "name": "Men's Slim Fit Jeans",
+        "category": "gentsClothes",
+        "price": 60,
+        "description": "These slim-fit jeans are designed for men who want to make a statement. Made from a high-quality stretch fabric, these jeans offer both comfort and style. The dark wash and tapered legs create a sharp, modern look that pairs perfectly with a variety of shirts or jackets.",
+        "image": "https://via.placeholder.com/500?text=Mens+Slim+Fit+Jeans",
+        "specifications": "Stretch fabric, Slim fit, Dark wash, Tapered legs, Available in black, indigo, and grey.",
+        "reviews": ["Great fit and very comfortable.", "Perfect for a night out.", "Love the color and fit."],
+        "brand": "Levi's",
+        "rating": 5
+    },
+    {
+        "id": 39,
+        "name": "Men's Leather Jacket",
+        "category": "gentsClothes",
+        "price": 120,
+        "description": "This stylish men's leather jacket is made from premium leather, offering both durability and comfort. With its sleek design and zippered front, it provides a contemporary and edgy look. The jacket is lined with soft fabric for extra warmth, making it ideal for cooler weather.",
+        "image": "https://via.placeholder.com/500?text=Mens+Leather+Jacket",
+        "specifications": "Premium leather, Zippered front, Soft lining, Slim fit, Available in black and brown.",
+        "reviews": ["Amazing jacket, great quality.", "Perfect for colder weather.", "Stylish and durable."],
+        "brand": "Zara",
+        "rating": 4
+    },
+    {
+        "id": 40,
+        "name": "Men's Polo T-Shirt",
+        "category": "gentsClothes",
+        "price": 35,
+        "description": "This men's polo shirt is made from a soft cotton blend, offering ultimate comfort. It features a classic collar with a three-button placket, making it perfect for both casual and semi-formal occasions. The slim-fit design gives it a modern and tailored look that’s easy to pair with jeans or chinos.",
+        "image": "https://via.placeholder.com/500?text=Mens+Polo+T-Shirt",
+        "specifications": "Cotton blend, Classic collar, Three-button placket, Slim fit, Available in navy, white, and black.",
+        "reviews": ["Comfortable and breathable.", "Fits perfectly and looks great.", "Love the design and fit."],
+        "brand": "Uniqlo",
+        "rating": 5
+    },
+    {
+        "id": 41,
+        "name": "Men's Chinos Pants",
+        "category": "gentsClothes",
+        "price": 70,
+        "description": "These chinos are a versatile and stylish addition to any wardrobe. Made from a lightweight cotton blend, they provide a comfortable fit while maintaining a refined look. The tailored cut and clean lines make these chinos perfect for both casual and business-casual outfits.",
+        "image": "https://via.placeholder.com/500?text=Mens+Chinos+Pants",
+        "specifications": "Cotton blend, Tailored cut, Lightweight fabric, Slim fit, Available in khaki, navy, and grey.",
+        "reviews": ["Great for office wear.", "Very comfortable and stylish.", "Perfect fit and color."],
+        "brand": "H&M",
+        "rating": 4
+    },
+    {
+        "id": 42,
+        "name": "Men's Sweatshirt",
+        "category": "gentsClothes",
+        "price": 50,
+        "description": "This men's sweatshirt is made from soft fleece material, offering comfort and warmth. With a classic crewneck and ribbed cuffs, it provides a snug fit that’s perfect for lounging or casual outings. The minimalist design and neutral colors make it easy to match with any casual look.",
+        "image": "https://via.placeholder.com/500?text=Mens+Sweatshirt",
+        "specifications": "Fleece material, Crewneck, Ribbed cuffs, Relaxed fit, Available in grey, black, and navy.",
+        "reviews": ["Very soft and cozy.", "Perfect for the cooler months.", "Great for casual wear."],
+        "brand": "Nike",
+        "rating": 5
+    },
+    {
+        "id": 43,
+        "name": "Men's Bomber Jacket",
+        "category": "gentsClothes",
+        "price": 95,
+        "description": "This bomber jacket is a stylish outerwear option that blends fashion and function. Made from durable fabric with a quilted interior, it offers warmth and comfort. The ribbed cuffs and hem provide a snug fit, while the zippered pockets offer practicality. This jacket is perfect for transitioning from fall to winter.",
+        "image": "https://via.placeholder.com/500?text=Mens+Bomber+Jacket",
+        "specifications": "Durable fabric, Quilted interior, Ribbed cuffs and hem, Zippered pockets, Available in olive, black, and navy.",
+        "reviews": ["Love the fit and style.", "Perfect for fall weather.", "Very comfortable and warm."],
+        "brand": "Adidas",
+        "rating": 4
+    },
+    {
+        "id": 44,
+        "name": "Men's Running Shorts",
+        "category": "gentsClothes",
+        "price": 30,
+        "description": "These men's running shorts are made from lightweight, breathable fabric, designed to keep you comfortable during workouts or outdoor activities. The elastic waistband with an adjustable drawstring ensures a secure fit, while the reflective details enhance visibility during nighttime runs.",
+        "image": "https://via.placeholder.com/500?text=Mens+Running+Shorts",
+        "specifications": "Breathable fabric, Elastic waistband, Adjustable drawstring, Reflective details, Available in black, red, and grey.",
+        "reviews": ["Great for running.", "Very comfortable and lightweight.", "Perfect fit for workouts."],
+        "brand": "Puma",
+        "rating": 5
+    },
+    {
+        "id": 45,
+        "name": "Men's Work Boots",
+        "category": "gentsClothes",
+        "price": 120,
+        "description": "These men's work boots are designed to provide all-day comfort and durability on the job. Featuring a reinforced toe cap, these boots are built to withstand heavy use and offer protection. The cushioned insole and slip-resistant outsole ensure stability and comfort, even in tough conditions.",
+        "image": "https://via.placeholder.com/500?text=Mens+Work+Boots",
+        "specifications": "Reinforced toe cap, Cushioned insole, Slip-resistant outsole, Durable construction, Available in brown, black, and tan.",
+        "reviews": ["Very comfortable for long hours.", "Excellent for outdoor work.", "Great durability and fit."],
+        "brand": "Timberland",
+        "rating": 4
+    },
+    
+        {
+            "id": 46,
+            "name": "Dinner Plate Set",
+            "category": "crockery",
+            "price": 50,
+            "description": "This elegant dinner plate set is made from high-quality porcelain, perfect for both casual and formal occasions. The set includes 6 dinner plates, each featuring a sleek and modern design. The plates are dishwasher and microwave safe, making them both practical and stylish.",
+            "image": "https://via.placeholder.com/500?text=Dinner+Plate+Set",
+            "specifications": "Porcelain, Set of 6 plates, Dishwasher and microwave safe, Modern design, Diameter: 10 inches.",
+            "reviews": ["Great quality and design.", "Perfect for dinner parties.", "Nice and durable plates."],
+            "brand": "Corelle",
+            "rating": 5
+        },
+        {
+            "id": 47,
+            "name": "Soup Bowl Set",
+            "category": "crockery",
+            "price": 40,
+            "description": "This set of 6 soup bowls is designed for both functionality and elegance. Made from durable ceramic, the bowls are perfect for enjoying soups, stews, and pastas. Their deep design allows for generous servings, and their simple yet classic design complements any table setting.",
+            "image": "https://via.placeholder.com/500?text=Soup+Bowl+Set",
+            "specifications": "Ceramic, Set of 6 bowls, Dishwasher and microwave safe, Deep design, Diameter: 7 inches.",
+            "reviews": ["Perfect for serving soup.", "Great size and shape.", "Lovely addition to our kitchen."],
+            "brand": "Mikasa",
+            "rating": 4
+        },
+        {
+            "id": 48,
+            "name": "Coffee Mug Set",
+            "category": "crockery",
+            "price": 30,
+            "description": "This set of 4 coffee mugs is made from high-quality ceramic with a smooth, glossy finish. These mugs are perfect for your morning coffee or tea, and their comfortable handle makes them easy to hold. The modern design features a unique color palette that suits any kitchen.",
+            "image": "https://via.placeholder.com/500?text=Coffee+Mug+Set",
+            "specifications": "Ceramic, Set of 4 mugs, Glossy finish, Comfortable handle, Capacity: 12 oz.",
+            "reviews": ["Nice and sturdy mugs.", "Perfect size for my morning coffee.", "Love the design and feel."],
+            "brand": "Le Creuset",
+            "rating": 4
+        },
+        {
+            "id": 49,
+            "name": "Serving Platter",
+            "category": "crockery",
+            "price": 60,
+            "description": "This large serving platter is ideal for serving appetizers, main dishes, or desserts. Made from high-quality porcelain, it is both durable and stylish. The platter features a sleek, white finish that will complement any dining room or kitchen decor.",
+            "image": "https://via.placeholder.com/500?text=Serving+Platter",
+            "specifications": "Porcelain, 1 large platter, Dishwasher and microwave safe, Modern design, Dimensions: 16 x 12 inches.",
+            "reviews": ["Great size for serving large portions.", "Beautiful and elegant platter.", "Perfect for dinner parties."],
+            "brand": "Villeroy & Boch",
+            "rating": 5
+        },
+        {
+            "id": 50,
+            "name": "Salad Bowl Set",
+            "category": "crockery",
+            "price": 45,
+            "description": "This 3-piece salad bowl set is made from durable stoneware and is designed to serve both casual and formal meals. The bowls are perfectly sized for serving salads, pasta, or fruit. The set includes 3 bowls in varying sizes to suit different needs.",
+            "image": "https://via.placeholder.com/500?text=Salad+Bowl+Set",
+            "specifications": "Stoneware, Set of 3 bowls, Dishwasher and microwave safe, Nested design, Sizes: 8, 10, 12 inches.",
+            "reviews": ["Great for serving salads and pastas.", "Sturdy and easy to clean.", "Love the size options."],
+            "brand": "Pottery Barn",
+            "rating": 4
+        },
+        {
+            "id": 51,
+            "name": "Porcelain Tea Set",
+            "category": "crockery",
+            "price": 80,
+            "description": "This beautiful porcelain tea set includes a teapot, creamer, sugar bowl, and four teacups. The delicate design and floral accents make this set perfect for tea parties or elegant gatherings. It’s both microwave and dishwasher safe for convenience.",
+            "image": "https://via.placeholder.com/500?text=Porcelain+Tea+Set",
+            "specifications": "Porcelain, Set includes teapot, creamer, sugar bowl, and 4 teacups, Dishwasher and microwave safe, Floral design.",
+            "reviews": ["Gorgeous set, perfect for tea parties.", "Elegant and durable.", "Love the floral design."],
+            "brand": "Royal Worcester",
+            "rating": 5
+        },
+        {
+            "id": 52,
+            "name": "Glassware Set",
+            "category": "crockery",
+            "price": 55,
+            "description": "This glassware set includes 6 wine glasses and 6 water glasses, all made from premium, lead-free crystal. The glasses are designed with a sleek, modern aesthetic and are perfect for formal dinners or casual gatherings. They are dishwasher safe for convenience.",
+            "image": "https://via.placeholder.com/500?text=Glassware+Set",
+            "specifications": "Lead-free crystal, Set includes 6 wine glasses and 6 water glasses, Dishwasher safe, Modern design.",
+            "reviews": ["Perfect for entertaining guests.", "Elegant and durable.", "Nice, clear glasses."],
+            "brand": "Riedel",
+            "rating": 5
+        },
+        {
+            "id": 53,
+            "name": "Stoneware Casserole Dish",
+            "category": "crockery",
+            "price": 50,
+            "description": "This stoneware casserole dish is perfect for baking and serving your favorite casseroles, lasagna, and roasted vegetables. The dish features a durable glaze that makes it resistant to scratches and stains, and it is microwave, oven, and dishwasher safe for convenience.",
+            "image": "https://via.placeholder.com/500?text=Stoneware+Casserole+Dish",
+            "specifications": "Stoneware, Dishwasher, microwave, and oven safe, Resistant glaze, Dimensions: 12 x 9 inches.",
+            "reviews": ["Great for baking casseroles.", "Sturdy and easy to clean.", "Perfect size for family meals."],
+            "brand": "Le Creuset",
+            "rating": 4
+        },
+        {
+            "id": 54,
+            "name": "Luxury Dessert Plates",
+            "category": "crockery",
+            "price": 65,
+            "description": "These luxury dessert plates are perfect for serving small desserts, appetizers, or sides. Made from fine bone china, they have an elegant and refined design, making them ideal for special occasions. The set includes 6 plates, each with a unique pattern to add a touch of sophistication.",
+            "image": "https://via.placeholder.com/500?text=Luxury+Dessert+Plates",
+            "specifications": "Bone china, Set of 6 plates, Unique pattern design, Dishwasher safe, Diameter: 7 inches.",
+            "reviews": ["Elegant and refined design.", "Perfect for special occasions.", "Love the fine bone china."],
+            "brand": "Wedgwood",
+            "rating": 5
+        },
+
+        
+            {
+                "id": 55,
+                "name": "Gold Plated Ring",
+                "category": "jewelry",
+                "price": 120,
+                "description": "This elegant gold plated ring features a stunning oval-shaped sapphire at its center, surrounded by smaller diamonds. Perfect for any special occasion, this ring offers timeless beauty and a luxurious feel. Available in multiple sizes to ensure the perfect fit.",
+                "image": "https://via.placeholder.com/500?text=Gold+Plated+Ring",
+                "specifications": "Gold plated, Sapphire center stone, Diamond accents, Available in sizes 5-10.",
+                "reviews": ["Absolutely stunning.", "Perfect for engagements.", "Lovely craftsmanship."],
+                "brand": "Tiffany & Co.",
+                "rating": 5
+            },
+            {
+                "id": 56,
+                "name": "Sterling Silver Necklace",
+                "category": "jewelry",
+                "price": 90,
+                "description": "This delicate sterling silver necklace features a simple yet elegant pendant with a small crystal accent. The chain is adjustable, making it suitable for various neck sizes. Ideal for everyday wear or a subtle touch for formal events.",
+                "image": "https://via.placeholder.com/500?text=Sterling+Silver+Necklace",
+                "specifications": "Sterling silver, Crystal pendant, Adjustable chain, Pendant size: 1 inch.",
+                "reviews": ["Simple yet elegant.", "Perfect for daily wear.", "Nice and lightweight."],
+                "brand": "Pandora",
+                "rating": 4
+            },
+            {
+                "id": 57,
+                "name": "Diamond Stud Earrings",
+                "category": "jewelry",
+                "price": 250,
+                "description": "These classic diamond stud earrings feature high-quality, conflict-free diamonds set in a 14k white gold setting. Their timeless design makes them a perfect gift for any occasion, from birthdays to anniversaries.",
+                "image": "https://via.placeholder.com/500?text=Diamond+Stud+Earrings",
+                "specifications": "14k white gold, 0.5 carat diamonds, Conflict-free diamonds, Stud design.",
+                "reviews": ["Beautiful and sparkly.", "Perfect for everyday wear.", "Great gift idea."],
+                "brand": "Cartier",
+                "rating": 5
+            },
+            {
+                "id": 58,
+                "name": "Rose Gold Bracelet",
+                "category": "jewelry",
+                "price": 100,
+                "description": "This elegant rose gold bracelet features a sleek, minimalist design that pairs perfectly with any outfit. The bracelet is adjustable to fit most wrist sizes and is ideal for both casual and formal occasions.",
+                "image": "https://via.placeholder.com/500?text=Rose+Gold+Bracelet",
+                "specifications": "Rose gold, Adjustable size, Minimalist design, Length: 7.5 inches.",
+                "reviews": ["Gorgeous and delicate.", "Love the rose gold color.", "Perfect for layering."],
+                "brand": "Michael Kors",
+                "rating": 4
+            },
+            {
+                "id": 59,
+                "name": "Pearl Drop Earrings",
+                "category": "jewelry",
+                "price": 150,
+                "description": "These stunning pearl drop earrings feature a single high-quality pearl suspended from a delicate silver hook. The elegant design makes them suitable for weddings, parties, or other special occasions.",
+                "image": "https://via.placeholder.com/500?text=Pearl+Drop+Earrings",
+                "specifications": "Silver hook, Freshwater pearls, Drop design, Length: 2 inches.",
+                "reviews": ["Elegant and timeless.", "Perfect for formal events.", "Beautiful pearls."],
+                "brand": "Swarovski",
+                "rating": 5
+            },
+            {
+                "id": 60,
+                "name": "Silver Hoop Earrings",
+                "category": "jewelry",
+                "price": 75,
+                "description": "These classic silver hoop earrings are the perfect addition to any jewelry collection. With their simple, timeless design, they can be worn daily or for special occasions. The earrings are lightweight and comfortable for all-day wear.",
+                "image": "https://via.placeholder.com/500?text=Silver+Hoop+Earrings",
+                "specifications": "Sterling silver, Hoop design, 2-inch diameter, Lightweight and comfortable.",
+                "reviews": ["Great quality hoops.", "Perfect for everyday wear.", "Nice size and shape."],
+                "brand": "Zales",
+                "rating": 4
+            },
+            {
+                "id": 61,
+                "name": "Gold Plated Charm Bracelet",
+                "category": "jewelry",
+                "price": 85,
+                "description": "This trendy gold plated charm bracelet features several decorative charms that add a personal touch to the piece. The bracelet is adjustable and can be worn with casual or formal attire.",
+                "image": "https://via.placeholder.com/500?text=Gold+Plated+Charm+Bracelet",
+                "specifications": "Gold plated, Adjustable length, Charm design, Length: 7.5 inches.",
+                "reviews": ["Cute and customizable.", "Love the charm options.", "Great gift idea."],
+                "brand": "Kate Spade",
+                "rating": 4
+            },
+            {
+                "id": 62,
+                "name": "Platinum Wedding Band",
+                "category": "jewelry",
+                "price": 500,
+                "description": "This platinum wedding band features a classic, smooth design that will never go out of style. Made from durable platinum, it is perfect for everyday wear and symbolizes a lifetime commitment. Available in various sizes for a perfect fit.",
+                "image": "https://via.placeholder.com/500?text=Platinum+Wedding+Band",
+                "specifications": "Platinum, Classic design, Available in sizes 6-12, Width: 4mm.",
+                "reviews": ["Beautiful and timeless.", "Perfect for a wedding band.", "Comfortable to wear."],
+                "brand": "Bvlgari",
+                "rating": 5
+            },
+            {
+                "id": 63,
+                "name": "Crystal Choker Necklace",
+                "category": "jewelry",
+                "price": 95,
+                "description": "This stunning crystal choker necklace is adorned with sparkling crystals that catch the light beautifully. It features an adjustable chain and is designed to add a touch of glamour to any outfit, perfect for evening events or parties.",
+                "image": "https://via.placeholder.com/500?text=Crystal+Choker+Necklace",
+                "specifications": "Crystal embellishments, Adjustable chain, Choker design, Length: 14 inches.",
+                "reviews": ["Gorgeous and eye-catching.", "Perfect for a night out.", "Adds sparkle to any outfit."],
+                "brand": "Swarovski",
+                "rating": 4
+            },
+
+            
+              
+             
+                {
+                    "id": 64,
+                    "name": "Noise Cancelling Headphones - Bose 700",
+                    "category": "electronics",
+                    "price": 380,
+                    "description": "Bose 700 Noise Cancelling Headphones offer exceptional sound quality with industry-leading noise cancellation technology. Comfortable and sleek, they provide up to 20 hours of battery life and include Alexa and Google Assistant integration for easy voice control.",
+                    "image": "https://via.placeholder.com/500?text=Bose+700+Headphones",
+                    "specifications": "Noise cancellation, 20 hours battery life, Alexa/Google Assistant integration, Bluetooth 5.0.",
+                    "reviews": ["Best noise cancellation.", "Incredibly comfortable.", "Perfect for travel."],
+                    "brand": "Bose",
+                    "rating": 5
+                },
+                {
+                    "id": 65,
+                    "name": "Noise Cancelling Headphones - Bose 700",
+                    "category": "electronics",
+                    "price": 380,
+                    "description": "Bose 700 Noise Cancelling Headphones offer exceptional sound quality with industry-leading noise cancellation technology. Comfortable and sleek, they provide up to 20 hours of battery life and include Alexa and Google Assistant integration for easy voice control.",
+                    "image": "https://via.placeholder.com/500?text=Bose+700+Headphones",
+                    "specifications": "Noise cancellation, 20 hours battery life, Alexa/Google Assistant integration, Bluetooth 5.0.",
+                    "reviews": ["Best noise cancellation.", "Incredibly comfortable.", "Perfect for travel."],
+                    "brand": "Bose",
+                    "rating": 5
+                },
+                {
+                    "id": 66,
+                    "name": "Noise Cancelling Headphones - Bose 700",
+                    "category": "electronics",
+                    "price": 380,
+                    "description": "Bose 700 Noise Cancelling Headphones offer exceptional sound quality with industry-leading noise cancellation technology. Comfortable and sleek, they provide up to 20 hours of battery life and include Alexa and Google Assistant integration for easy voice control.",
+                    "image": "https://via.placeholder.com/500?text=Bose+700+Headphones",
+                    "specifications": "Noise cancellation, 20 hours battery life, Alexa/Google Assistant integration, Bluetooth 5.0.",
+                    "reviews": ["Best noise cancellation.", "Incredibly comfortable.", "Perfect for travel."],
+                    "brand": "Bose",
+                    "rating": 5
+                },
+               
+                {
+                    "id": 67,
+                    "name": "Bluetooth Speaker - JBL Charge 4",
+                    "category": "electronics",
+                    "price": 130,
+                    "description": "The JBL Charge 4 portable Bluetooth speaker delivers powerful sound with deep bass. With up to 20 hours of playtime and a waterproof design, it’s perfect for outdoor activities and parties. The built-in power bank also lets you charge your devices on the go.",
+                    "image": "https://via.placeholder.com/500?text=JBL+Charge+4+Speaker",
+                    "specifications": "Bluetooth 4.2, 20 hours playtime, Waterproof, 2x JBL bass radiators.",
+                    "reviews": ["Great sound quality.", "Perfect for outdoor use.", "Long-lasting battery."],
+                    "brand": "JBL",
+                    "rating": 4.5
+                },
+                {
+                    "id": 68,
+                    "name": "Bluetooth Speaker - JBL Charge 4",
+                    "category": "electronics",
+                    "price": 130,
+                    "description": "The JBL Charge 4 portable Bluetooth speaker delivers powerful sound with deep bass. With up to 20 hours of playtime and a waterproof design, it’s perfect for outdoor activities and parties. The built-in power bank also lets you charge your devices on the go.",
+                    "image": "https://via.placeholder.com/500?text=JBL+Charge+4+Speaker",
+                    "specifications": "Bluetooth 4.2, 20 hours playtime, Waterproof, 2x JBL bass radiators.",
+                    "reviews": ["Great sound quality.", "Perfect for outdoor use.", "Long-lasting battery."],
+                    "brand": "JBL",
+                    "rating": 4.5
+                },
+                {
+                    "id": 79,
+                    "name": "Smartwatch - Garmin Forerunner 245",
+                    "category": "electronics",
+                    "price": 300,
+                    "description": "The Garmin Forerunner 245 is a feature-packed smartwatch with GPS tracking, heart rate monitoring, and advanced running dynamics. Ideal for athletes, it provides insights into your fitness and performance while offering up to 7 days of battery life.",
+                    "image": "https://via.placeholder.com/500?text=Garmin+Forerunner+245",
+                    "specifications": "GPS tracking, Heart rate monitor, 7-day battery life, Advanced running metrics.",
+                    "reviews": ["Great for runners.", "Accurate tracking.", "Long battery life."],
+                    "brand": "Garmin",
+                    "rating": 4
+                },
+                {
+                    "id": 70,
+                    "name": "Wireless Earbuds - Apple AirPods Pro",
+                    "category": "electronics",
+                    "price": 250,
+                    "description": "Apple AirPods Pro provide high-quality sound with active noise cancellation and a comfortable, secure fit. These earbuds are sweat and water-resistant, making them perfect for workouts or outdoor activities. With a compact charging case, they offer great portability.",
+                    "image": "https://via.placeholder.com/500?text=Apple+AirPods+Pro",
+                    "specifications": "Active noise cancellation, 4.5 hours battery, Sweat/water-resistant, Wireless charging case.",
+                    "reviews": ["Amazing sound quality.", "Perfect for the gym.", "Noise cancellation is great."],
+                    "brand": "Apple",
+                    "rating": 5
+                },
+                {
+                    "id": 71,
+                    "name": "Robot Vacuum - iRobot Roomba 675",
+                    "category": "electronics",
+                    "price": 250,
+                    "description": "The iRobot Roomba 675 is a smart robot vacuum that offers powerful suction and efficient cleaning. It can be controlled via an app or voice assistant, and is ideal for homes with pets or high-traffic areas. It includes a self-charging feature and is designed to clean multiple floor types.",
+                    "image": "https://via.placeholder.com/500?text=iRobot+Roomba+675",
+                    "specifications": "Wi-Fi connectivity, Self-charging, Suction power: 3X more, Works on multiple floor types.",
+                    "reviews": ["Very efficient.", "Great for pet hair.", "Easy to use and set up."],
+                    "brand": "iRobot",
+                    "rating": 4
+                },
+                {
+                    "id": 72,
+                    "name": "Portable Power Bank - Anker PowerCore 10000",
+                    "category": "electronics",
+                    "price": 40,
+                    "description": "The Anker PowerCore 10000 is a compact and powerful portable charger that provides fast charging for smartphones, tablets, and other devices. With its high capacity and small size, it’s perfect for travelers and people on the go.",
+                    "image": "https://via.placeholder.com/500?text=Anker+PowerCore+10000",
+                    "specifications": "10,000mAh capacity, Fast charging, Compact design, Dual USB ports.",
+                    "reviews": ["Great capacity.", "Charges devices quickly.", "Perfect for travel."],
+                    "brand": "Anker",
+                    "rating": 4.5
+                },
+
+                
+                    {
+                        "id": 73,
+                        "name": "Kids' Toy Train Set",
+                        "category": "kids",
+                        "price": 45,
+                        "description": "This colorful toy train set is perfect for kids who love to build and play. With multiple pieces to create tracks and a working engine, it provides hours of fun and stimulates creativity and problem-solving skills.",
+                        "image": "https://via.placeholder.com/500?text=Kids+Toy+Train+Set",
+                        "specifications": "Includes 50+ pieces, Electric engine, Easy to assemble.",
+                        "reviews": ["Great for little builders.", "My kid loves it.", "Good quality and fun."],
+                        "brand": "ToyWorld",
+                        "rating": 4.5
+                    },
+                    {
+                        "id": 74,
+                        "name": "Kids' Bicycle - Razor",
+                        "category": "kids",
+                        "price": 120,
+                        "description": "The Razor Kids' Bicycle is perfect for children learning to ride. With durable tires, a sturdy frame, and adjustable handlebars, it's designed for safety and comfort. Available in a variety of colors.",
+                        "image": "https://via.placeholder.com/500?text=Kids+Bicycle+Razor",
+                        "specifications": "18-inch wheels, Adjustable handlebars, Lightweight frame.",
+                        "reviews": ["Sturdy and safe.", "Easy for my child to ride.", "Love the color options."],
+                        "brand": "Razor",
+                        "rating": 4.5
+                    },
+                    {
+                        "id": 75,
+                        "name": "Kids' Play Kitchen Set",
+                        "category": "kids",
+                        "price": 65,
+                        "description": "This interactive kids' play kitchen set includes realistic kitchen tools, pots, pans, and play food. Perfect for imaginative play, it helps children develop motor skills, creativity, and social skills while having fun.",
+                        "image": "https://via.placeholder.com/500?text=Kids+Play+Kitchen+Set",
+                        "specifications": "Includes pots, pans, utensils, and play food, BPA-free plastic, Easy to clean.",
+                        "reviews": ["My daughter loves this set.", "Great for imaginative play.", "Durable and fun."],
+                        "brand": "LittleChef",
+                        "rating": 4.5
+                    },
+                    {
+                        "id": 76,
+                        "name": "Kids' Soccer Ball - Nike",
+                        "category": "kids",
+                        "price": 30,
+                        "description": "The Nike Kids' Soccer Ball is perfect for young athletes. Designed with durable stitching and vibrant colors, it provides excellent performance for training and casual play.",
+                        "image": "https://via.placeholder.com/500?text=Kids+Soccer+Ball+Nike",
+                        "specifications": "Size 3, Durable synthetic leather, Vibrant colors.",
+                        "reviews": ["Perfect for my 7-year-old.", "Great quality for the price.", "Ideal for learning soccer."],
+                        "brand": "Nike",
+                        "rating": 4
+                    },
+                    {
+                        "id": 77,
+                        "name": "Kids' Puzzle - 100 Pieces",
+                        "category": "kids",
+                        "price": 18,
+                        "description": "This 100-piece puzzle is a great way for kids to improve their problem-solving skills while having fun. The puzzle features bright, colorful illustrations and is made from durable cardboard.",
+                        "image": "https://via.placeholder.com/500?text=Kids+Puzzle+100+Pieces",
+                        "specifications": "100 pieces, Durable cardboard, Vibrant illustrations.",
+                        "reviews": ["Great for my kid’s concentration.", "Fun and challenging.", "Perfect size for little hands."],
+                        "brand": "PuzzleMania",
+                        "rating": 4.5
+                    },
+                    {
+                        "id": 78,
+                        "name": "Kids' Dress - Minnie Mouse",
+                        "category": "kids",
+                        "price": 25,
+                        "description": "This cute Minnie Mouse dress is perfect for little ones. Made from soft cotton, it’s comfortable and features adorable prints of Minnie Mouse, making it ideal for everyday wear or special occasions.",
+                        "image": "https://via.placeholder.com/500?text=Kids+Dress+Minnie+Mouse",
+                        "specifications": "Soft cotton fabric, Disney design, Available in sizes 2-6 years.",
+                        "reviews": ["My daughter loves it.", "So cute and comfy.", "Perfect for a Minnie Mouse fan."],
+                        "brand": "Disney",
+                        "rating": 5
+                    },
+                    {
+                        "id": 79,
+                        "name": "Kids' Backpack - Spiderman",
+                        "category": "kids",
+                        "price": 20,
+                        "description": "This Spiderman-themed backpack is perfect for young students. It features adjustable straps, multiple compartments, and a durable design, making it both stylish and practical for carrying books and school supplies.",
+                        "image": "https://via.placeholder.com/500?text=Kids+Backpack+Spiderman",
+                        "specifications": "Adjustable straps, Multiple compartments, Durable fabric.",
+                        "reviews": ["Perfect for school.", "My son loves the Spiderman design.", "Sturdy and practical."],
+                        "brand": "Marvel",
+                        "rating": 4.5
+                    },
+                    {
+                        "id": 80,
+                        "name": "Kids' Shoes - Converse Chuck Taylor",
+                        "category": "kids",
+                        "price": 35,
+                        "description": "These classic Converse Chuck Taylor sneakers are designed for kids. Featuring durable canvas, a comfortable fit, and a timeless style, they’re perfect for everyday wear.",
+                        "image": "https://via.placeholder.com/500?text=Kids+Shoes+Converse+Chuck+Taylor",
+                        "specifications": "Durable canvas, Rubber sole, Available in various colors.",
+                        "reviews": ["My son loves these shoes.", "Super comfortable.", "Stylish and durable."],
+                        "brand": "Converse",
+                        "rating": 4.5
+                    },
+                    {
+                        "id": 81,
+                        "name": "Kids' Art Set",
+                        "category": "kids",
+                        "price": 22,
+                        "description": "This complete kids' art set includes crayons, markers, colored pencils, paints, and brushes. Everything a young artist needs to create colorful masterpieces.",
+                        "image": "https://via.placeholder.com/500?text=Kids+Art+Set",
+                        "specifications": "Includes crayons, markers, colored pencils, and paints, Safe for children, Easy to clean.",
+                        "reviews": ["Great for creative minds.", "My child loves painting with it.", "Perfect for beginners."],
+                        "brand": "CreativeKids",
+                        "rating": 4.5
+                    },
+
+                    
+                        {
+                            "id": 82,
+                            "name": "Aloe Vera",
+                            "category": "plants",
+                            "price": 15,
+                            "description": "Aloe Vera is a popular succulent plant known for its soothing properties and easy-to-care-for nature. It thrives in bright, indirect light and requires minimal watering.",
+                            "image": "https://via.placeholder.com/500?text=Aloe+Vera",
+                            "specifications": "Indoor plant, low maintenance, needs bright, indirect light.",
+                            "reviews": ["Very easy to care for.", "Great for home decor.", "Healing properties."],
+                            "brand": "Nature's Best",
+                            "rating": 4.6
+                        },
+                        {
+                            "id": 83,
+                            "name": "Snake Plant",
+                            "category": "plants",
+                            "price": 20,
+                            "description": "The Snake Plant is an incredibly resilient and low-maintenance plant. It can tolerate a variety of light conditions and is known for improving air quality.",
+                            "image": "https://via.placeholder.com/500?text=Snake+Plant",
+                            "specifications": "Indoor plant, air-purifying, needs low to medium light.",
+                            "reviews": ["Perfect for beginners.", "Low maintenance.", "Great air purifier."],
+                            "brand": "Green Thumb",
+                            "rating": 4.8
+                        },
+                        {
+                            "id": 84,
+                            "name": "Peace Lily",
+                            "category": "plants",
+                            "price": 25,
+                            "description": "The Peace Lily is a beautiful indoor plant with glossy green leaves and white blooms. It's known for being easy to care for and has air-purifying properties.",
+                            "image": "https://via.placeholder.com/500?text=Peace+Lily",
+                            "specifications": "Indoor plant, blooms white flowers, requires medium light.",
+                            "reviews": ["Lovely plant.", "Adds a touch of elegance.", "Great for offices."],
+                            "brand": "Floral Essence",
+                            "rating": 4.7
+                        },
+                        {
+                            "id": 85,
+                            "name": "Fiddle Leaf Fig",
+                            "category": "plants",
+                            "price": 50,
+                            "description": "The Fiddle Leaf Fig is a popular indoor plant known for its large, violin-shaped leaves. It adds a tropical feel to any room and needs a bright spot with occasional watering.",
+                            "image": "https://via.placeholder.com/500?text=Fiddle+Leaf+Fig",
+                            "specifications": "Indoor plant, requires bright light, large leaves.",
+                            "reviews": ["Stylish plant.", "Great statement piece.", "Needs bright light."],
+                            "brand": "Urban Jungle",
+                            "rating": 4.4
+                        },
+                        {
+                            "id": 86,
+                            "name": "Spider Plant",
+                            "category": "plants",
+                            "price": 10,
+                            "description": "Spider Plants are great for hanging baskets or pots. They’re low-maintenance and propagate easily. They grow well in indirect sunlight and are perfect for beginners.",
+                            "image": "https://via.placeholder.com/500?text=Spider+Plant",
+                            "specifications": "Indoor plant, needs indirect light, easy to propagate.",
+                            "reviews": ["Super easy to care for.", "Perfect for beginners.", "Looks great hanging."],
+                            "brand": "Leaf & Vine",
+                            "rating": 4.6
+                        },
+                        {
+                            "id": 87,
+                            "name": "Cactus",
+                            "category": "plants",
+                            "price": 12,
+                            "description": "Cacti are resilient plants that thrive in dry, hot conditions. They require minimal watering and are perfect for sunny spots or windowsills.",
+                            "image": "https://via.placeholder.com/500?text=Cactus",
+                            "specifications": "Succulent, needs direct sunlight, very low maintenance.",
+                            "reviews": ["Low maintenance.", "Great for sunny windowsills.", "Fun to collect."],
+                            "brand": "Desert Oasis",
+                            "rating": 4.5
+                        },
+                        {
+                            "id": 88,
+                            "name": "Pothos",
+                            "category": "plants",
+                            "price": 18,
+                            "description": "Pothos is a popular trailing plant known for its heart-shaped leaves. It thrives in low light and can grow long vines, making it a perfect hanging or climbing plant.",
+                            "image": "https://via.placeholder.com/500?text=Pothos",
+                            "specifications": "Indoor plant, needs low light, easy to propagate.",
+                            "reviews": ["Great for hanging baskets.", "Low maintenance.", "Fast-growing vines."],
+                            "brand": "Lush Green",
+                            "rating": 4.7
+                        },
+                        {
+                            "id": 89,
+                            "name": "Succulent Mix",
+                            "category": "plants",
+                            "price": 30,
+                            "description": "A collection of various succulents that are perfect for adding texture and color to any room. These plants require minimal watering and thrive in bright, indirect light.",
+                            "image": "https://via.placeholder.com/500?text=Succulent+Mix",
+                            "specifications": "Assorted succulents, needs bright light, low maintenance.",
+                            "reviews": ["Great variety.", "Easy to care for.", "Perfect for small spaces."],
+                            "brand": "Succulent World",
+                            "rating": 4.6
+                        },
+                        {
+                            "id": 90,
+                            "name": "Dracaena",
+                            "category": "plants",
+                            "price": 35,
+                            "description": "The Dracaena is a versatile houseplant known for its spiky leaves and upright growth. It's a perfect addition to any room and needs medium to bright light with minimal watering.",
+                            "image": "https://via.placeholder.com/500?text=Dracaena",
+                            "specifications": "Indoor plant, needs medium to bright light, upright growth.",
+                            "reviews": ["Elegant and stylish.", "Great for corners.", "Low maintenance."],
+                            "brand": "Green Oasis",
+                            "rating": 4.5
+                        }
+                    
+                    
+                
+                
+            
+            
+
+            
+              
+
+
+            
+]

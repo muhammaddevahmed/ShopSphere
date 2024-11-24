@@ -113,3 +113,21 @@ updateTimer();
     document.getElementById('defaultFlagImg').alt = `${countryName} Flag`; // Update alt text
     document.getElementById('defaultCountryName').textContent = countryName; // Update country name
 }
+
+ // Automatic slider functionality
+ const slides = document.querySelectorAll(".slider-item");
+ let currentIndex = 0;
+
+ function showNextSlide() {
+     // Remove the active class from the current slide
+     slides[currentIndex].classList.remove("active");
+
+     // Update the index to the next slide
+     currentIndex = (currentIndex + 1) % slides.length;
+
+     // Add the active class to the next slide
+     slides[currentIndex].classList.add("active");
+ }
+
+ // Automatically switch slides every 3 seconds
+ setInterval(showNextSlide, 3000);
