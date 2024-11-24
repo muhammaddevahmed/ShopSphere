@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ShopSphere</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Fonts Link -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="assest/images/logoo.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopSphere</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts Link -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assest/images/logoo.png" type="image/x-icon">
 </head>
+
 <body class="bg-gray-200">
 
     <!-- Navbar start -->
@@ -17,7 +19,9 @@
         <div class="max-w-7xl mx-auto flex justify-between items-center flex-wrap">
             <!-- Logo and Name (Left-aligned, no shrinking) -->
             <div class="flex items-center flex-shrink-0">
-                <img src="assest/images/logoo.png" alt="Logo" class="h-14 mr-2">
+                <a href="index.html">
+                    <img src="assest/images/logoo.png" alt="Logo" class="h-14 mr-2">
+                </a>
                 <span class="text-white text-lg font-semibold">ShopSphere</span>
             </div>
 
@@ -42,7 +46,7 @@
 
             <!-- Right-side Links (Visible on desktop) -->
             <div class="hidden lg:flex items-center space-x-4">
-                <a href="#" class="text-white flex items-center space-x-2">
+                <a href="profile.html" class="text-white flex items-center space-x-2">
                     <i class="fas fa-user"></i>
                     <span>Profile</span>
                 </a>
@@ -62,227 +66,240 @@
         </div>
     </nav>
 
-        <!-- Mobile & Tablet Dropdown for Links (Initially Hidden) -->
-        <div id="mobile-menu" class="lg:hidden bg-blue-600 text-white p-4 hidden">
-            <div class="flex flex-col space-y-4">
-                <a href="#" class="flex items-center space-x-2">
-                    <i class="fas fa-user"></i>
-                    <span>Profile</span>
-                </a>
-                <a href="#" class="flex items-center space-x-2">
-                    <i class="fas fa-comment"></i>
-                    <span>Messages</span>
-                </a>
-                <a href="product.html" class="flex items-center space-x-2">
-                    <i class="fas fa-box"></i>
-                    <span>Products</span>
-                </a>
-                <a href="cart.html" class="flex items-center space-x-2">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span>Cart</span>
-                </a>
-            </div>
+    <!-- Mobile & Tablet Dropdown for Links (Initially Hidden) -->
+    <div id="mobile-menu" class="lg:hidden bg-blue-600 text-white p-4 hidden">
+        <div class="flex flex-col space-y-4">
+            <a href="#" class="flex items-center space-x-2">
+                <i class="fas fa-user"></i>
+                <span>Profile</span>
+            </a>
+            <a href="#" class="flex items-center space-x-2">
+                <i class="fas fa-comment"></i>
+                <span>Messages</span>
+            </a>
+            <a href="product.html" class="flex items-center space-x-2">
+                <i class="fas fa-box"></i>
+                <span>Products</span>
+            </a>
+            <a href="cart.html" class="flex items-center space-x-2">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Cart</span>
+            </a>
         </div>
+    </div>
     </nav>
-<div class=" flex items-center justify-center min-h-screen">
-  <div  class="w-full max-w-md bg-white shadow-lg rounded-lg p-6 ">
-    <h2 class="text-3xl font-bold text-center text-indigo-600 mb-4">Create Account</h2>
-    <form id="signupForm" class="space-y-4">
-      <div>
-        <label class="block text-gray-700 font-semibold mb-2">Username</label>
-        <input id="username" type="text" placeholder="Enter username" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" required>
-        <p id="usernameError" class="text-red-500 text-sm hidden">Username must be less than 14 characters.</p>
-      </div>
-      <div>
-        <label class="block text-gray-700 font-semibold mb-2">Email</label>
-        <input id="email" type="email" placeholder="Enter email" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" required>
-        <p id="emailError" class="text-red-500 text-sm hidden">Invalid or duplicate email.</p>
-      </div>
-      <div>
-        <label class="block text-gray-700 font-semibold mb-2">Password</label>
-        <input id="password" type="password" placeholder="Enter password" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" required>
-        <p id="passwordError" class="text-red-500 text-sm hidden">Password must include letters, numbers, and special characters.</p>
-      </div>
-      <div>
-        <label class="block text-gray-700 font-semibold mb-2">Confirm Password</label>
-        <input id="confirmPassword" type="password" placeholder="Confirm password" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" required>
-        <p id="confirmPasswordError" class="text-red-500 text-sm hidden">Passwords do not match.</p>
-      </div>
-      <div>
-        <label class="block text-gray-700 font-semibold mb-2">Role</label>
-        <select id="role" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400" required>
-          <option value="">Select Role</option>
-          <option value="admin">Admin</option>
-          <option value="user">User</option>
-        </select>
-      </div>
-      <button type="submit" class="w-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white py-2 rounded-lg hover:opacity-90">Signup</button>
-    </form>
-    <p class="text-center text-gray-600 mt-4">
-      Already have an account? <a href="login.html" class="text-indigo-500 font-semibold">Login</a>
-    </p>
-  </div>
-</div>
+    <div class=" flex items-center justify-center min-h-screen">
+        <div class="w-full max-w-md bg-white shadow-lg rounded-lg p-6 ">
+            <h2 class="text-3xl font-bold text-center text-indigo-600 mb-4">Create Account</h2>
+            <form id="signupForm" class="space-y-4">
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-2">Username</label>
+                    <input id="username" type="text" placeholder="Enter username"
+                        class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                        required>
+                    <p id="usernameError" class="text-red-500 text-sm hidden">Username must be less than 14 characters.
+                    </p>
+                </div>
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-2">Email</label>
+                    <input id="email" type="email" placeholder="Enter email"
+                        class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                        required>
+                    <p id="emailError" class="text-red-500 text-sm hidden">Invalid or duplicate email.</p>
+                </div>
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-2">Password</label>
+                    <input id="password" type="password" placeholder="Enter password"
+                        class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                        required>
+                    <p id="passwordError" class="text-red-500 text-sm hidden">Password must include letters, numbers,
+                        and special characters.</p>
+                </div>
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-2">Confirm Password</label>
+                    <input id="confirmPassword" type="password" placeholder="Confirm password"
+                        class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                        required>
+                    <p id="confirmPasswordError" class="text-red-500 text-sm hidden">Passwords do not match.</p>
+                </div>
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-2">Role</label>
+                    <select id="role"
+                        class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                        required>
+                        <option value="">Select Role</option>
+                        <option value="admin">Admin</option>
+                        <option value="user">User</option>
+                    </select>
+                </div>
+                <button type="submit"
+                    class="w-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white py-2 rounded-lg hover:opacity-90">Signup</button>
+            </form>
+            <p class="text-center text-gray-600 mt-4">
+                Already have an account? <a href="login.html" class="text-indigo-500 font-semibold">Login</a>
+            </p>
+        </div>
+    </div>
 
-   <!-- Footer Start -->
+    <!-- Footer Start -->
 
-   <footer class="bg-gray-200 py-12 ">
-    <div class="container mx-auto flex flex-wrap lg:flex-nowrap justify-between items-start ml-4">
+    <footer class="bg-gray-200 py-12 ">
+        <div class="container mx-auto flex flex-wrap lg:flex-nowrap justify-between items-start ml-4">
 
-        <!-- Logo and Description Section -->
+            <!-- Logo and Description Section -->
 
-        <div class="w-full lg:w-1/4 mb-8 lg:mb-0">
-            <div class="flex items-center mb-4">
+            <div class="w-full lg:w-1/4 mb-8 lg:mb-0">
+                <div class="flex items-center mb-4">
 
-                <!-- Logo -->
+                    <!-- Logo -->
 
-                <img src="assest/images/logoo.png" alt="Logo" class="w-12 h-12 mr-3">
+                    <img src="assest/images/logoo.png" alt="Logo" class="w-12 h-12 mr-3">
 
-                <!-- Company Name -->
+                    <!-- Company Name -->
 
-                <span class="text-xl font-semibold">ShopSphere</span>
+                    <span class="text-xl font-semibold">ShopSphere</span>
+                </div>
+                <p class="text-gray-600 mb-4">Your go-to platform for reliable suppliers <br> worldwide.</p>
+
+                <!-- Social Media Icons -->
+
+                <div class="flex space-x-4 mt-4">
+                    <a href="#" aria-label="Facebook" class="text-gray-600 hover:text-blue-600">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" aria-label="Twitter" class="text-gray-600 hover:text-blue-400">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" aria-label="LinkedIn" class="text-gray-600 hover:text-blue-700">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" aria-label="Instagram" class="text-gray-600 hover:text-pink-500">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" aria-label="YouTube" class="text-gray-600 hover:text-red-600">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
             </div>
-            <p class="text-gray-600 mb-4">Your go-to platform for reliable suppliers <br> worldwide.</p>
 
-            <!-- Social Media Icons -->
+            <!-- Links Section -->
 
-            <div class="flex space-x-4 mt-4">
-                <a href="#" aria-label="Facebook" class="text-gray-600 hover:text-blue-600">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="#" aria-label="Twitter" class="text-gray-600 hover:text-blue-400">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#" aria-label="LinkedIn" class="text-gray-600 hover:text-blue-700">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="#" aria-label="Instagram" class="text-gray-600 hover:text-pink-500">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" aria-label="YouTube" class="text-gray-600 hover:text-red-600">
-                    <i class="fab fa-youtube"></i>
-                </a>
+            <div class="w-full lg:w-2/4 grid grid-cols-2 sm:grid-cols-4 gap-8">
+
+                <!-- About Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">About</h4>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><a href="#" class="hover:text-gray-800">Our Story</a></li>
+                        <li><a href="#" class="hover:text-gray-800">Mission</a></li>
+                        <li><a href="#" class="hover:text-gray-800">Team</a></li>
+                        <li><a href="#" class="hover:text-gray-800">Careers</a></li>
+                    </ul>
+                </div>
+
+                <!-- Partnership Links -->
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Partnership</h4>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><a href="#" class="hover:text-gray-800">Become a Partner</a></li>
+                        <li><a href="#" class="hover:text-gray-800">Supplier Portal</a></li>
+                        <li><a href="#" class="hover:text-gray-800">Advertise</a></li>
+                        <li><a href="#" class="hover:text-gray-800">Affiliate Program</a></li>
+                    </ul>
+                </div>
+
+                <!-- Information Links -->
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Information</h4>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><a href="#" class="hover:text-gray-800">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-gray-800">Terms & Conditions</a></li>
+                        <li><a href="#" class="hover:text-gray-800">Help Center</a></li>
+                        <li><a href="#" class="hover:text-gray-800">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- For Users Links -->
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">For Users</h4>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><a href="#" class="hover:text-gray-800">User Guide</a></li>
+                        <li><a href="#" class="hover:text-gray-800">FAQs</a></li>
+                        <li><a href="#" class="hover:text-gray-800">Community</a></li>
+                        <li><a href="#" class="hover:text-gray-800">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Get the App Section -->
+
+            <div class="w-full lg:w-1/4 mt-8 lg:mt-0 flex flex-col items-center lg:items-start">
+                <h4 class="text-lg font-semibold mb-4">Get the App</h4>
+                <div class="flex space-x-4 ">
+
+                    <!-- Play Store Icon -->
+
+                    <a href="#" class="bg-black text-white px-4 py-2 rounded-lg flex items-center">
+                        <i class="fab fa-google-play text-lg mr-2"></i>
+                        Play Store
+                    </a>
+
+                    <!-- App Store Icon -->
+
+                    <a href="#" class="bg-black text-white px-4 py-2 rounded-lg flex items-center">
+                        <i class="fab fa-apple text-lg mr-2"></i>
+                        App Store
+                    </a>
+                </div>
             </div>
         </div>
+    </footer>
 
-        <!-- Links Section -->
+    <!-- Footer end -->
 
-        <div class="w-full lg:w-2/4 grid grid-cols-2 sm:grid-cols-4 gap-8">
+    <!-- Footer Bottom Section -->
 
-            <!-- About Links -->
-            <div>
-                <h4 class="text-lg font-semibold mb-4">About</h4>
-                <ul class="space-y-2 text-gray-600">
-                    <li><a href="#" class="hover:text-gray-800">Our Story</a></li>
-                    <li><a href="#" class="hover:text-gray-800">Mission</a></li>
-                    <li><a href="#" class="hover:text-gray-800">Team</a></li>
-                    <li><a href="#" class="hover:text-gray-800">Careers</a></li>
-                </ul>
+    <div class="bg-gray-600 py-4">
+        <div class="container mx-auto flex justify-between items-center text-white text-sm max-w-screen-md">
+
+            <!-- Copyright Text, Slightly Centered -->
+
+            <div class="text-left ml-4">
+                &copy; 2023 Ecommerce
             </div>
 
-            <!-- Partnership Links -->
+            <!-- Language and Flag Selector, Slightly Centered -->
 
-            <div>
-                <h4 class="text-lg font-semibold mb-4">Partnership</h4>
-                <ul class="space-y-2 text-gray-600">
-                    <li><a href="#" class="hover:text-gray-800">Become a Partner</a></li>
-                    <li><a href="#" class="hover:text-gray-800">Supplier Portal</a></li>
-                    <li><a href="#" class="hover:text-gray-800">Advertise</a></li>
-                    <li><a href="#" class="hover:text-gray-800">Affiliate Program</a></li>
-                </ul>
-            </div>
+            <div class="flex items-center space-x-2 mr-4">
 
-            <!-- Information Links -->
 
-            <div>
-                <h4 class="text-lg font-semibold mb-4">Information</h4>
-                <ul class="space-y-2 text-gray-600">
-                    <li><a href="#" class="hover:text-gray-800">Privacy Policy</a></li>
-                    <li><a href="#" class="hover:text-gray-800">Terms & Conditions</a></li>
-                    <li><a href="#" class="hover:text-gray-800">Help Center</a></li>
-                    <li><a href="#" class="hover:text-gray-800">Contact Us</a></li>
-                </ul>
-            </div>
+                <!-- Flag Display (Initially US Flag) -->
 
-            <!-- For Users Links -->
+                <img id="language-flag" src="https://flagcdn.com/w20/us.png" alt="US Flag"
+                    class="w-6 h-4 object-cover rounded-sm">
 
-            <div>
-                <h4 class="text-lg font-semibold mb-4">For Users</h4>
-                <ul class="space-y-2 text-gray-600">
-                    <li><a href="#" class="hover:text-gray-800">User Guide</a></li>
-                    <li><a href="#" class="hover:text-gray-800">FAQs</a></li>
-                    <li><a href="#" class="hover:text-gray-800">Community</a></li>
-                    <li><a href="#" class="hover:text-gray-800">Support</a></li>
-                </ul>
-            </div>
-        </div>
+                <!-- Language Dropdown -->
 
-        <!-- Get the App Section -->
-
-        <div class="w-full lg:w-1/4 mt-8 lg:mt-0 flex flex-col items-center lg:items-start">
-            <h4 class="text-lg font-semibold mb-4">Get the App</h4>
-            <div class="flex space-x-4 ">
-
-                <!-- Play Store Icon -->
-
-                <a href="#" class="bg-black text-white px-4 py-2 rounded-lg flex items-center">
-                    <i class="fab fa-google-play text-lg mr-2"></i>
-                    Play Store
-                </a>
-
-                <!-- App Store Icon -->
-
-                <a href="#" class="bg-black text-white px-4 py-2 rounded-lg flex items-center">
-                    <i class="fab fa-apple text-lg mr-2"></i>
-                    App Store
-                </a>
+                <select id="language-selector" class="bg-gray-700 text-white border-none focus:outline-none p-1 rounded"
+                    onchange="updateFlag()">
+                    <option value="en" selected>English</option>
+                    <option value="fr">French</option>
+                    <option value="es">Spanish</option>
+                    <option value="de">German</option>
+                </select>
             </div>
         </div>
     </div>
-</footer>
-
-<!-- Footer end -->
-
-<!-- Footer Bottom Section -->
-
-<div class="bg-gray-600 py-4">
-    <div class="container mx-auto flex justify-between items-center text-white text-sm max-w-screen-md">
-
-        <!-- Copyright Text, Slightly Centered -->
-
-        <div class="text-left ml-4">
-            &copy; 2023 Ecommerce
-        </div>
-
-        <!-- Language and Flag Selector, Slightly Centered -->
-
-        <div class="flex items-center space-x-2 mr-4">
 
 
-            <!-- Flag Display (Initially US Flag) -->
 
-            <img id="language-flag" src="https://flagcdn.com/w20/us.png" alt="US Flag"
-                class="w-6 h-4 object-cover rounded-sm">
-
-            <!-- Language Dropdown -->
-
-            <select id="language-selector" class="bg-gray-700 text-white border-none focus:outline-none p-1 rounded"
-                onchange="updateFlag()">
-                <option value="en" selected>English</option>
-                <option value="fr">French</option>
-                <option value="es">Spanish</option>
-                <option value="de">German</option>
-            </select>
-        </div>
-    </div>
-</div>
-
-
-  
 
 </body>
-  <script src="assest/src/app.js"></script>
-  <script src="assest/src/script.js"></script>
+<script src="assest/src/app.js"></script>
+<script src="assest/src/script.js"></script>
 </body>
+
 </html>
-
