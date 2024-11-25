@@ -53,6 +53,19 @@
         .sidebar label {
             display: block;
             margin-bottom: 5px;
+
+        }
+
+        .product-card img {
+            height: 300px;
+            object-fit: cover;
+            width: 100%;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card img:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -98,7 +111,7 @@
                     <i class="fas fa-user"></i>
                     <span>Profile</span>
                 </a>
-                <a href="#" class="text-white flex items-center space-x-2">
+                <a href="message.html" class="text-white flex items-center space-x-2">
                     <i class="fas fa-comment"></i>
                     <span>Messages</span>
                 </a>
@@ -120,7 +133,7 @@
                     <i class="fas fa-user"></i>
                     <span>Profile</span>
                 </a>
-                <a href="#" class="flex items-center space-x-2">
+                <a href="message.html" class="flex items-center space-x-2">
                     <i class="fas fa-comment"></i>
                     <span>Messages</span>
                 </a>

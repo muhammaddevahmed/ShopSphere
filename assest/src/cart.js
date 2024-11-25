@@ -1,22 +1,28 @@
-window.onload = function() {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+window.onload = function () {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Function to check if user is logged in
+    function isUserLoggedIn() {
+        const loginUsers = JSON.parse(localStorage.getItem("loginUsers")) || [];
+        return loginUsers.length > 0; // Return true if there's at least one logged-in user
+    }
 
     // Function to update the cart display
     function updateCartDisplay() {
-        const cartItemsDiv = document.getElementById('cartItems');
-        const cartTotalDiv = document.getElementById('cartTotal');
-        const buyNowMessageDiv = document.getElementById('buyNowMessage');
-        
-        cartItemsDiv.innerHTML = '';  // Clear cart items before repopulating
+        const cartItemsDiv = document.getElementById("cartItems");
+        const cartTotalDiv = document.getElementById("cartTotal");
+        const buyNowMessageDiv = document.getElementById("buyNowMessage");
+
+        cartItemsDiv.innerHTML = ""; // Clear cart items before repopulating
         if (cart.length === 0) {
-            cartItemsDiv.innerHTML = '<p>Your cart is empty.</p>';
-            cartTotalDiv.textContent = '';
-            buyNowMessageDiv.classList.add('hidden');
+            cartItemsDiv.innerHTML = "<p>Your cart is empty.</p>";
+            cartTotalDiv.textContent = "";
+            buyNowMessageDiv.classList.add("hidden");
         } else {
             let total = 0;
             cart.forEach((item, index) => {
-                const itemDiv = document.createElement('div');
-                itemDiv.classList.add('flex', 'border-b', 'pb-4');
+                const itemDiv = document.createElement("div");
+                itemDiv.classList.add("flex", "border-b", "pb-4");
                 itemDiv.innerHTML = `
                     <img src="${item.image}" class="w-32 h-32 object-cover mr-4" alt="${item.name}">
                     <div>
@@ -30,19 +36,19 @@ window.onload = function() {
                 cartItemsDiv.appendChild(itemDiv);
 
                 // Add event listener for delete button
-                itemDiv.querySelector('.delete-btn').addEventListener('click', function() {
-                    cart.splice(index, 1);  // Remove the item from the cart array
-                    localStorage.setItem('cart', JSON.stringify(cart));  // Save the updated cart to localStorage
-                    updateCartDisplay();  // Refresh the display
+                itemDiv.querySelector(".delete-btn").addEventListener("click", function () {
+                    cart.splice(index, 1); // Remove the item from the cart array
+                    localStorage.setItem("cart", JSON.stringify(cart)); // Save the updated cart to localStorage
+                    updateCartDisplay(); // Refresh the display
                 });
 
                 // Add event listener for quantity input change
-                itemDiv.querySelector('.quantity-input').addEventListener('input', function() {
+                itemDiv.querySelector(".quantity-input").addEventListener("input", function () {
                     const newQuantity = parseInt(this.value);
                     if (newQuantity > 0) {
-                        cart[index].quantity = newQuantity;  // Update quantity in the cart array
-                        localStorage.setItem('cart', JSON.stringify(cart));  // Save updated cart
-                        updateCartDisplay();  // Refresh display
+                        cart[index].quantity = newQuantity; // Update quantity in the cart array
+                        localStorage.setItem("cart", JSON.stringify(cart)); // Save updated cart
+                        updateCartDisplay(); // Refresh display
                     }
                 });
 
@@ -52,36 +58,41 @@ window.onload = function() {
 
             // Display the total price
             cartTotalDiv.textContent = `Total: $${total.toFixed(2)}`;
-            buyNowMessageDiv.classList.add('hidden');  // Hide the message initially
+            buyNowMessageDiv.classList.add("hidden"); // Hide the message initially
         }
     }
 
     // Event listener for "Buy Now" button
-    const buyNowButton = document.getElementById('buyNowButton');
-    buyNowButton.addEventListener('click', function() {
-        const cartTotalDiv = document.getElementById('cartTotal');
-        const totalAmount = parseFloat(cartTotalDiv.textContent.replace('Total: $', '').trim());
+    const buyNowButton = document.getElementById("buyNowButton");
+    buyNowButton.addEventListener("click", function () {
+        const cartTotalDiv = document.getElementById("cartTotal");
+        const totalAmount = parseFloat(cartTotalDiv.textContent.replace("Total: $", "").trim());
+
+        if (!isUserLoggedIn()) {
+            alert("Please log in to proceed with your purchase.");
+            window.location.href = "login.html"; // Redirect to login page
+            return;
+        }
 
         // If the cart is empty, alert and do not proceed
         if (cart.length === 0) {
-            alert('Your cart is empty. Please add items to your cart before proceeding.');
+            alert("Your cart is empty. Please add items to your cart before proceeding.");
         } else if (totalAmount === 0) {
-            // If the total is 0, show alert
-            alert('Your cart is empty. Please add items to your cart before proceeding.');
+            alert("Your cart is empty. Please add items to your cart before proceeding.");
         } else {
             // Show the "Buy Now" message
-            const buyNowMessageDiv = document.getElementById('buyNowMessage');
-            buyNowMessageDiv.classList.remove('hidden');  // Show the message
+            const buyNowMessageDiv = document.getElementById("buyNowMessage");
+            buyNowMessageDiv.classList.remove("hidden"); // Show the message
             buyNowMessageDiv.textContent = `Total amount of $${totalAmount.toFixed(2)} has been deducted from your account. Thank you for your purchase!`;
             alert(buyNowMessageDiv.textContent);
 
             // Clear the cart after successful purchase
             cart = [];
-            localStorage.setItem('cart', JSON.stringify(cart));  // Clear cart from localStorage
-            updateCartDisplay();  // Refresh the cart display
+            localStorage.setItem("cart", JSON.stringify(cart)); // Clear cart from localStorage
+            updateCartDisplay(); // Refresh the cart display
         }
     });
 
     // Initial update of the cart display
     updateCartDisplay();
-}
+};

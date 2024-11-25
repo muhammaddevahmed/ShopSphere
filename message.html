@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ShopSphere</title>
+  <title>Message to Seller</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Fonts Link -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="assest/images/logoo.png" type="image/x-icon">
+     <!-- Fonts Link -->
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+     <!-- Favicon -->
+     <link rel="shortcut icon" href="assest/images/logoo.png" type="image/x-icon">
 </head>
-<body class="bg-gradient-to-b from-gray-200 to-gray-300 text-gray-800 ">
+<body class="bg-gray-300">
 
      <!-- Navbar start -->
      <nav class="bg-blue-600 p-4">
@@ -62,12 +62,11 @@
                 </a>
             </div>
         </div>
-    </nav>
 
         <!-- Mobile & Tablet Dropdown for Links (Initially Hidden) -->
         <div id="mobile-menu" class="lg:hidden bg-blue-600 text-white p-4 hidden">
             <div class="flex flex-col space-y-4">
-                <a href="#" class="flex items-center space-x-2">
+                <a href="profile.html" class="flex items-center space-x-2">
                     <i class="fas fa-user"></i>
                     <span>Profile</span>
                 </a>
@@ -85,30 +84,30 @@
                 </a>
             </div>
         </div>
- <div class="flex items-center justify-center min-h-screen">
-  <div class="w-full max-w-md bg-white shadow-lg rounded-lg p-6">
-    <h2 class="text-3xl font-bold text-center text-teal-600 mb-4">Login</h2>
-    <form id="loginForm" class="space-y-4">
+    </nav>
+
+  <div class="max-w-2xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-lg">
+    <h1 class="text-2xl font-bold mb-4 text-gray-800">Send a Message to the Seller</h1>
+    <form id="messageForm" class="space-y-4">
       <div>
-        <label class="block text-gray-700 font-semibold mb-2">Email</label>
-        <input id="loginEmail" type="email" placeholder="Enter email" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-400" required>
+        <label for="name" class="block text-sm font-medium text-gray-700">Your Name</label>
+        <input type="text" id="name" name="name" class="mt-1 block w-full p-3 border rounded-lg border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Enter your name" required>
       </div>
       <div>
-        <label class="block text-gray-700 font-semibold mb-2">Password</label>
-        <input id="loginPassword" type="password" placeholder="Enter password" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-400" required>
+        <label for="email" class="block text-sm font-medium text-gray-700">Your Email</label>
+        <input type="email" id="email" name="email" class="mt-1 block w-full p-3 border rounded-lg border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Enter your email" required>
       </div>
-      <p id="loginError" class="text-red-500 text-sm hidden">Invalid email or password.</p>
-      <button type="submit" class="w-full bg-gradient-to-r from-teal-500 to-blue-500 text-white py-2 rounded-lg hover:opacity-90">Login</button>
+      <div>
+        <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+        <textarea id="message" name="message" rows="4" class="mt-1 block w-full p-3 border rounded-lg border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Type your message here..." required></textarea>
+      </div>
+      <button type="submit" class="w-full bg-blue-500 text-white py-3 rounded-lg font-medium hover:bg-blue-600 transition">Send Message</button>
     </form>
-    <p class="text-center text-gray-600 mt-4">
-      Don't have an account? <a href="signup.html" class="text-teal-500 font-semibold">Signup</a>
-    </p>
   </div>
-</div>
 
- <!-- Footer Start -->
+   <!-- Footer Start -->
 
- <footer class="bg-gray-200 py-12 ">
+   <footer class="bg-gray-200 py-12 mt-8 ">
     <div class="container mx-auto flex flex-wrap lg:flex-nowrap justify-between items-start ml-4">
 
         <!-- Logo and Description Section -->
@@ -259,7 +258,42 @@
     </div>
 </div>
 
-  <script src="assest/src/app.js"></script>
+
+
+
+  <script>
+    // JavaScript to handle form submission and store data in local storage
+    document.getElementById('messageForm').addEventListener('submit', function (e) {
+      e.preventDefault(); // Prevent form from refreshing the page
+
+      // Get form data
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      // Construct the message object
+      const messageData = {
+        name: name,
+        email: email,
+        message: message,
+        date: new Date().toLocaleString(),
+      };
+
+      // Get existing messages from local storage
+      const messages = JSON.parse(localStorage.getItem('sellerMessages')) || [];
+
+      // Add the new message
+      messages.push(messageData);
+
+      // Save back to local storage
+      localStorage.setItem('sellerMessages', JSON.stringify(messages));
+
+      // Clear the form
+      this.reset();
+
+      // Alert the user
+      alert('Your message has been sent to the seller!');
+    });
+  </script>
   <script src="assest/src/script.js"></script>
-</body>
-</html>
+</body
