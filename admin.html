@@ -19,11 +19,25 @@
         <!-- Admin data will be dynamically populated -->
       </ul>
     </div>
+  
+
+</div>
+
     <div class="bg-white p-4 rounded-lg shadow">
       <h2 class="text-xl font-bold text-indigo-600 mb-2">User Login Data</h2>
       <ul id="userData" class="space-y-4">
         <!-- User login data will be dynamically populated -->
       </ul>
+       <!-- Section to show user cart data -->
+       <div id="cartData" class="mt-6">
+        <h2 class="text-2xl font-semibold mb-4">Cart Items</h2>
+        <div id="cartItems"></div> <!-- Cart items will be displayed here -->
+    </div>
+
+    <!-- Section to show last purchase amount -->
+    <div id="lastPurchase" class="mt-6">
+        <h3 class="text-xl font-semibold">Last Purchase Amount: $0.00</h3> <!-- Will be dynamically updated -->
+    </div>
     </div>
   </div>
 
@@ -45,6 +59,11 @@
       </form>
     </div>
   </div>
+
+  <div class="mt-6 text-center">
+    <button id="adminLogoutButton" class="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700">
+     Logout
+    </button>
   
 
   <script src="assest/src/app.js"></script>

@@ -82,8 +82,19 @@ fetch('products.json')
             window.location.href = 'product-details.html';
         };
 
-        // Add to cart functionality
+        // Add to cart functionality with login check
         window.addToCart = function(productId) {
+            // Check if user is logged in by checking if there's a 'loginUsers' key in localStorage
+            const loggedInUser = JSON.parse(localStorage.getItem('loginUsers'))?.[0]; // Get the first logged in user (assuming single login)
+            
+            if (!loggedInUser) {
+                // If not logged in, alert the user and redirect them to the login page
+                alert('Please login first to add items to your cart!');
+                window.location.href = 'login.html'; // Redirect to login page
+                return;
+            }
+
+            // If logged in, proceed with adding the product to the cart
             const product = products.find(p => p.id === productId);
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -136,6 +147,7 @@ fetch('products.json')
             }
         });
     });
+
 
 
     

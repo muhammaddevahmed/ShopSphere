@@ -86,6 +86,9 @@ window.onload = function () {
             buyNowMessageDiv.textContent = `Total amount of $${totalAmount.toFixed(2)} has been deducted from your account. Thank you for your purchase!`;
             alert(buyNowMessageDiv.textContent);
 
+            // Store the total amount of the purchase in localStorage
+            localStorage.setItem("lastPurchaseAmount", totalAmount.toFixed(2));
+
             // Clear the cart after successful purchase
             cart = [];
             localStorage.setItem("cart", JSON.stringify(cart)); // Clear cart from localStorage
@@ -96,3 +99,4 @@ window.onload = function () {
     // Initial update of the cart display
     updateCartDisplay();
 };
+
