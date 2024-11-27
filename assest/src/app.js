@@ -138,7 +138,7 @@ const editAdmin = (index) => {
   const admin = users.filter((u) => u.role === "admin")[index];
 
   // Prevent editing if the user is the first admin added
-  if (index === 0) {
+  if (index !== 0) {
     alert("Admin data cannot be edited.");
     return;
   }
