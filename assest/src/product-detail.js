@@ -38,6 +38,7 @@ window.onload = function() {
         if (!loggedInUser) {
             // If user is not logged in, prompt them to log in
             alert('Please log in first to add items to the cart.');
+            window.location.href = 'login.html'; // Redirect to login page
             return; // Prevent the cart addition if user is not logged in
         }
 
