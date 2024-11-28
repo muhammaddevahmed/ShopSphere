@@ -32,6 +32,16 @@ window.onload = function() {
 
     // Add to Cart button
     document.getElementById('addToCart').addEventListener('click', function() {
+        // Check if the user is logged in
+        const loggedInUser = localStorage.getItem('loginUsers');
+
+        if (!loggedInUser) {
+            // If user is not logged in, prompt them to log in
+            alert('Please log in first to add items to the cart.');
+            return; // Prevent the cart addition if user is not logged in
+        }
+
+        // Proceed with adding to cart if the user is logged in
         const quantity = parseInt(quantityInput.value);
         const cartItem = { ...product, quantity };
 
