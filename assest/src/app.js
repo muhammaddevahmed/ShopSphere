@@ -33,7 +33,7 @@ const validateSignup = () => {
 
   let valid = true;
 
-  if (username.length > 14) {
+  if (username.length > 20) {
     document.getElementById("usernameError").classList.remove("hidden");
     valid = false;
   } else {
@@ -80,7 +80,10 @@ const handleLogin = () => {
     document.getElementById("loginError").classList.remove("hidden");
   } else {
     document.getElementById("loginError").classList.add("hidden");
-    
+
+    // Save current user data to localStorage
+    localStorage.setItem("currentUser", JSON.stringify(user));
+
     if (user.role === "admin") {
       window.location.href = "admin.html";
     } else {
@@ -88,6 +91,7 @@ const handleLogin = () => {
       let loginUsers = JSON.parse(localStorage.getItem("loginUsers")) || [];
       loginUsers.push({ email: user.email, username: user.username });
       localStorage.setItem("loginUsers", JSON.stringify(loginUsers));
+
       window.location.href = "index.html";
     }
   }
@@ -104,7 +108,6 @@ const loadAdminData = () => {
       (u, index) => `
         <li class="flex justify-between items-center">
           ${u.username} (${u.email})
-          <button onclick="editAdmin(${index})" class="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600">Edit</button>
         </li>`
     )
     .join("");
@@ -130,86 +133,21 @@ const deleteUser = (index) => {
   loadAdminData();
 };
 
-// Edit Admin Data
-let editIndex = null;
 
-const editAdmin = (index) => {
-  const users = JSON.parse(localStorage.getItem("users")) || [];
-  const admin = users.filter((u) => u.role === "admin")[index];
 
-  // Prevent editing if the user is the first admin added
-  if (index !== 0) {
-    alert("Admin data cannot be edited.");
-    return;
-  }
-
-  editIndex = index;
-  document.getElementById("editUsername").value = admin.username;
-  document.getElementById("editEmail").value = admin.email;
-
-  document.getElementById("editModal").classList.remove("hidden");
-};
-
-document.getElementById("editForm")?.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const username = document.getElementById("editUsername").value;
-  const email = document.getElementById("editEmail").value;
-
-  const users = JSON.parse(localStorage.getItem("users")) || [];
-  const admins = users.filter((u) => u.role === "admin");
-  admins[editIndex].username = username;
-  admins[editIndex].email = email;
-
-  const nonAdmins = users.filter((u) => u.role !== "admin");
-  const updatedUsers = [...admins, ...nonAdmins];
-  localStorage.setItem("users", JSON.stringify(updatedUsers));
-
-  document.getElementById("editModal").classList.add("hidden");
-  loadAdminData();
-});
-
-// Cancel Edit
-document.getElementById("cancelEdit")?.addEventListener("click", () => {
-  document.getElementById("editModal").classList.add("hidden");
-});
-
-// Initialize Admin Data on Page Load
-if (window.location.pathname.includes("admin.html")) {
-  loadAdminData();
-}
-
-// Event Listeners for Forms
-document.getElementById("signupForm")?.addEventListener("submit", (e) => {
-  e.preventDefault();
-  validateSignup();
-});
-
-document.getElementById("loginForm")?.addEventListener("submit", (e) => {
-  e.preventDefault();
-  handleLogin();
-});
-// Logout Function
-document.getElementById("logoutButton")?.addEventListener("click", function(e) {
+// Logout Functionality
+document.getElementById("logoutButton")?.addEventListener("click", function (e) {
   e.preventDefault();
 
-  // Check if user is logged in (i.e., "currentUser" exists in localStorage)
-  const currentUser = localStorage.getItem("currentUser");
-
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   if (currentUser) {
-      // If user is logged in, proceed with logout
-      alert("You are about to log out.");
-
-      // Remove the user from localStorage
-      localStorage.removeItem("currentUser");
-
-      // Alert after logout
-      alert("You have been successfully logged out.");
-
-      // Redirect to login page
-      window.location.href = "login.html";
+    confirm("Are you sure you want to logout?");
+    localStorage.removeItem("currentUser");
+    alert("You have been successfully logged out.");
+    window.location.href = "login.html";
   } else {
-      // If no user is logged in, alert the user
-      alert("You need to log in first.");
+    alert("You need to log in first.");
+    window.location.href = "login.html";  
   }
 });
 
@@ -223,37 +161,45 @@ const loadCartData = () => {
   lastPurchaseDiv.innerHTML = ""; // Clear any existing last purchase info
 
   if (cart.length === 0) {
-      cartItemsDiv.innerHTML = "<p>No cart data available.</p>";
+    cartItemsDiv.innerHTML = "<p>No cart data available.</p>";
   } else {
-      cart.forEach((item, index) => {
-          const itemDiv = document.createElement("div");
-          itemDiv.classList.add("flex", "border-b", "pb-4");
-          itemDiv.innerHTML = `
-              <img src="${item.image}" class="w-32 h-32 object-cover mr-4" alt="${item.name}">
-              <div>
-                  <h3 class="text-xl font-semibold">${item.name}</h3>
-                  <p>Price: $${item.price}</p>
-                  <p>Quantity: ${item.quantity}</p>
-                  <p class="text-gray-700">${item.description}</p>
-              </div>
-          `;
-          cartItemsDiv.appendChild(itemDiv);
-      });
+    cart.forEach((item) => {
+      const itemDiv = document.createElement("div");
+      itemDiv.classList.add("flex", "border-b", "pb-4");
+      itemDiv.innerHTML = `
+        <img src="${item.image}" class="w-32 h-32 object-cover mr-4" alt="${item.name}">
+        <div>
+          <h3 class="text-xl font-semibold">${item.name}</h3>
+          <p>Price: $${item.price}</p>
+          <p>Quantity: ${item.quantity}</p>
+        </div>
+      `;
+      cartItemsDiv.appendChild(itemDiv);
+    });
   }
 
-  // Get the last purchase amount
   const lastPurchaseAmount = localStorage.getItem("lastPurchaseAmount");
-  if (lastPurchaseAmount) {
-      lastPurchaseDiv.innerHTML = `<h3 class="text-xl font-semibold">Last Purchase Amount: $${lastPurchaseAmount}</h3>`;
-  } else {
-      lastPurchaseDiv.innerHTML = "<p>No purchase made yet.</p>";
-  }
+  lastPurchaseDiv.innerHTML = lastPurchaseAmount
+    ? `<h3 class="text-xl font-semibold">Last Purchase Amount: $${lastPurchaseAmount}</h3>`
+    : "<p>No purchase made yet.</p>";
 };
 
-// Call this function to load cart data when the page loads
+// Initialize Data on Page Load
 if (window.location.pathname.includes("admin.html")) {
+  loadAdminData();
   loadCartData();
 }
+
+// Event Listeners for Forms
+document.getElementById("signupForm")?.addEventListener("submit", (e) => {
+  e.preventDefault();
+  validateSignup();
+});
+
+document.getElementById("loginForm")?.addEventListener("submit", (e) => {
+  e.preventDefault();
+  handleLogin();
+});
 
 // Admin Logout Functionality
 document.getElementById("adminLogoutButton")?.addEventListener("click", function(e) {
@@ -271,4 +217,4 @@ document.getElementById("adminLogoutButton")?.addEventListener("click", function
       alert("You have been logged out successfully.");
       window.location.href = "index.html";  
   }
-});
+});  
