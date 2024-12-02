@@ -141,7 +141,7 @@ document.getElementById("logoutButton")?.addEventListener("click", function (e) 
 
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   if (currentUser) {
-    confirm("Are you sure you want to Logouty?");
+    confirm("Are you sure you want to Logout?");
     localStorage.removeItem("currentUser");
     alert("You have been successfully logged out.");
     window.location.href = "login.html";

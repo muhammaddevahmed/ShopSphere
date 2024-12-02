@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-6">
+        <h1 class="text-3xl font-bold mb-8 text-blue-700">Order Confirmation</h1>
+
+        <!-- Order Confirmation Details -->
+        <div class="bg-white p-6 shadow rounded mb-8 border border-blue-300">
+            <h2 class="text-2xl font-semibold border-b pb-4 mb-4 text-blue-600">Shipping Address</h2>
+            <div id="shippingAddress" class="text-lg"></div>
+
+            <h2 class="text-2xl font-semibold border-b pb-4 mb-4 text-blue-600 mt-6">Payment Method</h2>
+            <div id="paymentMethod" class="text-lg"></div>
+
+            <h2 class="text-2xl font-semibold border-b pb-4 mb-4 text-blue-600 mt-6">Order Summary</h2>
+            <div id="orderSummary" class="space-y-4"></div>
+            <div id="orderTotal" class="mt-4 text-xl font-bold text-green-600"></div>
+        </div>
+
+        <div class="flex gap-4">
+            <button onclick="window.location.href='product.html'" class="bg-blue-500 text-white px-6 py-3 rounded-full shadow-lg">
+                Back to Shopping
+            </button>
+            
+            <button id="buyNowButton" class="bg-green-500 text-white px-6 py-3 rounded-full shadow-lg">
+                Buy Now
+            </button>
+        </div>
+    </div>
+
+   <script src="assest/src/confirm.js"></script>
+</body>
+</html>

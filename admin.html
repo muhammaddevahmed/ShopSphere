@@ -3,71 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ShopSphere</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Fonts Link -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="assest/images/logoo.png" type="image/x-icon">
+  <title>Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-200">
-  <header class="bg-indigo-600 p-4 text-white text-center text-2xl">Admin Dashboard</header>
-  <div class="container mx-auto mt-6 space-y-6">
-    <div class="bg-white p-4 rounded-lg shadow">
-      <h2 class="text-xl font-bold text-indigo-600 mb-2">Admin Details</h2>
-      <ul id="adminData" class="space-y-4">
-        <!-- Admin data will be dynamically populated -->
-      </ul>
-    </div>
-  
+<body class="bg-gray-100">
 
-</div>
+  <!-- Navbar -->
+  <nav class="bg-blue-600 p-4 flex justify-between items-center text-white">
+    <a href="index.html" class="text-2xl font-bold">E-Commerce</a>
+    <div>
+      <button id="logoutButton" class="bg-red-500 px-4 py-2 rounded hover:bg-red-600">Logout</button>
+    </div>
+  </nav>
 
-    <div class="bg-white p-4 rounded-lg shadow">
-      <h2 class="text-xl font-bold text-indigo-600 mb-2">User Login Data</h2>
-      <ul id="userData" class="space-y-4">
-        <!-- User login data will be dynamically populated -->
-      </ul>
-       <!-- Section to show user cart data -->
-       <div id="cartData" class="mt-6">
-        <h2 class="text-2xl font-semibold mb-4">Cart Items</h2>
-        <div id="cartItems"></div> <!-- Cart items will be displayed here -->
+  <!-- Main Dashboard Container -->
+  <div class="container mx-auto p-6">
+
+    <!-- Admin Section: Display users and cart data -->
+    <div id="adminSection" class="flex space-x-8">
+      <!-- Admin Users Data -->
+      <div id="adminData" class="w-1/2">
+        <h2 class="text-xl font-bold mb-4">Admin Users</h2>
+        <ul id="adminUsersList" class="bg-white shadow-md rounded-lg p-4">
+          <!-- Dynamic admin users will be listed here -->
+        </ul>
+      </div>
+
+      <!-- User Data -->
+      <div id="userData" class="w-1/2">
+        <h2 class="text-xl font-bold mb-4">User Activity</h2>
+        <ul id="userActivityList" class="bg-white shadow-md rounded-lg p-4">
+          <!-- Dynamic user activity will be listed here -->
+        </ul>
+      </div>
     </div>
 
-    <!-- Section to show last purchase amount -->
-    <div id="lastPurchase" class="mt-6">
-        <h3 class="text-xl font-semibold">Last Purchase Amount: $0.00</h3> <!-- Will be dynamically updated -->
+    <!-- Cart Section: Display cart items and last purchase -->
+    <div id="cartSection" class="mt-8">
+      <h2 class="text-xl font-bold mb-4">Cart Details</h2>
+      
+      <!-- Cart Items List -->
+      <div id="cartItems" class="bg-white shadow-md rounded-lg p-4">
+        <!-- Dynamic cart items will be listed here -->
+      </div>
+
+      <!-- Last Purchase Amount -->
+      <div id="lastPurchase" class="mt-4 bg-white shadow-md rounded-lg p-4">
+        <!-- Last purchase data will be displayed here -->
+      </div>
     </div>
-    </div>
+
   </div>
 
-  <!-- Edit Modal -->
-  <div id="editModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-    <div class="bg-white rounded-lg p-6 w-full max-w-md">
-      <h3 class="text-lg font-bold mb-4">Edit Admin Details</h3>
-      <form id="editForm" class="space-y-4">
-        <div>
-          <label class="block font-semibold text-gray-700">Username</label>
-          <input id="editUsername" type="text" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400">
-        </div>
-        <div>
-          <label class="block font-semibold text-gray-700">Email</label>
-          <input id="editEmail" type="email" class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400">
-        </div>
-        <button type="submit" class="bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600">Save</button>
-        <button type="button" id="cancelEdit" class="bg-gray-300 px-4 py-2 rounded-lg hover:bg-gray-400">Cancel</button>
-      </form>
-    </div>
+  <!-- Admin Logout -->
+  <div class="text-center mt-8">
+    <button id="adminLogoutButton" class="bg-red-500 px-4 py-2 rounded hover:bg-red-600">Admin Logout</button>
   </div>
-
-  <div class="mt-6 text-center">
-    <button id="adminLogoutButton" class="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700">
-     Logout
-    </button>
-  
 
   <script src="assest/src/app.js"></script>
-  
 </body>
 </html>
 

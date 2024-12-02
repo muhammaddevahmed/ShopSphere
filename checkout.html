@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-6">
+        <h1 class="text-3xl font-bold mb-8 text-blue-700">Checkout</h1>
+
+        <!-- Order Summary -->
+        <div class="bg-white p-6 shadow rounded mb-8 border border-blue-300">
+            <h2 class="text-2xl font-semibold border-b pb-4 mb-4 text-blue-600">Order Summary</h2>
+            <div id="orderSummary" class="space-y-4">
+                <!-- Order items will be displayed here -->
+            </div>
+            <div class="mt-4 text-xl font-bold text-green-600" id="orderTotal"></div>
+        </div>
+
+        <!-- Shipping Form -->
+        <div class="bg-white p-6 shadow rounded mb-8 border border-blue-300">
+            <h2 class="text-2xl font-semibold border-b pb-4 mb-4 text-blue-600">Shipping Address</h2>
+            <form id="shippingForm" class="space-y-4">
+                <input type="text" id="address" placeholder="Address" class="block w-full border border-blue-400 p-3 rounded focus:ring-2 focus:ring-blue-500" required>
+                <input type="text" id="city" placeholder="City" class="block w-full border border-blue-400 p-3 rounded focus:ring-2 focus:ring-blue-500" required>
+                <input type="text" id="postalCode" placeholder="Postal Code" class="block w-full border border-blue-400 p-3 rounded focus:ring-2 focus:ring-blue-500" required>
+                <input type="text" id="country" placeholder="Country" class="block w-full border border-blue-400 p-3 rounded focus:ring-2 focus:ring-blue-500" required>
+            </form>
+        </div>
+
+        <!-- Payment Method -->
+        <div class="bg-white p-6 shadow rounded mb-8 border border-blue-300">
+            <h2 class="text-2xl font-semibold border-b pb-4 mb-4 text-blue-600">Payment Method</h2>
+            <form id="paymentForm" class="space-y-4">
+                <label class="flex items-center space-x-3">
+                    <input type="radio" name="paymentMethod" value="Credit Card" class="form-radio text-blue-600" required>
+                    <img src="https://www.svgrepo.com/show/42266/credit-card.svg" alt="Credit Card" class="w-6 h-6">
+                    <span>Credit Card</span>
+                </label>
+                <label class="flex items-center space-x-3">
+                    <input type="radio" name="paymentMethod" value="PayPal" class="form-radio text-blue-600" required>
+                    <img src="https://img.icons8.com/color/48/paypal.png" alt="PayPal" class="w-6 h-6">
+                    <span>PayPal</span>
+                </label>
+            </form>
+        </div>
+
+        <!-- Confirmation Button -->
+      <button id="confirmOrderButton" class="bg-gradient-to-r from-blue-500 to-green-500 text-white px-6 py-3 rounded-full shadow-lg hover:from-blue-600 hover:to-green-600">
+            Confirm Order
+        </button>
+    </div>
+
+   <script src="assest/src/check.js"></script>
+</body>
+</html>
+

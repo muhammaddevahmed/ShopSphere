@@ -51,6 +51,6 @@ window.onload = function() {
         cart.push(cartItem);
         localStorage.setItem('cart', JSON.stringify(cart));
 
-        alert('Product added to cart!');
+        alert(`${product.name} has been added to your cart!`);
     });
 }

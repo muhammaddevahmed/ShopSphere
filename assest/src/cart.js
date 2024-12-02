@@ -80,19 +80,15 @@ window.onload = function () {
         } else if (totalAmount === 0) {
             alert("Your cart is empty. Please add items to your cart before proceeding.");
         } else {
-            // Show the "Buy Now" message
-            const buyNowMessageDiv = document.getElementById("buyNowMessage");
-            buyNowMessageDiv.classList.remove("hidden"); // Show the message
-            buyNowMessageDiv.textContent = `Total amount of $${totalAmount.toFixed(2)} has been deducted from your account. Thank you for your purchase!`;
-            alert(buyNowMessageDiv.textContent);
+        
+                // Redirect to checkout.html
+                window.location.href = "checkout.html";
 
             // Store the total amount of the purchase in localStorage
             localStorage.setItem("lastPurchaseAmount", totalAmount.toFixed(2));
 
             // Clear the cart after successful purchase
-            cart = [];
-            localStorage.setItem("cart", JSON.stringify(cart)); // Clear cart from localStorage
-            updateCartDisplay(); // Refresh the cart display
+         
         }
     });
 
