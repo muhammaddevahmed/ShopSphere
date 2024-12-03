@@ -3,10 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Confirmation</title>
+    <title>ShopSphere</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts Link -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Favicon -->
+      <link rel="shortcut icon" href="assest/images/logoo.png" type="image/x-icon">
 </head>
 <body class="bg-gray-100">
+
+      <!-- Navbar start -->
+      <nav class="bg-blue-600 p-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center flex-wrap">
+            <!-- Logo and Name (Left-aligned, no shrinking) -->
+            <div class="flex items-center flex-shrink-0">
+                <a href="index.html">
+                    <img src="assest/images/logoo.png" alt="Logo" class="h-14 mr-2">
+                </a>
+                <span class="text-white text-lg font-semibold">ShopSphere</span>
+            </div>
+
+            <!-- Mobile & Tablet Menu Button (Hamburger Icon, visible only on small and medium screens) -->
+            <button id="hamburger" class="lg:hidden text-white ml-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+
+            <!-- Search Bar (Visible only on medium and larger screens) -->
+            <div class="flex-grow mx-4 hidden sm:block">
+                <input type="text" placeholder="Search..." class="w-full px-4 py-2 rounded-lg text-gray-800">
+            </div>
+
+            <!-- Mobile & Tablet Search Bar (Visible only on small screens) -->
+            <div class="sm:hidden flex-grow mx-4 mt-2">
+                <input type="text" placeholder="Search..." class="w-full px-4 py-2 rounded-lg text-gray-800">
+            </div>
+
+            <!-- Right-side Links (Visible on desktop) -->
+            <div class="hidden lg:flex items-center space-x-4">
+                <a href="profile.html" class="text-white flex items-center space-x-2">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+                <a href="message.html" class="text-white flex items-center space-x-2">
+                    <i class="fas fa-comment"></i>
+                    <span>Messages</span>
+                </a>
+                <a href="product.html" class="text-white flex items-center space-x-2">
+                    <i class="fas fa-box"></i>
+                    <span>Products</span>
+                </a>
+                <a href="cart.html" class="cart-link text-white flex items-center space-x-4 gap-2">
+                    <i class="fas fa-shopping-cart"></i>
+                    Cart
+                </a>
+            </div>
+        </div>
+    </nav>
+
+        <!-- Mobile & Tablet Dropdown for Links (Initially Hidden) -->
+        <div id="mobile-menu" class="lg:hidden bg-blue-600 text-white p-4 hidden">
+            <div class="flex flex-col space-y-4">
+                <a href="#" class="flex items-center space-x-2">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+                <a href="message.html" class="flex items-center space-x-2">
+                    <i class="fas fa-comment"></i>
+                    <span>Messages</span>
+                </a>
+                <a href="product.html" class="flex items-center space-x-2">
+                    <i class="fas fa-box"></i>
+                    <span>Products</span>
+                </a>
+                <a href="cart.html" class="flex items-center space-x-2">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Cart</span>
+                </a>
+            </div>
+        </div>
+
     <div class="container mx-auto p-6">
         <h1 class="text-3xl font-bold mb-8 text-blue-700">Order Confirmation</h1>
 
@@ -34,6 +113,162 @@
         </div>
     </div>
 
+    
+ <!-- Footer Start -->
+
+ <footer class="bg-gray-200 py-12 ">
+    <div class="container mx-auto flex flex-wrap lg:flex-nowrap justify-between items-start ml-4">
+
+        <!-- Logo and Description Section -->
+
+        <div class="w-full lg:w-1/4 mb-8 lg:mb-0">
+            <div class="flex items-center mb-4">
+
+                <!-- Logo -->
+
+                <img src="assest/images/logoo.png" alt="Logo" class="w-12 h-12 mr-3">
+
+                <!-- Company Name -->
+
+                <span class="text-xl font-semibold">ShopSphere</span>
+            </div>
+            <p class="text-gray-600 mb-4">Your go-to platform for reliable suppliers <br> worldwide.</p>
+
+            <!-- Social Media Icons -->
+
+            <div class="flex space-x-4 mt-4">
+                <a href="#" aria-label="Facebook" class="text-gray-600 hover:text-blue-600">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" aria-label="Twitter" class="text-gray-600 hover:text-blue-400">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" aria-label="LinkedIn" class="text-gray-600 hover:text-blue-700">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#" aria-label="Instagram" class="text-gray-600 hover:text-pink-500">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" aria-label="YouTube" class="text-gray-600 hover:text-red-600">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Links Section -->
+
+        <div class="w-full lg:w-2/4 grid grid-cols-2 sm:grid-cols-4 gap-8">
+
+            <!-- About Links -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4">About</h4>
+                <ul class="space-y-2 text-gray-600">
+                    <li><a href="#" class="hover:text-gray-800">Our Story</a></li>
+                    <li><a href="#" class="hover:text-gray-800">Mission</a></li>
+                    <li><a href="#" class="hover:text-gray-800">Team</a></li>
+                    <li><a href="#" class="hover:text-gray-800">Careers</a></li>
+                </ul>
+            </div>
+
+            <!-- Partnership Links -->
+
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Partnership</h4>
+                <ul class="space-y-2 text-gray-600">
+                    <li><a href="#" class="hover:text-gray-800">Become a Partner</a></li>
+                    <li><a href="#" class="hover:text-gray-800">Supplier Portal</a></li>
+                    <li><a href="#" class="hover:text-gray-800">Advertise</a></li>
+                    <li><a href="#" class="hover:text-gray-800">Affiliate Program</a></li>
+                </ul>
+            </div>
+
+            <!-- Information Links -->
+
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Information</h4>
+                <ul class="space-y-2 text-gray-600">
+                    <li><a href="#" class="hover:text-gray-800">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-gray-800">Terms & Conditions</a></li>
+                    <li><a href="#" class="hover:text-gray-800">Help Center</a></li>
+                    <li><a href="#" class="hover:text-gray-800">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- For Users Links -->
+
+            <div>
+                <h4 class="text-lg font-semibold mb-4">For Users</h4>
+                <ul class="space-y-2 text-gray-600">
+                    <li><a href="#" class="hover:text-gray-800">User Guide</a></li>
+                    <li><a href="#" class="hover:text-gray-800">FAQs</a></li>
+                    <li><a href="#" class="hover:text-gray-800">Community</a></li>
+                    <li><a href="#" class="hover:text-gray-800">Support</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Get the App Section -->
+
+        <div class="w-full lg:w-1/4 mt-8 lg:mt-0 flex flex-col items-center lg:items-start">
+            <h4 class="text-lg font-semibold mb-4">Get the App</h4>
+            <div class="flex space-x-4 ">
+
+                <!-- Play Store Icon -->
+
+                <a href="#" class="bg-black text-white px-4 py-2 rounded-lg flex items-center">
+                    <i class="fab fa-google-play text-lg mr-2"></i>
+                    Play Store
+                </a>
+
+                <!-- App Store Icon -->
+
+                <a href="#" class="bg-black text-white px-4 py-2 rounded-lg flex items-center">
+                    <i class="fab fa-apple text-lg mr-2"></i>
+                    App Store
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Footer end -->
+
+<!-- Footer Bottom Section -->
+
+<div class="bg-gray-600 py-4">
+    <div class="container mx-auto flex justify-between items-center text-white text-sm max-w-screen-md">
+
+        <!-- Copyright Text, Slightly Centered -->
+
+        <div class="text-left ml-4">
+            &copy; Muhammad Ahmed
+        </div>
+
+        <!-- Language and Flag Selector, Slightly Centered -->
+
+        <div class="flex items-center space-x-2 mr-4">
+
+
+            <!-- Flag Display (Initially US Flag) -->
+
+            <img id="language-flag" src="https://flagcdn.com/w20/us.png" alt="US Flag"
+                class="w-6 h-4 object-cover rounded-sm">
+
+            <!-- Language Dropdown -->
+
+            <select id="language-selector" class="bg-gray-700 text-white border-none focus:outline-none p-1 rounded"
+                onchange="updateFlag()">
+                <option value="en" selected>English</option>
+                <option value="fr">French</option>
+                <option value="es">Spanish</option>
+                <option value="de">German</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+
    <script src="assest/src/confirm.js"></script>
+   <script src="assest/src/script.js"></script>
 </body>
 </html>
