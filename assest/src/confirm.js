@@ -18,7 +18,7 @@ window.onload = function () {
     const paymentMethodDiv = document.getElementById("paymentMethod");
     if (paymentData) {
         paymentMethodDiv.innerHTML = `
-            <img src="${paymentData.cardImage}" class="w-16 h-16 object-cover mr-4" alt="${paymentData.cardImage}">
+            <img src="${paymentData.cardImage}" class="w-20 h-20 object-cover mr-4" alt="${paymentData.cardImage}">
             <p><strong>Payment Method:</strong> ${paymentData.paymentMethod}</p>
             <p><strong>Card Number:</strong> **** **** **** ${paymentData.cardNumber.slice(-4)}</p>
             <p><strong>Cardholder Name:</strong> ${paymentData.cardName}</p>
