@@ -1,5 +1,7 @@
 window.onload = function () {
     const orderDetails = JSON.parse(localStorage.getItem("orderDetails"));
+    const paymentData = JSON.parse(localStorage.getItem("paymentData"));
+
     if (!orderDetails) {
         window.location.href = "index.html"; // Redirect to home if no order details
     }
@@ -14,7 +16,16 @@ window.onload = function () {
 
     // Display Payment Method
     const paymentMethodDiv = document.getElementById("paymentMethod");
-    paymentMethodDiv.textContent = orderDetails.paymentMethod;
+    if (paymentData) {
+        paymentMethodDiv.innerHTML = `
+            <img src="${paymentData.cardImage}" class="w-16 h-16 object-cover mr-4" alt="${paymentData.cardImage}">
+            <p><strong>Payment Method:</strong> ${paymentData.paymentMethod}</p>
+            <p><strong>Card Number:</strong> **** **** **** ${paymentData.cardNumber.slice(-4)}</p>
+            <p><strong>Cardholder Name:</strong> ${paymentData.cardName}</p>
+        `;
+    } else {
+        paymentMethodDiv.textContent = orderDetails.paymentMethod;
+    }
 
     // Display Order Summary
     const orderSummaryDiv = document.getElementById("orderSummary");
@@ -41,10 +52,16 @@ window.onload = function () {
     document.getElementById("buyNowButton").onclick = function () {
         alert(`Thank you for purchasing! Total amount of $${total.toFixed(2)} has been deducted from your account.`);
 
-        // Clear cart data from localStorage
+        // Clear cart and payment data from localStorage
         localStorage.removeItem("orderDetails");
+        localStorage.removeItem("paymentData");
+        localStorage.removeItem("cart");
 
-    
+        
+
         window.location.href = "index.html";
     };
 };
+
+
+

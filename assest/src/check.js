@@ -57,10 +57,48 @@ window.onload = function () {
         localStorage.setItem("orderDetails", JSON.stringify(orderDetails));
 
         // Proceed to order confirmation
-        localStorage.removeItem("cart"); // Clear the cart
-        window.location.href = "confirm.html"
+        
+        window.location.href = "confirm.html";
     });
+
+    // New functionality: Payment method selection and saving payment details
+    document.querySelectorAll('input[name="paymentMethod"]').forEach(input => {
+        input.addEventListener('change', (event) => {
+            const selectedMethod = event.target.value;
+            const selectedImage = event.target.nextElementSibling.src;
+            document.getElementById('selectedMethodTitle').textContent = selectedMethod;
+            document.getElementById('selectedMethodImage').src = selectedImage;
+            document.getElementById('paymentDetails').classList.remove('hidden');
+        });
+    });
+
+    function savePaymentDetails() {
+        const paymentMethod = document.getElementById('selectedMethodTitle').textContent;
+        const cardNumber = document.getElementById('cardNumber').value;
+        const cardName = document.getElementById('cardName').value;
+        const cardImage = document.getElementById('selectedMethodImage').src
+
+        if (paymentMethod && cardNumber && cardName && cardImage ) {
+            const paymentData = {
+                paymentMethod,
+                cardNumber,
+                cardName,cardImage,
+            };
+            localStorage.setItem('paymentData', JSON.stringify(paymentData));
+            alert('Payment details saved! Proceed to the confirmation page.');
+        } else {
+            alert('Please fill in all details.');
+        }
+    }
+
+    // Ensure `savePaymentDetails` function is accessible globally
+    window.savePaymentDetails = savePaymentDetails;
 };
+
+
+
+
+
   
   
   

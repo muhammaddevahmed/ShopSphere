@@ -77,8 +77,10 @@ window.onload = function () {
         // If the cart is empty, alert and do not proceed
         if (cart.length === 0) {
             alert("Your cart is empty. Please add items to your cart before proceeding.");
+            window.location.href = "product.html"
         } else if (totalAmount === 0) {
             alert("Your cart is empty. Please add items to your cart before proceeding.");
+            
         } else {
         
                 // Redirect to checkout.html
