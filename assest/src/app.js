@@ -1,26 +1,63 @@
-// Store user details in Local Storage
+// Add this initialization function at the beginning of your code
+const initializeAdmin = () => {
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+  const staticAdmin = {
+    username: "Admin",
+    email: "admin@gmail.com",    // Static admin email
+    password: "admin123",       // Static admin password
+    role: "admin"
+  };
+
+  // Check if static admin exists
+  if (!users.some(u => u.email === staticAdmin.email)) {
+    users.push(staticAdmin);
+    localStorage.setItem("users", JSON.stringify(users));
+  }
+};
+
+// Initialize admin when the script loads
+initializeAdmin();
+
+// Modified storeUser function
 const storeUser = (user) => {
   let users = JSON.parse(localStorage.getItem("users")) || [];
 
-  // Check if the user email already exists
+  // Prevent modification of static admin
+  if (user.email === "admin@example.com") {
+    alert("Admin account cannot be modified");
+    return;
+  }
+
+  // Rest of the original storeUser function remains the same
   if (users.some((u) => u.email === user.email)) {
     alert("Email already exists.");
     return;
   }
 
-  // Check if the user is an admin
   if (user.role === "admin") {
-    // Prevent adding/editing admin users once they are created
-    if (users.some((u) => u.role === "admin")) {
-      alert("Admin account already exists. Admin data cannot be modified.");
-      return;
-    }
+    alert("Admin account creation is restricted");
+    return;
   }
 
   users.push(user);
   localStorage.setItem("users", JSON.stringify(users));
   alert("Signup successful!");
   window.location.href = "login.html";
+};
+
+// Modified deleteUser function to protect admin
+const DeleteUser = (index) => {
+  let loginUsers = JSON.parse(localStorage.getItem("loginUsers")) || [];
+  
+  // Prevent deletion of admin login records
+  if (loginUsers[index]?.email === "admin@example.com") {
+    alert("Admin login records cannot be deleted");
+    return;
+  }
+  
+  loginUsers.splice(index, 1);
+  localStorage.setItem("loginUsers", JSON.stringify(loginUsers));
+  loadAdminData();
 };
 
 // Validate Signup
@@ -150,28 +187,42 @@ document.getElementById("logoutButton")?.addEventListener("click", function (e) 
     window.location.href = "login.html";  
   }
 });
-
 // Load Cart Data and Last Purchase Amount in Admin Page
 const loadCartData = () => {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   const cartItemsDiv = document.getElementById("cartItems");
   const lastPurchaseDiv = document.getElementById("lastPurchase");
 
+  // Initialize Balance
+  let totalBalance = parseFloat(localStorage.getItem("totalBalance")) || 0;
+  const balanceAmount = document.getElementById("balanceAmount");
+  if(balanceAmount) balanceAmount.textContent = `$${totalBalance.toFixed(2)}`;
+
   cartItemsDiv.innerHTML = ""; // Clear any existing cart items
   lastPurchaseDiv.innerHTML = ""; // Clear any existing last purchase info
 
   if (cart.length === 0) {
-    cartItemsDiv.innerHTML = "<p>No cart data available.</p>";
+    cartItemsDiv.innerHTML = "<h1>No cart data available.</h1>";
   } else {
-    cart.forEach((item) => {
+    cart.forEach((item, index) => {
       const itemDiv = document.createElement("div");
-      itemDiv.classList.add("flex", "border-b", "pb-4");
+      itemDiv.classList.add("flex", "border-b", "pb-4", "items-center", "justify-between");
       itemDiv.innerHTML = `
-        <img src="${item.image}" class="w-32 h-32 object-cover mr-4" alt="${item.name}">
-        <div>
-          <h3 class="text-xl font-semibold">${item.name}</h3>
-          <p>Price: $${item.price}</p>
-          <p>Quantity: ${item.quantity}</p>
+        <div class="flex items-center">
+          <img src="${item.image}" class="w-32 h-32 object-cover mr-4" alt="${item.name}">
+          <div>
+            <h3 class="text-xl font-semibold">${item.name}</h3>
+            <p>Price: $${item.price}</p>
+            <p>Quantity: ${item.quantity}</p>
+          </div>
+        </div>
+        <div class="flex gap-2">
+          <button onclick="handleAccept(${index})" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+            Accept
+          </button>
+          <button onclick="handleDecline(${index})" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
+            Decline
+          </button>
         </div>
       `;
       cartItemsDiv.appendChild(itemDiv);
@@ -184,11 +235,53 @@ const loadCartData = () => {
     : "<p>No purchase made yet.</p>";
 };
 
+// New Balance Functions
+const handleAccept = (index) => {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const item = cart[index];
+  
+  if (item) {
+    const amount = item.price * item.quantity;
+    const totalBalance = parseFloat(localStorage.getItem("totalBalance")) || 0;
+    
+    localStorage.setItem("totalBalance", totalBalance + amount);
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    loadCartData();
+  }
+};
+
+const handleDecline = (index) => {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.splice(index, 1);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  loadCartData();
+};
+
 // Initialize Data on Page Load
 if (window.location.pathname.includes("admin.html")) {
   loadAdminData();
   loadCartData();
+  
+  // Initialize balance display
+  const balanceAmount = document.getElementById("balanceAmount");
+  if(balanceAmount) {
+    const totalBalance = parseFloat(localStorage.getItem("totalBalance")) || 0;
+    balanceAmount.textContent = `$${totalBalance.toFixed(2)}`;
+  }
 }
+
+// Rest of your original code remains unchanged below
+// Event Listeners for Forms
+document.getElementById("signupForm")?.addEventListener("submit", (e) => {
+  e.preventDefault();
+  validateSignup();
+});
+
+document.getElementById("loginForm")?.addEventListener("submit", (e) => {
+  e.preventDefault();
+  handleLogin();
+});
 
 // Event Listeners for Forms
 document.getElementById("signupForm")?.addEventListener("submit", (e) => {
@@ -218,3 +311,4 @@ document.getElementById("adminLogoutButton")?.addEventListener("click", function
       window.location.href = "index.html";  
   }
 });  
+

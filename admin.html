@@ -5,62 +5,129 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    .dashboard-card {
+      min-height: 300px;
+      transition: all 0.3s ease;
+    }
+    .stat-badge {
+      background: #eff6ff;
+      color: #3b82f6;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+    .sidebar-item:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  </style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-50">
 
-  <!-- Navbar -->
-  <nav class="bg-blue-600 p-4 flex justify-between items-center text-white">
-    <a href="index.html" class="text-2xl font-bold">ShopSphere</a>
-    <div>
-      <button id="logoutButton" class="bg-red-500 px-4 py-2 rounded hover:bg-red-600">Logout</button>
-    </div>
-  </nav>
+  <!-- Main Layout -->
+  <div class="flex min-h-screen">
+    <!-- Fixed Sidebar -->
+    <aside class="w-64 bg-indigo-800 shadow-xl fixed h-full">
+      <div class="p-6">
+        <h2 class="text-white text-xl font-bold mb-8">ShopSphere<span class="text-indigo-200"> Admin</span></h2>
+        <nav class="space-y-2">
+          <a href="#" class="sidebar-item block text-white px-4 py-3 rounded-lg hover:bg-indigo-700">
+            <i class="fas fa-tachometer-alt mr-3"></i>Dashboard
+          </a>
+          <a href="#" class="sidebar-item block text-white px-4 py-3 rounded-lg hover:bg-indigo-700">
+            <i class="fas fa-users-cog mr-3"></i>Admin Users
+          </a>
+          <a href="#" class="sidebar-item block text-white px-4 py-3 rounded-lg hover:bg-indigo-700">
+            <i class="fas fa-user-clock mr-3"></i>User Activity
+          </a>
+          <a href="#" class="sidebar-item block text-white px-4 py-3 rounded-lg hover:bg-indigo-700">
+            <i class="fas fa-shopping-cart mr-3"></i>Cart Details
+          </a>
+        </nav>
+      </div>
+    </aside>
 
-  <!-- Main Dashboard Container -->
-  <div class="container mx-auto p-6">
+    <!-- Main Content Area (Your Original Code) -->
+    <main class="flex-1 ml-64 p-8">
+      <!-- Top Header -->
+      <header class="flex justify-between items-center mb-8">
+        <div>
+          <h1 class="text-2xl font-bold text-gray-800">Admin Dashboard</h1>
+          <p class="text-gray-600">Welcome back, Administrator</p>
+        </div>
+        <button id="logoutButton" class="bg-red-500 px-6 py-2 rounded-md hover:bg-red-600 text-white font-semibold shadow-md transition-all">
+          Logout
+        </button>
+      </header>
 
-    <!-- Admin Section: Display users and cart data -->
-    <div id="adminSection" class="flex space-x-8">
-      <!-- Admin Users Data -->
-      <div id="adminData" class="w-1/2">
-        <h2 class="text-xl font-bold mb-4">Admin Users</h2>
-        <ul id="adminUsersList" class="bg-white shadow-md rounded-lg p-4">
-          <!-- Dynamic admin users will be listed here -->
-        </ul>
+      <!-- Your Original Content Structure (Unmodified) -->
+      <div class="container mx-auto">
+        <!-- Admin Section Grid -->
+        <div id="adminSection" class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <!-- Admin Users Card -->
+          <div id="adminData" class="dashboard-card bg-white rounded-xl shadow-md p-6 hover:shadow-lg border border-gray-100">
+            <h2 class="text-xl font-bold mb-4 text-gray-700 flex items-center">
+              <span class="mr-2">👥</span>
+              Admin Users
+            </h2>
+            <ul id="adminUsersList" class="space-y-3">
+              <!-- Dynamic admin users will be listed here -->
+            </ul>
+          </div>
+
+          <!-- User Activity Card -->
+          <div id="userData" class="dashboard-card bg-white rounded-xl shadow-md p-6 hover:shadow-lg border border-gray-100">
+            <h2 class="text-xl font-bold mb-4 text-gray-700 flex items-center">
+              <span class="mr-2">📈</span>
+              User Activity
+            </h2>
+            <ul id="userActivityList" class="space-y-3">
+              <!-- Dynamic user activity will be listed here -->
+            </ul>
+          </div>
+        </div>
+
+        <!-- Cart Section Grid -->
+        <div id="cartSection" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- Cart Items Card -->
+          <div id="cartItems" class="dashboard-card bg-white rounded-xl shadow-md p-6 hover:shadow-lg border border-gray-100">
+            <h2 class="text-xl font-bold mb-4 text-gray-700 flex items-center">
+              <span class="mr-2">🛒</span>
+              Cart Details
+            </h2>
+            <!-- Dynamic cart items will be listed here -->
+          </div>
+
+          <!-- Last Purchase Card -->
+          <div id="lastPurchase" class="dashboard-card bg-white rounded-xl shadow-md p-6 hover:shadow-lg border border-gray-100">
+            <h2 class="text-xl font-bold mb-4 text-gray-700 flex items-center">
+              <span class="mr-2">💰</span>
+              Recent Purchase
+            </h2>
+            <!-- Last purchase data will be displayed here -->
+          </div>
+        </div>
       </div>
 
-      <!-- User Data -->
-      <div id="userData" class="w-1/2">
-        <h2 class="text-xl font-bold mb-4">User Activity</h2>
-        <ul id="userActivityList" class="bg-white shadow-md rounded-lg p-4">
-          <!-- Dynamic user activity will be listed here -->
-        </ul>
-      </div>
-    </div>
-
-    <!-- Cart Section: Display cart items and last purchase -->
-    <div id="cartSection" class="mt-8">
-      <h2 class="text-xl font-bold mb-4">Cart Details</h2>
-      
-      <!-- Cart Items List -->
-      <div id="cartItems" class="bg-white shadow-md rounded-lg p-4">
-        <!-- Dynamic cart items will be listed here -->
-      </div>
-
-      <!-- Last Purchase Amount -->
-      <div id="lastPurchase" class="mt-4 bg-white shadow-md rounded-lg p-4">
-        <!-- Last purchase data will be displayed here -->
-      </div>
-    </div>
-
+        <!-- New Total Balance Card -->
+  <div id="totalBalance" class="dashboard-card bg-white rounded-xl shadow-md p-6 hover:shadow-lg border border-green-100 mt-10">
+    <h2 class="text-xl font-bold mb-4 text-gray-700 flex items-center">
+      <span class="mr-2">💰</span>
+      Total Balance
+    </h2>
+    <p class="text-3xl font-bold text-green-600" id="balanceAmount">$0.00</p>
   </div>
+</div>
 
-  <!-- Admin Logout -->
-  <div class="text-center mt-8">
-    <button id="adminLogoutButton" class="bg-red-500 px-4 py-2 rounded hover:bg-red-600">Admin Logout</button>
+      <!-- Your Original Logout Button -->
+      <div class="text-center my-8">
+        <button id="adminLogoutButton" class="bg-red-500 px-8 py-3 rounded-lg hover:bg-red-600 text-white font-semibold shadow-lg transition-all transform hover:scale-105">
+          Admin Logout
+        </button>
+      </div>
+    </main>
   </div>
 
   <script src="assest/src/app.js"></script>
 </body>
 </html>
-

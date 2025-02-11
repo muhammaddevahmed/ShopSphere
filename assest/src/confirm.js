@@ -52,10 +52,7 @@ window.onload = function () {
     document.getElementById("buyNowButton").onclick = function () {
         alert(`Thank you for purchasing! Total amount of $${total.toFixed(2)} has been deducted from your account.`);
 
-        // Clear cart and payment data from localStorage
-        localStorage.removeItem("orderDetails");
-        localStorage.removeItem("paymentData");
-        localStorage.removeItem("cart");
+       
 
         
 
