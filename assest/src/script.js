@@ -196,5 +196,6 @@ updateTimer();
        profilePic.src = savedPic; // Load the saved image
      }
    });
+   
 
 

@@ -25,9 +25,9 @@
 <body class="bg-gray-50">
 
   <!-- Main Layout -->
-  <div class="flex min-h-screen">
+  <div class="flex flex-col lg:flex-row min-h-screen">
     <!-- Fixed Sidebar -->
-    <aside class="w-64 bg-indigo-800 shadow-xl fixed h-full">
+    <aside class="w-full lg:w-64 bg-indigo-800 shadow-xl lg:fixed lg:h-full">
       <div class="p-6">
         <h2 class="text-white text-xl font-bold mb-8">ShopSphere<span class="text-indigo-200"> Admin</span></h2>
         <nav class="space-y-2">
@@ -47,23 +47,23 @@
       </div>
     </aside>
 
-    <!-- Main Content Area (Your Original Code) -->
-    <main class="flex-1 ml-64 p-8">
+    <!-- Main Content Area -->
+    <main class="flex-1 lg:ml-64 p-8">
       <!-- Top Header -->
-      <header class="flex justify-between items-center mb-8">
+      <header class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
         <div>
           <h1 class="text-2xl font-bold text-gray-800">Admin Dashboard</h1>
           <p class="text-gray-600">Welcome back, Administrator</p>
         </div>
-        <button id="logoutButton" class="bg-red-500 px-6 py-2 rounded-md hover:bg-red-600 text-white font-semibold shadow-md transition-all">
+        <button id="logoutButton" class="bg-red-500 mt-4 md:mt-0 px-6 py-2 rounded-md hover:bg-red-600 text-white font-semibold shadow-md transition-all">
           Logout
         </button>
       </header>
 
-      <!-- Your Original Content Structure (Unmodified) -->
+      <!-- Content Structure -->
       <div class="container mx-auto">
         <!-- Admin Section Grid -->
-        <div id="adminSection" class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div id="adminSection" class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
           <!-- Admin Users Card -->
           <div id="adminData" class="dashboard-card bg-white rounded-xl shadow-md p-6 hover:shadow-lg border border-gray-100">
             <h2 class="text-xl font-bold mb-4 text-gray-700 flex items-center">
@@ -98,6 +98,12 @@
             <!-- Dynamic cart items will be listed here -->
           </div>
 
+          <!-- Pending Orders Card -->
+          <div class="container mx-auto px-4 py-8 lg:py-0">
+            <h2 class="text-2xl font-bold mb-4">Pending Orders</h2>
+            <div id="pendingOrders"></div>
+          </div>
+
           <!-- Last Purchase Card -->
           <div id="lastPurchase" class="dashboard-card bg-white rounded-xl shadow-md p-6 hover:shadow-lg border border-gray-100">
             <h2 class="text-xl font-bold mb-4 text-gray-700 flex items-center">
@@ -107,19 +113,18 @@
             <!-- Last purchase data will be displayed here -->
           </div>
         </div>
-      </div>
 
         <!-- New Total Balance Card -->
-  <div id="totalBalance" class="dashboard-card bg-white rounded-xl shadow-md p-6 hover:shadow-lg border border-green-100 mt-10">
-    <h2 class="text-xl font-bold mb-4 text-gray-700 flex items-center">
-      <span class="mr-2">💰</span>
-      Total Balance
-    </h2>
-    <p class="text-3xl font-bold text-green-600" id="balanceAmount">$0.00</p>
-  </div>
-</div>
+        <div id="totalBalance" class="dashboard-card bg-white rounded-xl shadow-md p-6 hover:shadow-lg border border-green-100 mt-10">
+          <h2 class="text-xl font-bold mb-4 text-gray-700 flex items-center">
+            <span class="mr-2">💰</span>
+            Total Balance
+          </h2>
+          <p class="text-3xl font-bold text-green-600" id="balanceAmount">$0.00</p>
+        </div>
+      </div>
 
-      <!-- Your Original Logout Button -->
+      <!-- Admin Logout Button -->
       <div class="text-center my-8">
         <button id="adminLogoutButton" class="bg-red-500 px-8 py-3 rounded-lg hover:bg-red-600 text-white font-semibold shadow-lg transition-all transform hover:scale-105">
           Admin Logout

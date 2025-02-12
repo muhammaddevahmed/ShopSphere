@@ -154,7 +154,7 @@ const loadAdminData = () => {
   userBox.innerHTML = loginUsers
     .map(
       (u, index) => `
-        <li class="flex justify-between items-center">
+        <li class="flex justify-between items-center m-4 g-10">
           ${u.username} (${u.email})
           <button onclick="deleteUser(${index})" class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600">Delete</button>
         </li>`
@@ -214,6 +214,7 @@ const loadCartData = () => {
             <h3 class="text-xl font-semibold">${item.name}</h3>
             <p>Price: $${item.price}</p>
             <p>Quantity: ${item.quantity}</p>
+            ${item.status ? `<p>Status: ${item.status}</p>` : ''}
           </div>
         </div>
         <div class="flex gap-2">
@@ -235,6 +236,36 @@ const loadCartData = () => {
     : "<p>No purchase made yet.</p>";
 };
 
+// Load Pending Orders
+const loadPendingOrders = () => {
+  const pendingOrders = JSON.parse(localStorage.getItem("pendingOrders")) || [];
+  const pendingOrdersDiv = document.getElementById("pendingOrders");
+
+  pendingOrdersDiv.innerHTML = "";
+
+  if (pendingOrders.length === 0) {
+    pendingOrdersDiv.innerHTML = "<p>No pending orders.</p>";
+  } else {
+    pendingOrders.forEach((order, index) => {
+      const orderDiv = document.createElement("div");
+      orderDiv.classList.add("flex", "border-b", "pb-4", "items-center", "justify-between", "mb-4");
+      orderDiv.innerHTML = `
+        <div class="flex items-center">
+          <img src="${order.image}" class="w-32 h-32 object-cover mr-4" alt="${order.name}">
+          <div>
+            <h3 class="text-xl font-semibold">${order.name}</h3>
+            <p>Price: $${order.price}</p>
+            <p>Quantity: ${order.quantity}</p>
+            <p class="text-green-500">Status: ${order.status}</p>
+            <p>Estimated Delivery: ${order.deliveryDays} days</p>
+          </div>
+        </div>
+      `;
+      pendingOrdersDiv.appendChild(orderDiv);
+    });
+  }
+};
+
 // New Balance Functions
 const handleAccept = (index) => {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -244,10 +275,28 @@ const handleAccept = (index) => {
     const amount = item.price * item.quantity;
     const totalBalance = parseFloat(localStorage.getItem("totalBalance")) || 0;
     
+    // Update balance
     localStorage.setItem("totalBalance", totalBalance + amount);
+    
+    // Create pending order
+    const pendingOrder = {
+      ...item,
+      status: "Approved",
+      deliveryDays: Math.floor(Math.random() * 10) + 1
+    };
+
+    // Add to pending orders
+    const pendingOrders = JSON.parse(localStorage.getItem("pendingOrders")) || [];
+    pendingOrders.push(pendingOrder);
+    localStorage.setItem("pendingOrders", JSON.stringify(pendingOrders));
+
+    // Remove from cart
     cart.splice(index, 1);
     localStorage.setItem("cart", JSON.stringify(cart));
+    
+    // Refresh displays
     loadCartData();
+    loadPendingOrders();
   }
 };
 
@@ -262,6 +311,7 @@ const handleDecline = (index) => {
 if (window.location.pathname.includes("admin.html")) {
   loadAdminData();
   loadCartData();
+  loadPendingOrders();
   
   // Initialize balance display
   const balanceAmount = document.getElementById("balanceAmount");
@@ -271,7 +321,7 @@ if (window.location.pathname.includes("admin.html")) {
   }
 }
 
-// Rest of your original code remains unchanged below
+
 // Event Listeners for Forms
 document.getElementById("signupForm")?.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -311,4 +361,6 @@ document.getElementById("adminLogoutButton")?.addEventListener("click", function
       window.location.href = "index.html";  
   }
 });  
+
+
 
