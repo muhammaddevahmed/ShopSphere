@@ -29,10 +29,10 @@ const storeUser = (user) => {
   }
 
   // Rest of the original storeUser function remains the same
-  if (users.some((u) => u.email === user.email)) {
-    alert("Email already exists.");
-    return;
-  }
+  // if (users.some((u) => u.email === user.email)) {
+  //   alert("Succesfully account created.");
+  //   return;
+  // }
 
   if (user.role === "admin") {
     alert("Admin account creation is restricted");
@@ -112,6 +112,7 @@ const handleLogin = () => {
 
   const users = JSON.parse(localStorage.getItem("users")) || [];
   const user = users.find((u) => u.email === email && u.password === password);
+
 
   if (!user) {
     document.getElementById("loginError").classList.remove("hidden");
@@ -198,8 +199,8 @@ const loadCartData = () => {
   const balanceAmount = document.getElementById("balanceAmount");
   if(balanceAmount) balanceAmount.textContent = `$${totalBalance.toFixed(2)}`;
 
-  cartItemsDiv.innerHTML = ""; // Clear any existing cart items
-  lastPurchaseDiv.innerHTML = ""; // Clear any existing last purchase info
+  cartItemsDiv.innerHTML = ""; // Clear existing items
+  lastPurchaseDiv.innerHTML = "";
 
   if (cart.length === 0) {
     cartItemsDiv.innerHTML = "<h1>No cart data available.</h1>";
@@ -243,30 +244,50 @@ const loadPendingOrders = () => {
 
   pendingOrdersDiv.innerHTML = "";
 
-  if (pendingOrders.length === 0) {
-    pendingOrdersDiv.innerHTML = "<p>No pending orders.</p>";
-  } else {
-    pendingOrders.forEach((order, index) => {
-      const orderDiv = document.createElement("div");
-      orderDiv.classList.add("flex", "border-b", "pb-4", "items-center", "justify-between", "mb-4");
-      orderDiv.innerHTML = `
-        <div class="flex items-center">
-          <img src="${order.image}" class="w-32 h-32 object-cover mr-4" alt="${order.name}">
-          <div>
-            <h3 class="text-xl font-semibold">${order.name}</h3>
-            <p>Price: $${order.price}</p>
-            <p>Quantity: ${order.quantity}</p>
-            <p class="text-green-500">Status: ${order.status}</p>
-            <p>Estimated Delivery: ${order.deliveryDays} days</p>
-          </div>
+  pendingOrders.forEach((order) => {
+    const orderDiv = document.createElement("div");
+    orderDiv.classList.add("flex", "border-b", "pb-4", "items-center", "justify-between", "mb-4");
+    orderDiv.innerHTML = `
+      <div class="flex items-center">
+        <img src="${order.image}" class="w-32 h-32 object-cover mr-4" alt="${order.name}">
+        <div>
+          <h3 class="text-xl font-semibold">${order.name}</h3>
+          <p>Price: $${order.price}</p>
+          <p>Quantity: ${order.quantity}</p>
+          <p class="text-green-500">Status: ${order.status}</p>
+          <p>Estimated Delivery: ${order.deliveryDays} days</p>
         </div>
-      `;
-      pendingOrdersDiv.appendChild(orderDiv);
-    });
-  }
+      </div>
+    `;
+    pendingOrdersDiv.appendChild(orderDiv);
+  });
 };
 
-// New Balance Functions
+// Load Declined Orders
+const loadDeclinedOrders = () => {
+  const declinedOrders = JSON.parse(localStorage.getItem("declinedOrders")) || [];
+  const declinedOrdersDiv = document.getElementById("declinedOrders");
+
+  declinedOrdersDiv.innerHTML = "";
+
+  declinedOrders.forEach((order) => {
+    const orderDiv = document.createElement("div");
+    orderDiv.classList.add("flex", "border-b", "pb-4", "items-center", "justify-between", "mb-4");
+    orderDiv.innerHTML = `
+      <div class="flex items-center">
+        <img src="${order.image}" class="w-32 h-32 object-cover mr-4" alt="${order.name}">
+        <div>
+          <h3 class="text-xl font-semibold">${order.name}</h3>
+          <p>Price: $${order.price}</p>
+          <p>Quantity: ${order.quantity}</p> 
+          <p class="text-red-500">Status: Out of Stock</p>
+        </div>
+      </div>
+    `;
+    declinedOrdersDiv.appendChild(orderDiv);
+  });
+};
+
 const handleAccept = (index) => {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   const item = cart[index];
@@ -302,9 +323,28 @@ const handleAccept = (index) => {
 
 const handleDecline = (index) => {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  cart.splice(index, 1);
-  localStorage.setItem("cart", JSON.stringify(cart));
-  loadCartData();
+  const item = cart[index];
+  
+  if (item) {
+    // Create declined order
+    const declinedOrder = {
+      ...item,
+      status: "Out of Stock"
+    };
+
+    // Add to declined orders
+    const declinedOrders = JSON.parse(localStorage.getItem("declinedOrders")) || [];
+    declinedOrders.push(declinedOrder);
+    localStorage.setItem("declinedOrders", JSON.stringify(declinedOrders));
+
+    // Remove from cart
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    
+    // Refresh displays
+    loadCartData();
+    loadDeclinedOrders();
+  }
 };
 
 // Initialize Data on Page Load
@@ -312,8 +352,8 @@ if (window.location.pathname.includes("admin.html")) {
   loadAdminData();
   loadCartData();
   loadPendingOrders();
+  loadDeclinedOrders();
   
-  // Initialize balance display
   const balanceAmount = document.getElementById("balanceAmount");
   if(balanceAmount) {
     const totalBalance = parseFloat(localStorage.getItem("totalBalance")) || 0;

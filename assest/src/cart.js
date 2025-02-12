@@ -1,6 +1,8 @@
 window.onload = function () {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+    
+
     // Function to check if user is logged in
     function isUserLoggedIn() {
         const loginUsers = JSON.parse(localStorage.getItem("loginUsers")) || [];
