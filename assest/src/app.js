@@ -207,7 +207,8 @@ const loadCartData = () => {
   } else {
     cart.forEach((item, index) => {
       const itemDiv = document.createElement("div");
-      itemDiv.classList.add("flex", "border-b", "pb-4", "items-center", "justify-between");
+      itemDiv.classList.add("flex", "border-b", "pb-4", "items-center", "justify-between", "flex-wrap");
+    
       itemDiv.innerHTML = `
         <div class="flex items-center">
           <img src="${item.image}" class="w-32 h-32 object-cover mr-4" alt="${item.name}">
@@ -215,20 +216,24 @@ const loadCartData = () => {
             <h3 class="text-xl font-semibold">${item.name}</h3>
             <p>Price: $${item.price}</p>
             <p>Quantity: ${item.quantity}</p>
-            ${item.status ? `<p>Status: ${item.status}</p>` : ''}
+            ${item.status ? `<p>Status: ${item.status}</p>` : ""}
           </div>
         </div>
-        <div class="flex gap-2">
-          <button onclick="handleAccept(${index})" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+    
+        <!-- Responsive Button Container -->
+        <div class="flex flex-col md:flex-row gap-2 w-full md:w-auto mt-2 md:mt-0">
+          <button onclick="handleAccept(${index})" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 w-full md:w-auto">
             Accept
           </button>
-          <button onclick="handleDecline(${index})" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
+          <button onclick="handleDecline(${index})" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 w-full md:w-auto">
             Decline
           </button>
         </div>
       `;
+    
       cartItemsDiv.appendChild(itemDiv);
     });
+    
   }
 
   const lastPurchaseAmount = localStorage.getItem("lastPurchaseAmount");

@@ -38,7 +38,7 @@ window.onload = function () {
       const approvedItem = pendingOrders.find(p => p.name === item.name);
       if (approvedItem) {
           status = approvedItem.status; // "Approved"
-          deliveryTime = `${approvedItem.deliveryDays} days`;
+          deliveryTime = `${approvedItem.deliveryDays} `;
           statusColor = "bg-green-500"; // Approved -> Green
       }
 
