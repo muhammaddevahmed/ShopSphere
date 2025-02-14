@@ -287,39 +287,46 @@ const loadDeclinedOrders = () => {
     declinedOrdersDiv.appendChild(orderDiv);
   });
 };
-
 const handleAccept = (index) => {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   const item = cart[index];
-  
+
   if (item) {
-    const amount = item.price * item.quantity;
-    const totalBalance = parseFloat(localStorage.getItem("totalBalance")) || 0;
-    
-    // Update balance
-    localStorage.setItem("totalBalance", totalBalance + amount);
-    
-    // Create pending order
-    const pendingOrder = {
-      ...item,
-      status: "Approved",
-      deliveryDays: Math.floor(Math.random() * 10) + 1
+    // Show delivery time dropdown
+    document.getElementById("deliveryOptions").classList.remove("hidden");
+
+    document.getElementById("confirmOrderBtn").onclick = () => {
+      const selectedDeliveryTime = document.getElementById("deliveryTimeSelect").value;
+      const totalBalance = parseFloat(localStorage.getItem("totalBalance")) || 0;
+      const amount = item.price * item.quantity;
+
+      // Update total balance
+      localStorage.setItem("totalBalance", (totalBalance + amount).toString());
+
+      // Create pending order with selected delivery time
+      const pendingOrder = {
+        ...item,
+        status: "Approved",
+        deliveryDays: selectedDeliveryTime,
+      };
+
+      // Add to pending orders
+      const pendingOrders = JSON.parse(localStorage.getItem("pendingOrders")) || [];
+      pendingOrders.push(pendingOrder);
+      localStorage.setItem("pendingOrders", JSON.stringify(pendingOrders));
+
+      // Remove from cart
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+
+      // Hide dropdown and refresh displays
+      document.getElementById("deliveryOptions").classList.add("hidden");
+      loadCartData();
+      loadPendingOrders();
     };
-
-    // Add to pending orders
-    const pendingOrders = JSON.parse(localStorage.getItem("pendingOrders")) || [];
-    pendingOrders.push(pendingOrder);
-    localStorage.setItem("pendingOrders", JSON.stringify(pendingOrders));
-
-    // Remove from cart
-    cart.splice(index, 1);
-    localStorage.setItem("cart", JSON.stringify(cart));
-    
-    // Refresh displays
-    loadCartData();
-    loadPendingOrders();
   }
 };
+
 
 const handleDecline = (index) => {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];

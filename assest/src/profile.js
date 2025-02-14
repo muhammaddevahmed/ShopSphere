@@ -1,47 +1,74 @@
-  // Save profile data to localStorage
-  const saveProfileData = (data) => {
-    localStorage.setItem('userProfile', JSON.stringify(data));
-  };
+window.onload = function () {
+  const orderDetails = JSON.parse(localStorage.getItem("orderDetails")) || { cart: [] };
+  const paymentData = JSON.parse(localStorage.getItem("paymentData"));
+  const pendingOrders = JSON.parse(localStorage.getItem("pendingOrders")) || [];
+  const declinedOrders = JSON.parse(localStorage.getItem("declinedOrders")) || [];
 
-  // Load profile data from localStorage
-  const loadProfileData = () => {
-    const savedData = JSON.parse(localStorage.getItem('userProfile'));
-    if (savedData) {
-      document.getElementById('username').value = savedData.username || '';
-      document.getElementById('email').value = savedData.email || '';
-      document.getElementById('country').value = savedData.country || '';
-      document.getElementById('language').value = savedData.language || 'English';
-      document.getElementById('userDetails').innerHTML = `
-        <p><strong>Username:</strong> ${savedData.username}</p>
-        <p><strong>Email:</strong> ${savedData.email}</p>
-        <p><strong>Country:</strong> ${savedData.country}</p>
-        <p><strong>Language:</strong> ${savedData.language}</p>
-        <p><strong>Profile Picture:</strong></p>
-        <img src="${savedData.profilePic || ''}" alt="Profile Picture" class="w-24 h-24 rounded-full">
+  // Display Shipping Address
+  document.getElementById("shippingAddress").innerHTML = `
+      <p>${orderDetails.shippingAddress.address}</p>
+      <p>${orderDetails.shippingAddress.city}, ${orderDetails.shippingAddress.postalCode}</p>
+      <p>${orderDetails.shippingAddress.country}</p>
+  `;
+
+  // Display Payment Method
+  const paymentMethodDiv = document.getElementById("paymentMethod");
+  if (paymentData) {
+      paymentMethodDiv.innerHTML = `
+          <img src="${paymentData.cardImage}" class="w-20 h-20 object-cover mr-4" alt="${paymentData.cardImage}">
+          <p><strong>Payment Method:</strong> ${paymentData.paymentMethod}</p>
+          <p><strong>Card Number:</strong> **** **** **** ${paymentData.cardNumber.slice(-4)}</p>
+          <p><strong>Cardholder Name:</strong> ${paymentData.cardName}</p>
       `;
-    }
-  };
+  } else {
+      paymentMethodDiv.textContent = orderDetails.paymentMethod;
+  }
 
-  // Handle form submission
-  document.getElementById('profileForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    const username = document.getElementById('username').value;
-    const email = document.getElementById('email').value;
-    const country = document.getElementById('country').value;
-    const language = document.getElementById('language').value;
-    const profilePic = document.getElementById('profilePic').files[0] ? URL.createObjectURL(document.getElementById('profilePic').files[0]) : '';
+  // Display Order Summary with Updated Status & Delivery Time
+  const orderSummaryDiv = document.getElementById("orderSummary");
+  let total = 0;
 
-    const userData = {
-      username,
-      email,
-      country,
-      language,
-      profilePic
-    };
+  orderDetails.cart.forEach(item => {
+      let status = "Pending";
+      let deliveryTime = "Updating...";
+      let statusColor = "bg-yellow-500"; // Default: Pending (Yellow)
+      let deliveryColor = "bg-blue-500"; // Default: Blue for delivery time
 
-    saveProfileData(userData);
-    loadProfileData();  // Reload to show saved data
+      // Check if item is approved
+      const approvedItem = pendingOrders.find(p => p.name === item.name);
+      if (approvedItem) {
+          status = approvedItem.status; // "Approved"
+          deliveryTime = `${approvedItem.deliveryDays} days`;
+          statusColor = "bg-green-500"; // Approved -> Green
+      }
+
+      // Check if item is declined
+      const declinedItem = declinedOrders.find(d => d.name === item.name);
+      if (declinedItem) {
+          status = "Out of Stock";
+          deliveryTime = "-";
+          statusColor = "bg-red-500"; // Declined -> Red
+      }
+
+      const itemDiv = document.createElement("div");
+      itemDiv.classList.add("flex", "border-b", "pb-4");
+      itemDiv.innerHTML = `
+          <img src="${item.image}" class="w-16 h-16 object-cover mr-4" alt="${item.name}">
+          <div>
+              <h3 class="text-lg font-semibold">${item.name}</h3>
+              <p>Price: $${item.price}</p>
+              <p>Quantity: ${item.quantity}</p>
+              <p class="mt-2"><strong>Status:</strong> 
+                  <span class="status px-3 py-1 rounded-full text-white text-sm font-bold  ${statusColor}">${status}</span>
+              </p>
+              <p class="mt-2"><strong>Delivery Time:</strong> 
+                  <span class="delivery px-3 py-1 rounded-md text-white text-sm font-bold ${deliveryColor}">${deliveryTime}</span>
+              </p>
+          </div>
+      `;
+      orderSummaryDiv.appendChild(itemDiv);
+      total += item.price * item.quantity;
   });
 
-  // Load user data on page load
-  loadProfileData();
+  document.getElementById("orderTotal").textContent = `Total: $${total.toFixed(2)}`;
+};
